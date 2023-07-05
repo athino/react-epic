@@ -63,6 +63,11 @@ export const { reducer } = new Reducer<UserState>((state = initialState, action)
                 name: action.payload.name
             }
         }
+        default: {
+            return {
+                ...state
+            }
+        }
     }
 })
 

@@ -1,6 +1,6 @@
 {
   "name": "@athino/react-epic",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A redux wrapper for react.",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
