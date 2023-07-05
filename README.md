@@ -169,7 +169,14 @@ export const User = () => {
         </div>
     )
 }
-
 ```
 
+## API
 
+There are only two exports from `react-epic`.
+- Root
+- Actions
+
+### Actions
+- excepts: `actionsInitializer` function.
+- returns: `actions` instance.
