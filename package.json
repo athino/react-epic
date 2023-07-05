@@ -1,0 +1,19 @@
+{
+  "name": "@athino/react-epic",
+  "version": "1.0.0",
+  "description": "A redux wrapper for react.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.1.6"
+  },
+  "publishConfig": {
+    "@athino:registry": "https://npm.pkg.github.com"
+  }
+}
