@@ -166,7 +166,7 @@ export const User = () => {
     return (
         <div>
             <button
-                onClick={() => actions.echo.fetchUser({ id: '1' })}>
+                onClick={() => actions.user.fetchUser({ id: '1' })}>
                 {isLoading ? 'Fetching user...' : 'Fetch user'}
             </button>
             <br/>
