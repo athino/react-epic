@@ -138,7 +138,7 @@ import { useProvider } from './common/hooks.ts'
 import { User } from '../User.tsx'
 
 const App = () => {
-  const { Provider } = userProvider()
+  const { Provider } = useProvider()
   return (
     <Provider>
       <User/>
