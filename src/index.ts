@@ -1,2 +1,2 @@
-export { Root } from './exports/rootClass'
-export { Actions } from './exports/actionsClass'
+export { createActions } from './exports/createActions'
+export { createRoot } from './exports/createRoot'
