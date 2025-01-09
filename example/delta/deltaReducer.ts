@@ -4,13 +4,13 @@ type TDeltaState = {
     userId?: string
 }
 
-export const { createSubdomain } = createReducer<TDeltaState>({
+export const { reducer } = createReducer<TDeltaState>({
     
     fetchUser({ state, payload }) {
         state.userId = payload.id
     },
 
-    removeUser({ state }) {
+    removeUser({state}) {
         state.userId = undefined
     }
     

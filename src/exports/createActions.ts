@@ -6,19 +6,6 @@ type InitializerBase<Actions> = (ctx: { defineAction: <Payload extends NonArrayO
   [Key in keyof Actions]: Actions[Key]
 }
 
-type ActionTypeMap<Actions> = {
-  [Key in keyof Actions]: {
-    type: Key;
-    payload: Actions[Key];
-  };
-};
-
-type Reducer<Initializer extends InitializerBase<Initializer>> = {
-  new<State>(reducer: (state: State, action: ActionTypeMap<ReturnType<Initializer>>[keyof ReturnType<Initializer>]) => State): {
-    reducer: (state: State, action: ActionTypeMap<ReturnType<Initializer>>[keyof ReturnType<Initializer>]) => State
-  }
-}
-
 type IfEmpty<T, U, P> = T extends object
   ? keyof T extends never
     ? U
@@ -38,7 +25,7 @@ export const createActions = <Initializer extends InitializerBase<Initializer>>(
     }) => {
 
       return {
-        createSubdomain: () => {}
+        reducer: reducer
       }
     }
   }

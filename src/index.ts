@@ -1,2 +1,2 @@
 export { createActions } from './exports/createActions'
-export { createRoot } from './exports/createRoot'
+export { crateState } from './exports/crateState'

@@ -4,7 +4,7 @@ type TEchoState = {
     userId?: string
 }
 
-export const { createSubdomain } = createReducer<TEchoState>({
+export const { reducer } = createReducer<TEchoState>({
     
     fetchOrder({ state, payload }) {
         state.userId = payload.id
