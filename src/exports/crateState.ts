@@ -20,7 +20,7 @@ export const crateState = <TDomains extends TDomainsBase>(arg: TDomains) => {
         }
       }
     },
-    createEffect: <T extends keyof MergeUnion<TDomains['domains'][keyof TDomains['domains']]>>(effect: TEffect<TDomains, T>) => {
+    createEffect: <T extends (keyof MergeUnion<TDomains['domains'][keyof TDomains['domains']]>) | RegExp>(effect: TEffect<TDomains, T>) => {
 
     }
   }
