@@ -1,9 +1,8 @@
+import { TReducerCtx } from "./reducerCtx"
 
 
-export type TDomainsBase = {
-    domains: {
-        [domain: string]: {
-            [action: string]: (ctx: any) => void
-        }
+export type TDomainsBase =  {
+    [domain: string]: {
+        [action: string]: (ctx: TReducerCtx<any, any>) => void
     }
 }

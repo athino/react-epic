@@ -1,23 +1,20 @@
-import { TDomainsBase } from "../types/domainBase"
-import { MergeUnion, TEffect } from "../types/effect"
+// @ts-nocheck
 
-export const crateState = <TDomains extends TDomainsBase>(arg: TDomains) => {
+export const createState = (a) => {
+  const createCreateHooks = (b) => () => {
+    return {
+      useActions: () => {},
+      useProvider: () => {}
+    }
+  }
 
   return {
-    createEffects: (effects: {
-      effects: Array<any>
-    }) => {
+    createHooks: createCreateHooks(),
+    createEffects: (c) => {
       return {
-        createHooks: () => {
-          return {
-            useActions: () => {},
-            Provider: () => {}
-          }
-        }
+        createHooks: createCreateHooks(c)
       }
     },
-    createEffect: <T extends (keyof MergeUnion<TDomains['domains'][keyof TDomains['domains']]>) | RegExp, TDomain extends keyof TDomains['domains'] | undefined>(effect: TEffect<TDomains, T, TDomain>) => {
-      
-    }
+    createEffect: (d) => {}
   }
 }

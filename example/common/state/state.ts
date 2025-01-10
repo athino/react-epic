@@ -1,9 +1,9 @@
-import { crateState } from '../../../src/index'
+import { createState } from '../../../src/index'
 import { reducer as deltaReducer } from "../../delta/deltaReducer";
 import { reducer as echoReducer } from "../../echo/echoReducer";
 import { fetchUserEffect } from '../../delta/deltaEffects';
 
-export const { createEffect, createEffects } = crateState({
+export const { createEffect, createEffects } = createState({
     domains: {
         delta: deltaReducer,
         echo: echoReducer
@@ -16,4 +16,4 @@ const { createHooks } = createEffects({
     ]
 })
 
-export const { useActions, Provider } = createHooks()
+export const { useActions, useProvider } = createHooks()
