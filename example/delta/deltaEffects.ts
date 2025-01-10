@@ -1,7 +1,7 @@
 import {createEffect} from '../common/state/state'
 
 export const fetchUserEffect = createEffect({
-    domainType: 'echo',
+    domainType: 'delta',
     actionType: 'fetchOrder',
     handler: ({action}) => {
         action
