@@ -14,14 +14,14 @@ export const crateState = <TDomains extends TDomainsBase>(arg: TDomains) => {
       return {
         createHooks: () => {
           return {
-            useActions: 1,
-            Provider: 1
+            useActions: () => {},
+            Provider: () => {}
           }
         }
       }
     },
     createEffect: <T extends (keyof MergeUnion<TDomains['domains'][keyof TDomains['domains']]>) | RegExp, K extends keyof TDomains['domains']>(effect: TEffect<TDomains, T, K>) => {
-
+      
     }
   }
 }
