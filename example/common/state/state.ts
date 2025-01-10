@@ -5,8 +5,8 @@ import { fetchUserEffect } from '../../delta/deltaEffects';
 
 export const { createEffect, createEffects } = crateState({
     domains: {
-        delta: echoReducer,
-        echo: deltaReducer
+        delta: deltaReducer,
+        echo: echoReducer
     }
 })
 

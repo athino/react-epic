@@ -13,8 +13,9 @@ export const { reducer } = createReducer<TDeltaState>({
     removeUser({ state }) {
         state.userId = undefined
     },
-    fetchOrder: function (ctx: { state: TDeltaState; payload: { id: string } }): void {
-        throw new Error('Function not implemented.')
+
+    fetchOrder({ state }) {
+        state.userId = undefined
     }
-    
+
 })

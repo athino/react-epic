@@ -4,11 +4,9 @@ export const fetchUserEffect = createEffect({
     effectType: 'takeEvery',
     actionType: 'fetchOrder',
     domain: undefined,
-    handler: ({action, actions}) => {
-        actions.echo.fetchUser({id: '', nok: true})
-        actions.delta.removeOrder()
-
-        action.type
+    handler: ({action, actions, state}) => {
+        actions.delta.fetchUser({id: '', nok: true})
+        actions.echo.removeOrder()
 
         action
     }
