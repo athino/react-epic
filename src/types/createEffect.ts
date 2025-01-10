@@ -15,7 +15,7 @@ export type TCreateEffect<TDomains extends TDomainsBase> = <TDomainType extends 
     domainType: TDomainType,
     actionType: TActionType,
     handler(ctx: {
-        action:{
+        action: {
             actionType: TActionType,
             domainType: TDomainType extends undefined ? string : TDomainType
         }
