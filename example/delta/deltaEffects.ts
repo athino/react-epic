@@ -11,3 +11,15 @@ export const fetchUserEffect = createEffect({
         state.delta.userId
     }
 })
+
+export const fetchOrderEffect = createEffect({
+    domainType: 'echo',
+    actionType: 'fetchOrder',
+    handler: ({action, actions, state}) => {
+        action
+
+        actions.delta.fetchOrder
+
+        state.delta.userId
+    }
+})

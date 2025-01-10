@@ -32,4 +32,8 @@ export type TCreateEffect<TDomains extends TDomainsBase> = <
             [K in keyof TDomains]: Parameters<TDomains[K][keyof TDomains[K]]>[0]['state']
         }>
     }): void
-}) => void
+}) => {
+    domainType?: string,
+    actionType: string,
+    handler(ctx: unknown): void
+}
