@@ -24,7 +24,13 @@ export type TCreateEffect<TDomains extends TDomainsBase> = <
             domainType: TDomainType extends undefined ? string : TDomainType,
             payload: TDomainType extends undefined
                 ? (((TMergeUnion<TDomains[keyof TDomains]>)))
-                : (TDomainType extends keyof TDomains ? ((TActionType extends keyof TDomains[TDomainType] ? (Parameters<TDomains[TDomainType][TActionType]>[0] extends { payload: any } ? Parameters<TDomains[TDomainType][TActionType]>[0]['payload'] : undefined) : boolean[] )) : string[])
+                : (TDomainType extends keyof TDomains
+                    ? ((TActionType extends keyof TDomains[TDomainType]
+                        ? (Parameters<TDomains[TDomainType][TActionType]>[0] extends { payload: any }
+                            ? Parameters<TDomains[TDomainType][TActionType]>[0]['payload']
+                            : undefined)
+                        : boolean[]))
+                    : string[])
         }
         actions: {
             [K in keyof TDomains]: {
