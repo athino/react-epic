@@ -1,14 +1,16 @@
+
+import React from "react"
 import { useActions } from "../common/state/state"
 
 export const Component = () => {
-
+    
     const {actions, data} = useActions(({delta}) => ({
-        foo: delta.id
+        userId: delta.userId
     }))
 
     return (
-        <button onClick={() => actions.delta.fetchUser({id: '3'})}>
-            {data.foo}
+        <button onClick={() => actions.delta.fetchUser({id: '3', nok: true})}>
+            {data.userId}
         </button>
     )
 }

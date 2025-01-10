@@ -1,10 +1,10 @@
 import { TDomainsBase } from "./domainBase";
 
-type DeepReadonly<T> = {
+export type TState<T> = {
     readonly [K in keyof T]: T[K] extends object
         ? T[K] extends Function
             ? T[K]
-            : DeepReadonly<T[K]>
+            : TState<T[K]>
         : T[K];
 };
 
@@ -28,7 +28,7 @@ export type TCreateEffect<TDomains extends TDomainsBase> = <
                 [P in keyof TDomains[K]]: Parameters<TDomains[K][P]>[0] extends { payload: any } ? (payload: Parameters<TDomains[K][P]>[0]['payload']) => void : () => void 
             }
         }
-        state: DeepReadonly<{
+        state: TState<{
             [K in keyof TDomains]: Parameters<TDomains[K][keyof TDomains[K]]>[0]['state']
         }>
     }): void
