@@ -14,12 +14,14 @@ export const fetchUserEffect = createEffect({
 
 export const fetchOrderEffect = createEffect({
     domainType: 'echo',
-    actionType: 'fetchOrder',
+    actionType: 'removeOrder',
     handler: ({action, actions, state}) => {
         action
 
         actions.delta.fetchOrder
 
         state.delta.userId
+
+        action.payload
     }
 })
