@@ -14,13 +14,10 @@ type TEffectBase<TDomains extends TDomainsBase, TActionType extends TActionTypeB
 export type TCreateEffect<TDomains extends TDomainsBase> = <TDomainType extends keyof TDomains | undefined, TActionType extends TActionTypeBase<TDomains, TDomainType>, TEffect extends TEffectBase<TDomains, TActionType, TDomainType>>(effect: {
     domainType: TDomainType,
     actionType: TActionType,
-    handler: (ctx: {
-        action: TDomainType extends undefined ? {
+    handler(ctx: {
+        action:{
             actionType: TActionType,
-            domainType: string
-        }: {
-            actionType: TActionType,
-            domainType: TDomainType
+            domainType: TDomainType extends undefined ? string : TDomainType
         }
-    }) => void
+    }): void
 }) => void

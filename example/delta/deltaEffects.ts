@@ -1,11 +1,9 @@
 import {createEffect} from '../common/state/state'
 
 export const fetchUserEffect = createEffect({
-    domainType: undefined,
-    actionType: 'removeUser',
+    domainType: 'delta',
+    actionType: 'fetchOrder',
     handler: ({action}) => {
-
         action
-
     }
 })
