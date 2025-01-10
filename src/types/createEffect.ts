@@ -14,6 +14,11 @@ export type TCreateEffect<TDomains extends TDomainsBase> = <
         action: {
             actionType: TActionType,
             domainType: TDomainType extends undefined ? string : TDomainType
+        },
+        actions: {
+            [K in keyof TDomains]: {
+                [P in keyof TDomains[K]]: Parameters<TDomains[K][P]>[0] extends { payload: any } ? (payload: Parameters<TDomains[K][P]>[0]['payload']) => void : () => void 
+            }
         }
     }): void
 }) => void
