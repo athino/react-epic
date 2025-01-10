@@ -1,16 +1,16 @@
 import { TDomainsBase } from "./domainBase"
 
-type MergeUnion<T> = {
+export type MergeUnion<T> = {
     [K in (T extends any ? keyof T : never)]: T extends { [P in K]?: any } ? T[K] : never;
 };
 
-export type TEffect<TDomains extends TDomainsBase, T extends (keyof MergeUnion<TDomains['domains'][keyof TDomains['domains']]>) | RegExp, D extends keyof TDomains['domains'] | undefined> = {
-    actionType: T
+export type TEffect<TDomains extends TDomainsBase, T extends (keyof MergeUnion<TDomains['domains'][keyof TDomains['domains']]>) | RegExp, TDomain extends keyof TDomains['domains'] | undefined> = {
     effectType: 'takeLeading' | 'takeEvery' | 'takeLatest'
-    domain?: D
+    actionType: T
+    domain?: TDomain
     handler: (ctx: {
         state: Readonly<any>
-        action: D extends keyof TDomains['domains'] ? (T extends keyof TDomains['domains'][D] ? TDomains['domains'][D][T] : unknown) : (T extends keyof MergeUnion<TDomains['domains'][keyof TDomains['domains']]>
+        action: TDomain extends keyof TDomains['domains'] ? (T extends keyof TDomains['domains'][TDomain] ? TDomains['domains'][TDomain][T] : unknown) : (T extends keyof MergeUnion<TDomains['domains'][keyof TDomains['domains']]>
                 ? (Parameters<MergeUnion<TDomains['domains'][keyof TDomains['domains']]>[T]>[0] extends { payload: any}
                     ? {type: T, payload: Parameters<MergeUnion<TDomains['domains'][keyof TDomains['domains']]>[T]>[0]['payload']} : { type: T })
                 : { type: string, payload: unknown}),

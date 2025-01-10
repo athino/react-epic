@@ -1,9 +1,5 @@
 import { TDomainsBase } from "../types/domainBase"
-import { TEffect } from "../types/effect"
-
-type MergeUnion<T> = {
-  [K in (T extends any ? keyof T : never)]: T extends { [P in K]?: any } ? T[K] : never;
-};
+import { MergeUnion, TEffect } from "../types/effect"
 
 export const crateState = <TDomains extends TDomainsBase>(arg: TDomains) => {
 
@@ -20,7 +16,7 @@ export const crateState = <TDomains extends TDomainsBase>(arg: TDomains) => {
         }
       }
     },
-    createEffect: <T extends (keyof MergeUnion<TDomains['domains'][keyof TDomains['domains']]>) | RegExp, K extends keyof TDomains['domains'] | undefined>(effect: TEffect<TDomains, T, K>) => {
+    createEffect: <T extends (keyof MergeUnion<TDomains['domains'][keyof TDomains['domains']]>) | RegExp, TDomain extends keyof TDomains['domains'] | undefined>(effect: TEffect<TDomains, T, TDomain>) => {
       
     }
   }
