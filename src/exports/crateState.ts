@@ -1,6 +1,8 @@
 // @ts-nocheck
 
-export const createState = (a) => {
+import { TCreateState } from '../types/createState'
+
+export const createState: TCreateState = (a) => {
   const createCreateHooks = (b) => () => {
     return {
       useActions: () => {},
