@@ -20,6 +20,7 @@ export type TCreateState = <TDomains extends TDomainsBase>(arg: {
      * ```
      */
     createEffect: TCreateEffect<TDomains>
+
     /**
      * Utility function to create an effects.
      * 
@@ -32,6 +33,7 @@ export type TCreateState = <TDomains extends TDomainsBase>(arg: {
      * ```
      */
     createEffects: TCreateEffects<TDomains>
+    
     /**
      * Utility function to create react hooks.
      * 
