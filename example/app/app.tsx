@@ -1,14 +1,12 @@
 import React from 'react';
-import { useProvider } from "../common/state/state"
 import { Component } from './component';
+import { EpicProvider } from '../state/state';
 
 export const App = () => {
 
-    const { Provider } = useProvider()
-
     return (
-        <Provider>
+        <EpicProvider>
             <Component/>
-        </Provider>
+        </EpicProvider>
     )
 }
