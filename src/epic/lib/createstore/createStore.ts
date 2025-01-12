@@ -15,12 +15,14 @@ export const createStore = (arg: {
                 const actionReducer =  reducer[action.type]
                 if (!actionReducer) return state
 
+                const newState = {...state}
+
                 actionReducer({
-                    state: state,
+                    state: newState,
                     payload: action.payload
                 })
 
-                return state
+                return newState
             }
         }
     })
