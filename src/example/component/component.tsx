@@ -13,7 +13,7 @@ export const Component = () => {
 
     return (
         <button onClick={() => actions.delta.deltaActionWithPayload({
-            id: 'ehu'
+            count: 1
         })}>
             <pre>{JSON.stringify(state, null, 4)}</pre>
         </button>

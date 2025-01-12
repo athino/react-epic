@@ -16,7 +16,13 @@ export const createState = <TDomains extends TDomainsBase>(domains: {
     domains: TDomains
  }) => {
 
-    const store = lib.createStore(domains.domains)
+    const store = lib.createStore({
+        domains: domains.domains
+    })
+
+    store.subscribe(() => {
+        console.log(store.getState())
+    })
  
     return {
         /**
@@ -42,14 +48,14 @@ export const createState = <TDomains extends TDomainsBase>(domains: {
                  */
                 createHook() {
 
-                    const hookActons = lib.createHookActions({
+                    const hookActions = lib.createHookActions({
                         domains: domains.domains,
                         dispatch: store.dispatch
                     })
 
                     return <TData>(selector: TSelectorBase<TDomains, TData>) => ({
                         data: selector(domains.domains),
-                        actions: hookActons
+                        actions: hookActions
                     })
                 },
  

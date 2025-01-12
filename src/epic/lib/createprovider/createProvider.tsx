@@ -6,6 +6,7 @@ export const createProvider = (arg: {
 }) => {
 
   return (props: {children: React.ReactNode }) => {
+
     return (
       <ReduxProvider store={arg.store}>
           {props.children}
