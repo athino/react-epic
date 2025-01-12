@@ -50,15 +50,11 @@ export const createState = <TDomains extends TDomainsBase>(domains: {
                         dispatch: store.dispatch
                     })
 
-                    return <TData>(selector?: TSelectorBase<TDomains, TData>) => {
-                        const sel = selector || ((s) => {})
-                        const data = useSelector(sel)
+                    const useActions = lib.createUtilityHook({
+                        actions: hookActions
+                    })
 
-                        return {
-                            data: data,
-                            actions: hookActions
-                        }
-                    }
+                    return useActions
                 },
  
                 /**
