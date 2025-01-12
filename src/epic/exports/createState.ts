@@ -4,6 +4,7 @@ import { TDomainTypeBase } from '../types/domainTypeBase'
 import { TEffect } from '../types/effect'
 import { TActionTypeBase } from '../types/actionTypeBase'
 import { TSelectorBase } from '../types/selectorBase'
+import { lib } from '../lib/lib'
 
 /**
 * Utility to create states.
@@ -14,6 +15,8 @@ export const createState = <TDomains extends TDomainsBase>(domains: {
      */
     domains: TDomains
  }) => {
+
+    const store = lib.createStore(domains.domains)
  
     return {
         /**

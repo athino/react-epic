@@ -7,7 +7,7 @@ type TDeltaState = {
 export const deltaReducer = deltaActions.createReducer<TDeltaState>({
 
     deltaActionWithPayload({state, payload}) {
-
+        state.deltaId = payload.id
     },
 
     deltaActionWithoutPayload({state}) {
