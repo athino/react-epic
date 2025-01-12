@@ -21,6 +21,11 @@ export const createState = <TDomains extends TDomainsBase>(domains: {
         domains: domains.domains
     })
 
+    const useActions = lib.createUtilityHook({
+        domains: domains.domains,
+        dispatch: store.dispatch
+    })
+
     return {
         /**
          * Utility to create effect that listens to actions.
@@ -44,12 +49,6 @@ export const createState = <TDomains extends TDomainsBase>(domains: {
                  * Utility to create a react hook for your app.
                  */
                 createHook() {
-
-                    const useActions = lib.createUtilityHook({
-                        domains: domains.domains,
-                        dispatch: store.dispatch
-                    })
-
                     return useActions
                 },
  
@@ -65,12 +64,6 @@ export const createState = <TDomains extends TDomainsBase>(domains: {
          * Utility to create a react hook for your app.
          */
         createHook() {
-
-            const useActions = lib.createUtilityHook({
-                domains: domains.domains,
-                dispatch: store.dispatch
-            })
-
             return useActions
         },
  
