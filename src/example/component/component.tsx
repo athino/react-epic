@@ -1,6 +1,7 @@
 
 import React from "react"
 import { useActions } from "../state/hook"
+import { useSelector } from "react-redux"
 
 export const Component = () => {
     
@@ -8,9 +9,13 @@ export const Component = () => {
         userId: 'delta'
     }))
 
+    const state = useSelector((state) => state)
+
     return (
-        <button onClick={() => actions.delta.deltaActionWithPayload}>
-            {data.userId}
+        <button onClick={() => actions.delta.deltaActionWithPayload({
+            id: 'ehu'
+        })}>
+            <pre>{JSON.stringify(state, null, 4)}</pre>
         </button>
     )
 }

@@ -3,8 +3,7 @@ import { epic } from "../../epic"
 export const deltaActions = epic.createActions(({ defineAction }) => ({
 
     deltaActionWithPayload: defineAction<{
-        id: string,
-        nok: boolean
+        id: string
     }>(),
 
     deltaActionWithoutPayload: defineAction<{

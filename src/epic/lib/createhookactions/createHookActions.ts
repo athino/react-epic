@@ -26,4 +26,3 @@ export const createHookActions = (arg: {
 
     return hookActions as unknown as Record<string, any>
 }
-
