@@ -5,7 +5,7 @@ import { useActions } from "../state/hook"
 export const Component = () => {
     
     const {actions, data} = useActions(({delta}) => ({
-        userId: 'delta.userId'
+        userId: 'delta'
     }))
 
     return (

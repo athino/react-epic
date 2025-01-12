@@ -4,7 +4,6 @@ import { Component } from './example/component/component';
 
 export const App = () => {
 
-
     return (
         <EpicProvider>
             <Component/>
