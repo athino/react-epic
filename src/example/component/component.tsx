@@ -1,6 +1,6 @@
 
 import React from "react"
-import { useActions } from "../state/state"
+import { useActions } from "../state/hook"
 
 export const Component = () => {
     

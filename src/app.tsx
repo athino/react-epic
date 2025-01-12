@@ -1,11 +1,13 @@
 import React from 'react';
-import { EpicProvider } from './example/state/state';
+import { Provider as EpicProvider } from './example/state/provider';
+import { Component } from './example/component/component';
 
 export const App = () => {
 
-    console.log(EpicProvider)
 
     return (
-        <button>eger</button>
+        <EpicProvider>
+            <Component/>
+        </EpicProvider>
     )
 }

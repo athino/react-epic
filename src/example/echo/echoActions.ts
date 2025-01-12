@@ -1,13 +1,13 @@
-import { epic } from '../../../index'
+import { epic } from "../../epic"
 
-export const deltaActions = epic.createActions(({ defineAction }) => ({
+export const echoActions = epic.createActions(({ defineAction }) => ({
 
-    deltaActionWithPayload: defineAction<{
+    echoActionWithPayload: defineAction<{
         id: string,
         nok: boolean
     }>(),
 
-    deltaActionWithoutPayload: defineAction<{
+    echoActionWithoutPayload: defineAction<{
 
     }>(),
 
@@ -19,6 +19,6 @@ export const deltaActions = epic.createActions(({ defineAction }) => ({
     commonActionWithoutPayload: defineAction<{
 
     }>()
-
+    
 }))
 
