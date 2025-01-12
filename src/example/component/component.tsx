@@ -12,10 +12,13 @@ export const Component = () => {
     }
 
     return (
-        <button onClick={() => onClick()}>
+        <div>
+            <button onClick={() => onClick()}>
+                Click
+            </button>
             <pre>
                 {JSON.stringify(data, null, 4)}
             </pre>
-        </button>
+        </div>
     )
 }
