@@ -9,7 +9,7 @@ export const Component = () => {
     }))
 
     return (
-        <button onClick={() => actions.delta.deltaActionWithPayload({id: '3', nok: true})}>
+        <button onClick={() => actions.delta.deltaActionWithPayload}>
             {data.userId}
         </button>
     )

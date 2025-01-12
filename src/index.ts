@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { createElement, Fragment, ReactNode } from 'react'
 import { TDomainsBase } from './types/domainBase'
 import { TInitializerBase } from './types/initializerBase'
 import { TReducer } from './types/reducer'
@@ -29,7 +29,7 @@ export const epic = {
     /**
      * Utility to create states.
      */
-    createStates<TDomains extends TDomainsBase>(domains: {
+    createState<TDomains extends TDomainsBase>(domains: {
         /** 
          * Specify the reducer for each domain of the root state.
          */
@@ -71,7 +71,7 @@ export const epic = {
                     createProvider() {
                         return (props: {
                             children: ReactNode
-                        }) => props.children
+                        }) => createElement(Fragment, null, props.children)
                     }
                 }
             },
@@ -89,8 +89,10 @@ export const epic = {
              * Utility to create a provider component for your app.
              */
             createProvider() {
-                return (props: { children: ReactNode}) => null
-            },
+                return (props: {
+                    children: ReactNode
+                }) => createElement(Fragment, null, props.children)
+            }
         }
     }
     
