@@ -12,8 +12,7 @@ export const echoActions = epic.createActions(({ defineAction }) => ({
     }>(),
 
     commonWithPayload: defineAction<{
-        id: string,
-        nok: boolean
+        id: string
     }>(),
 
     commonActionWithoutPayload: defineAction<{
