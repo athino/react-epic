@@ -3,7 +3,7 @@ import React from "react"
 import { useActions } from "../state/hook"
 
 export const Component = () => {
-    const {actions, data} = useActions((state) => state)
+    const {actions, data} = useActions((state) => state.delta.count)
 
     const onClick = () => {
         actions.delta.deltaActionWithPayload({
