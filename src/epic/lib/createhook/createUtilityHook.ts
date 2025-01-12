@@ -7,7 +7,6 @@ export const createUtilityHook = <Actions>(arg: {
     actions: Actions
 }) => <T extends TOptionalSelector>(selector?: T) => {
     const data = useSelector((state) => selector ? selector(state) : undefined)
-
     const actions = arg.actions
     
     return (selector
