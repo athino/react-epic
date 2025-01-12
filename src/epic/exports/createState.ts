@@ -3,9 +3,7 @@ import { TDomainsBase } from '../types/domainBase'
 import { TDomainTypeBase } from '../types/domainTypeBase'
 import { TEffect } from '../types/effect'
 import { TActionTypeBase } from '../types/actionTypeBase'
-import { TSelectorBase } from '../types/selectorBase'
 import { lib } from '../lib/lib'
-import { useSelector } from 'react-redux'
 
 /**
 * Utility to create states.
