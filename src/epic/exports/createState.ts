@@ -5,6 +5,7 @@ import { TEffect } from '../types/effect'
 import { TActionTypeBase } from '../types/actionTypeBase'
 import { TSelectorBase } from '../types/selectorBase'
 import { lib } from '../lib/lib'
+import { useSelector } from 'react-redux'
 
 /**
 * Utility to create states.
@@ -20,10 +21,6 @@ export const createState = <TDomains extends TDomainsBase>(domains: {
         domains: domains.domains
     })
 
-    store.subscribe(() => {
-        console.log(store.getState())
-    })
- 
     return {
         /**
          * Utility to create effect that listens to actions.
@@ -53,10 +50,15 @@ export const createState = <TDomains extends TDomainsBase>(domains: {
                         dispatch: store.dispatch
                     })
 
-                    return <TData>(selector: TSelectorBase<TDomains, TData>) => ({
-                        data: selector(domains.domains),
-                        actions: hookActions
-                    })
+                    return <TData>(selector?: TSelectorBase<TDomains, TData>) => {
+                        const sel = selector || ((s) => {})
+                        const data = useSelector(sel)
+
+                        return {
+                            data: data,
+                            actions: hookActions
+                        }
+                    }
                 },
  
                 /**
