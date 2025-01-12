@@ -65,10 +65,13 @@ export const createState = <TDomains extends TDomainsBase>(domains: {
          * Utility to create a react hook for your app.
          */
         createHook() {
-            return () => ({
-                data: {},
-                actions: {}
+
+            const useActions = lib.createUtilityHook({
+                domains: domains.domains,
+                dispatch: store.dispatch
             })
+
+            return useActions
         },
  
         /**
