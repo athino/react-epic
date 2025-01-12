@@ -16,7 +16,7 @@ export const Component = () => {
                 Click
             </button>
             <pre>
-                {JSON.stringify(data, null, 4)}
+                Count: {data.count}
             </pre>
         </div>
     )
