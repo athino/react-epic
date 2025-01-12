@@ -9,7 +9,7 @@ export const Component = () => {
         actions.delta.deltaActionWithPayload({
             count: 1
         })
-        // actions.delta.commonActionWithoutPayload()
+        actions.delta.commonActionWithoutPayload()
     }
 
     return (
