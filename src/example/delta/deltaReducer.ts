@@ -4,6 +4,10 @@ type TDeltaState = {
     count?: number
 }
 
+export const initalDeltaState: TDeltaState = {
+    count: 0
+}
+
 export const deltaReducer = deltaActions.createReducer<TDeltaState>({
 
     deltaActionWithPayload({state, payload}) {
