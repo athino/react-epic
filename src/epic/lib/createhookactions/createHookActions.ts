@@ -1,7 +1,8 @@
 import { TDomainsBase } from '../../types/domainBase'
+import { THookActions } from '../../types/hookActions'
 
-export const createHookActions = (arg: {
-    domains: TDomainsBase,
+export const createHookActions = <TDomains extends TDomainsBase>(arg: {
+    domains: TDomains,
     dispatch: any
 }) => {
 
@@ -22,7 +23,7 @@ export const createHookActions = (arg: {
                 }
             })
         }
-    })
+    }) as unknown as THookActions<TDomains>
 
-    return hookActions as unknown as Record<string, any>
+    return hookActions
 }
