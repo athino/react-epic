@@ -3,8 +3,9 @@ import { createHookActions } from "../createhookactions/createHookActions";
 import { TDomainsBase } from "../../types/domainBase";
 import { TState } from "../../types/state";
 
-type TOptionalSelector<State> = (undefined | ((state: State) => any))
-type TUseActionsReturn<State, T extends TOptionalSelector<State>, Actions> = T extends undefined ? { actions: Actions } : { actions: Actions, data: ReturnType<NonNullable<T>> };
+type Expand<T> = T extends infer O ? { [K in keyof O]: O[K] } : never
+type TOptionalSelector<State> = (undefined | ((state: Expand<State>) => any))
+type TUseActionsReturn<State, T extends TOptionalSelector<State>, Actions> = T extends undefined ? { actions: Expand<Actions> } : { actions: Expand<Actions>, data: Expand<ReturnType<NonNullable<T>>> };
 
 export const createUtilityHook = <TDomains extends TDomainsBase>(arg: {
     domains: TDomains,
@@ -17,12 +18,12 @@ export const createUtilityHook = <TDomains extends TDomainsBase>(arg: {
     })
 
     return <T extends TOptionalSelector<TState<TDomains>>>(selector?: T) => {
-        const data = useSelector<TState<TDomains>>((state) => selector ? selector(state) : undefined)
+        const data = useSelector<Expand<TState<TDomains>>>((state) => selector ? selector(state) : undefined)
         const actions = hookActions
         
         return (selector
             ? { data, actions }
             : { actions }
-        ) as TUseActionsReturn<TState<TDomains>, T, typeof hookActions>;
+        ) as unknown as TUseActionsReturn<TState<TDomains>, T, typeof hookActions>;
     };    
 }
