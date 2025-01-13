@@ -1,15 +1,16 @@
 
 
-export const createEffectHandler = (arg: {
+export const createEffectHandler = (arg1: {
     effects: any[]
 }) => {
     
-    const handler = (arg: {
+
+    return (arg: {
         action: any
         state: any
     }) => {
+        console.log(arg1.effects)
         console.log(arg)
     }
 
-    return handler
 }
