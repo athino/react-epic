@@ -11,7 +11,7 @@ const state: TEchoState = {
 export const echoReducer = echoActions.createReducer(state, {
 
     echoActionWithPayload({state, payload}) {
-
+        
     },
 
     echoActionWithoutPayload({state}) {
@@ -19,7 +19,7 @@ export const echoReducer = echoActions.createReducer(state, {
     },
 
     commonWithPayload({state, payload}) {
-
+        
     },
 
     commonActionWithoutPayload({state}) {
