@@ -1,4 +1,3 @@
-import { createElement, Fragment, ReactNode } from 'react'
 import { TDomainsBase } from '../types/domainBase'
 import { TDomainTypeBase } from '../types/domainTypeBase'
 import { TEffect } from '../types/effect'
@@ -69,9 +68,7 @@ export const createState = <TDomains extends TDomainsBase>(domains: {
          * Utility to create a provider component for your app.
          */
         createProvider() {
-            return (props: {
-                children: ReactNode
-            }) => createElement(Fragment, null, props.children)
+            return lib.createProvider({ store })
         }
     }
  }
