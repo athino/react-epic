@@ -1,17 +1,17 @@
 import { deltaActions } from './deltaActions'
 
 type TDeltaState = {
-    count: number
+    value: string
 }
 
 const state: TDeltaState = {
-    count: 9
+    value: ''
 }
 
 export const deltaReducer = deltaActions.createReducer(state, {
 
     deltaActionWithPayload({state, payload}) {
-        state.count = state.count + state.count
+        state.value = payload.value
     },
 
     deltaActionWithoutPayload({state}) {

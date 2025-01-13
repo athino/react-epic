@@ -2,22 +2,18 @@ import React from "react"
 import { useActions } from "../state/hook"
 
 export const Component = () => {
-    const {actions, data} = useActions((state) => state.delta.count)
+    const {actions, data} = useActions((state) => state.delta)
 
-    const onClick = () => {
-        actions.delta.deltaActionWithPayload({
-            count: 2
-        })
+    const onChange = (value: string) => {
+        actions.delta.deltaActionWithPayload({ value })
     }
 
     return (
         <div>
-            <button onClick={() => onClick()}>
-                Click
-            </button>
-            <pre>
-                Count: {data}
-            </pre>
+            <input
+                type='text'
+                onChange={({target}) => onChange(target.value)}
+                value={data.value}/>
         </div>
     )
 }
