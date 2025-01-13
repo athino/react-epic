@@ -6,7 +6,7 @@ export const Component = () => {
 
     const onClick = () => {
         actions.delta.deltaActionWithPayload({
-            count: 1
+            count: 2
         })
     }
 

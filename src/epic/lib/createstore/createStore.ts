@@ -8,17 +8,8 @@ export const createStore = (arg: {
         get(domainsTarget, domainsP) {
             if (typeof domainsP !== 'string') return
             const reducer = domainsTarget[domainsP]
-            if (!reducer) return
-            return (state: any = {}, action: any) => {
-                const actionReducer =  reducer[action.type]
-                if (!actionReducer) return state
-                const newState = {...state}
-                actionReducer({
-                    state: newState,
-                    payload: action.payload
-                })
-                return newState
-            }
+            if (!reducer) return (s: any) => s
+            return reducer
         }
     })
     return configureStore({ reducer })
