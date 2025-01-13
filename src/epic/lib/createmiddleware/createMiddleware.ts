@@ -1,16 +1,16 @@
-
+import { createEffectHandler } from "../createeffecthandler/createEffectHandler"
 
 export const createMiddleWare = () => {
     const _store = {
-        effects: [] as any[]
+        effectHandler: undefined as any
     }
 
     return {
         addEffects(effects: any[]) {
-            _store.effects = effects
+            _store.effectHandler = createEffectHandler({ effects })
         },
-        getEffects() {
-            return _store.effects
+        getEffectHandler() {
+            return _store.effectHandler
         }
     }
 }

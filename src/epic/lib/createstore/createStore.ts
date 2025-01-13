@@ -16,7 +16,9 @@ export const createStore = (arg: {
 
     const middleware: Middleware = (store) => (next) => (action) => {
         const result = next(action)
-        console.log(arg.middleware.getEffects())
+        const effectHandler = arg.middleware.getEffectHandler()
+        
+        effectHandler({state: store.getState(), action})
         return result
     };
     
