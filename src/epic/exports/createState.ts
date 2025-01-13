@@ -14,8 +14,11 @@ export const createState = <TDomains extends TDomainsBase>(domains: {
     domains: TDomains
  }) => {
 
+    const middleware = lib.createMiddleWare()
+
     const store = lib.createStore({
-        domains: domains.domains
+        domains: domains.domains,
+        middleware: middleware
     })
 
     const useActions = lib.createUtilityHook({
@@ -40,6 +43,9 @@ export const createState = <TDomains extends TDomainsBase>(domains: {
              */
             effects: TEffect<TDomainsBase, TDomainTypeBase<TDomainsBase>, TActionTypeBase<TDomainsBase, TDomainTypeBase<TDomainsBase>>>[]
         }) {
+
+            middleware.addEffects(effects.effects)
+
             return {
  
                 /**
