@@ -5,7 +5,7 @@ type TDeltaState = {
 }
 
 const state: TDeltaState = {
-    value: ''
+    value: 'skriv her...'
 }
 
 export const deltaReducer = deltaActions.createReducer(state, {
