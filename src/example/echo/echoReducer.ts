@@ -8,14 +8,14 @@ export const initalDeltaState: TEchoState = {
     echoId: undefined
 }
 
-export const echoReducer = echoActions.createReducer<TEchoState>({
+export const echoReducer = echoActions.createReducer(initalDeltaState, {
 
     echoActionWithPayload({state, payload}) {
 
     },
 
     echoActionWithoutPayload({state}) {
-
+        
     },
 
     commonWithPayload({state, payload}) {
@@ -25,5 +25,5 @@ export const echoReducer = echoActions.createReducer<TEchoState>({
     commonActionWithoutPayload({state}) {
 
     }
-    
+
 })

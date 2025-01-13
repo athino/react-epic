@@ -9,7 +9,7 @@ export const createActions = <TInitializer extends TInitializerBase>(initializer
         /**
          * Utility to create reducer based on the actions defined in createActions.
          */
-        createReducer<TState>(reducer: TReducer<TState, TInitializer>) {
+        createReducer<TState>(initialState: TState, reducer: TReducer<TState, TInitializer>) {
             return reducer
         }
     }

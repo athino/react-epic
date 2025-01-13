@@ -8,7 +8,7 @@ export const initalDeltaState: TDeltaState = {
     count: 0
 }
 
-export const deltaReducer = deltaActions.createReducer<TDeltaState>({
+export const deltaReducer = deltaActions.createReducer(initalDeltaState, {
 
     deltaActionWithPayload({state, payload}) {
         state.count = (state.count || 0) + payload.count
