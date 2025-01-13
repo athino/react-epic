@@ -4,11 +4,11 @@ type TDeltaState = {
     count: number
 }
 
-export const initalDeltaState: TDeltaState = {
+const state: TDeltaState = {
     count: 9
 }
 
-export const deltaReducer = deltaActions.createReducer(initalDeltaState, {
+export const deltaReducer = deltaActions.createReducer(state, {
 
     deltaActionWithPayload({state, payload}) {
         state.count = state.count + state.count

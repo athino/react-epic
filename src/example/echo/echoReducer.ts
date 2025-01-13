@@ -4,11 +4,11 @@ type TEchoState = {
     echoId?: string
 }
 
-export const initalDeltaState: TEchoState = {
+const state: TEchoState = {
     echoId: undefined
 }
 
-export const echoReducer = echoActions.createReducer(initalDeltaState, {
+export const echoReducer = echoActions.createReducer(state, {
 
     echoActionWithPayload({state, payload}) {
 
