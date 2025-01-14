@@ -14,14 +14,10 @@ export const createEffectHandler = (arg1: {
 
         arg1.effects.forEach((effect) => {
             if (effect.actionType === type) {
-                if (effect.domainType === undefined) {
+                if ([undefined, domain].includes(effect.domainType)) {
                     effect.handler({
                         action: arg.action
-                    })
-                } else if (effect.domainType === domain) {
-                    effect.handler({
-                        action: arg.action
-                    })
+                    });
                 }
             }
         })
