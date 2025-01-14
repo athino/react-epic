@@ -15,5 +15,5 @@ export type TEffect<
     actionType: TActionType
 
     /** handler */
-    handler: (arg: any) => void
+    handler: (arg: any) => Promise<void>
 }
