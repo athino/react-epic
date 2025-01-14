@@ -21,9 +21,13 @@ export const createState = <TDomains extends TDomainsBase>(domains: {
         middleware: middleware
     })
 
-    const useActions = lib.createUtilityHook({
+    const hookActions = lib.createHookActions({
         domains: domains.domains,
         dispatch: store.dispatch
+    })
+
+    const useActions = lib.createUtilityHook({
+        hookActions: hookActions
     })
 
     return {
