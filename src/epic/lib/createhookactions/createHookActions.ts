@@ -17,7 +17,8 @@ export const createHookActions = <TDomains extends TDomainsBase>(arg: {
                     return (payload?: any) => {
                         arg.dispatch({
                             type: reducerP,
-                            payload: payload
+                            payload: payload,
+                            domain: domainsP
                         })
                     }
                 }
