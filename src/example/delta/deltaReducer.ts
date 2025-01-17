@@ -7,7 +7,7 @@ export const deltaReducer = createReducer<TDeltaActions>({
         state.value = payload.value
     },
 
-    deltaActionWithoutPayload(state) {
+    deltaActionWithoutPayload(state, payload) {
 
     }
 

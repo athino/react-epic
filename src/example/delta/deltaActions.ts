@@ -9,7 +9,9 @@ export type TDeltaActions = DefineActions<{
     }
 
     deltaActionWithoutPayload: {
-        payload: undefined
+        payload: {
+            
+        }
     }
     
 }>

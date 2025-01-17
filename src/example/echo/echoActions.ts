@@ -9,7 +9,9 @@ export type TEchoActions = DefineActions<{
     }
 
     echoActionWithoutPayload: {
-        payload: undefined
+        payload: {
+            
+        }
     }
     
 }>

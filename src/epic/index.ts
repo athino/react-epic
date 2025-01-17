@@ -22,12 +22,24 @@ export const createState = <S extends State>(state: S) => {
       createReducer: <A extends Actions>(reducer: {
          [K in keyof A]: (state: S, payload: A[K]['payload']) => void
       }) => {
+         return (state: S, payload: {
+            [K in keyof A]: {
+               type: K
+               payload: A[K]['payload']
+            }
+         }[keyof A]) => {
 
+            const re = reducer[payload.type]
+
+            re(state, payload)
+
+            return state
+         }
       }
    }
 }
 
 type State = Record<string, any>
 type Actions = Record<string, {
-   payload: any
+   payload: undefined | Record<string, any>
 }>
