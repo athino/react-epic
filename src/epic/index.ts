@@ -23,7 +23,7 @@ export const createState = <S extends StateBase>(state: S) => {
          [K in keyof A]: (ctx: keyof A[K]['payload'] extends never ? { state: S } : { state: S, payload: A[K]['payload'] }) => void
       }) => {
          type Action = {
-            [K in keyof A]: {
+            [K in keyof A]: keyof A[K]['payload'] extends never ? { type: K } : {
                type: K
                payload: A[K]['payload']
             }
@@ -47,7 +47,7 @@ type ActionsBase = Record<string, {
    payload: undefined | Record<string, any>
 }>
 
-const createCtx = <T, P, S, A extends { type: T, payload: P }>(action: A, state: S) => ({
+const createCtx = <T, P, S, A extends { type: T, payload?: P }>(action: A, state: S) => ({
    state: state,
    payload: action.payload
 })

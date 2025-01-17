@@ -14,6 +14,5 @@ export const echoReducer = createReducer<TEchoActions>({
 })
 
 echoReducer({ value: '' }, {
-    type: 'echoActionWithoutPayload',
-    payload: {value: ''}
+    type: 'echoActionWithoutPayload'
 })
