@@ -1,29 +1,14 @@
-import { echoActions } from './echoActions'
+import { createReducer } from './echoState'
+import { TEchoActions } from './echoActions'
 
-type TEchoState = {
-    echoId?: string
-}
+export const echoReducer = createReducer<TEchoActions>({
 
-const state: TEchoState = {
-    echoId: undefined
-}
-
-export const echoReducer = echoActions.createReducer(state, {
-
-    echoActionWithPayload({state, payload}) {
-        
+    echoActionWithPayload(state, payload) {
+        state.value = payload.value
     },
 
-    echoActionWithoutPayload({state}) {
-        
-    },
-
-    commonWithPayload({state, payload}) {
-        
-    },
-
-    commonActionWithoutPayload({state}) {
+    echoActionWithoutPayload(state) {
 
     }
-
+    
 })

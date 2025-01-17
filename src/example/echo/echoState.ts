@@ -1,9 +1,9 @@
 import { createState, DefineState } from '../../epic'
 
-type TDeltaState = DefineState<{
+type TEchoState = DefineState<{
     value: string
 }>
 
-export const { createReducer } = createState<TDeltaState>({
+export const { createReducer } = createState<TEchoState>({
     value: 'skriv her...'
 })

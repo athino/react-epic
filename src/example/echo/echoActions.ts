@@ -1,22 +1,15 @@
-import { epic } from "../../epic"
+import { DefineActions } from "../../epic"
 
-export const echoActions = epic.createActions(({ defineAction }) => ({
+export type TEchoActions = DefineActions<{
 
-    echoActionWithPayload: defineAction<{
-        id: string,
-        nok: boolean
-    }>(),
+    echoActionWithPayload: {
+        payload: {
+            value: string
+        }
+    }
 
-    echoActionWithoutPayload: defineAction<{
-
-    }>(),
-
-    commonWithPayload: defineAction<{
-        id: string
-    }>(),
-
-    commonActionWithoutPayload: defineAction<{
-
-    }>()
+    echoActionWithoutPayload: {
+        payload: undefined
+    }
     
-}))
+}>
