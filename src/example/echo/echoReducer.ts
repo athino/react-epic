@@ -3,14 +3,14 @@ import { TEchoActions } from './echoActions'
 
 export const echoReducer = createReducer<TEchoActions>({
 
-    echoActionWithPayload(state, payload) {
+    echoActionWithPayload({state, payload}) {
         state.value = payload.value
     },
 
-    echoActionWithoutPayload(state) {
+    echoActionWithoutPayload({state}) {
 
     }
-    
+
 })
 
 echoReducer({ value: '' }, {

@@ -20,7 +20,7 @@ export const createState = <S extends StateBase>(state: S) => {
        * Utility function to construct the reducer for the state.
        */
       createReducer: <A extends ActionsBase>(reducer: {
-         [K in keyof A]: (state: S, payload: A[K]['payload']) => void
+         [K in keyof A]: (ctx: keyof A[K]['payload'] extends never ? { state: S } : { state: S, payload: A[K]['payload'] }) => void
       }) => {
          type Action = {
             [K in keyof A]: {
@@ -33,9 +33,10 @@ export const createState = <S extends StateBase>(state: S) => {
             [K in keyof S]: S[K]
          }
 
+
          return (state: State, action: Action) => {
             const newState = {...state}
-            reducer[action.type](newState, action)
+            reducer[action.type](createAct(action, newState))
             return newState
          }
       }
@@ -46,3 +47,8 @@ type StateBase = Record<string, any>
 type ActionsBase = Record<string, {
    payload: undefined | Record<string, any>
 }>
+
+const createAct = <T, P, S, A extends { type: T, payload: P }>(action: A, state: S) => ({
+   state: state,
+   payload: action.payload
+})
