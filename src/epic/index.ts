@@ -33,10 +33,9 @@ export const createState = <S extends StateBase>(state: S) => {
             [K in keyof S]: S[K]
          }
 
-
          return (state: State, action: Action) => {
             const newState = {...state}
-            reducer[action.type](createAct(action, newState))
+            reducer[action.type](createCtx(action, newState))
             return newState
          }
       }
@@ -48,7 +47,7 @@ type ActionsBase = Record<string, {
    payload: undefined | Record<string, any>
 }>
 
-const createAct = <T, P, S, A extends { type: T, payload: P }>(action: A, state: S) => ({
+const createCtx = <T, P, S, A extends { type: T, payload: P }>(action: A, state: S) => ({
    state: state,
    payload: action.payload
 })
