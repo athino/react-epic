@@ -1,28 +1,13 @@
-import { deltaActions } from './deltaActions'
+import { createReducer } from './deltaState'
+import { TDeltaActions } from './deltaActions'
 
-type TDeltaState = {
-    value: string
-}
-
-const state: TDeltaState = {
-    value: 'skriv her...'
-}
-
-export const deltaReducer = deltaActions.createReducer(state, {
+export const deltaReducer = createReducer<TDeltaActions>({
 
     deltaActionWithPayload({state, payload}) {
         state.value = payload.value
     },
 
     deltaActionWithoutPayload({state}) {
-
-    },
-
-    commonWithPayload({state, payload}) {
-
-    },
-
-    commonActionWithoutPayload({state}) {
 
     }
     

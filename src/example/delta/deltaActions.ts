@@ -1,21 +1,15 @@
-import { epic } from "../../epic"
+import { DefineActions } from "../../epic"
 
-export const deltaActions = epic.createActions(({ defineAction }) => ({
+export type TDeltaActions = DefineActions<{
 
-    deltaActionWithPayload: defineAction<{
-        value: string
-    }>(),
+    deltaActionWithPayload: {
+        payload: {
+            value: string
+        }
+    }
 
-    deltaActionWithoutPayload: defineAction<{
-
-    }>(),
-
-    commonWithPayload: defineAction<{
-        id: string
-    }>(),
-
-    commonActionWithoutPayload: defineAction<{
-
-    }>()
-
-}))
+    deltaActionWithoutPayload: {
+        payload: undefined
+    }
+    
+}>
