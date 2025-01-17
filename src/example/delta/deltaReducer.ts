@@ -3,11 +3,11 @@ import { TDeltaActions } from './deltaActions'
 
 export const deltaReducer = createReducer<TDeltaActions>({
 
-    deltaActionWithPayload(state, payload) {
+    deltaActionWithPayload({state, payload}) {
         state.value = payload.value
     },
 
-    deltaActionWithoutPayload(state, payload) {
+    deltaActionWithoutPayload({state}) {
 
     }
 
