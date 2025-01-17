@@ -3,31 +3,37 @@ import { createActions } from './exports/createActions'
 /**
  * Generic utility type to construct the payload of each action.
  */
-export type DefineActions<A extends Actions> = A
+export type DefineActions<A extends ActionsBase> = A
 
 /**
  * Generic utility type to construct the state type.
  */
-export type DefineState<S extends State> = S
+export type DefineState<S extends StateBase> = S
 
 /**
  * Utility function to construct the inital state.
  */
-export const createState = <S extends State>(state: S) => {
+export const createState = <S extends StateBase>(state: S) => {
 
    return {
       /**
        * Utility function to construct the reducer for the state.
        */
-      createReducer: <A extends Actions>(reducer: {
+      createReducer: <A extends ActionsBase>(reducer: {
          [K in keyof A]: (state: S, payload: A[K]['payload']) => void
       }) => {
-         return (state: S, action: {
+         type Action = {
             [K in keyof A]: {
                type: K
                payload: A[K]['payload']
             }
-         }[keyof A]) => {
+         }[keyof A]
+
+         type State = {
+            [K in keyof S]: S[K]
+         }
+
+         return (state: State, action: Action) => {
             const newState = {...state}
             reducer[action.type](newState, action)
             return newState
@@ -36,7 +42,7 @@ export const createState = <S extends State>(state: S) => {
    }
 }
 
-type State = Record<string, any>
-type Actions = Record<string, {
+type StateBase = Record<string, any>
+type ActionsBase = Record<string, {
    payload: undefined | Record<string, any>
 }>
