@@ -14,7 +14,13 @@ export const createActions = <D extends TDomainsBase>(arg: {
             get(domainTarget, domainP) {
                 return new Proxy(domainTarget, {
                     get(what, actionP) {
-                        console.log(actionP)
+                        return (payload: any) => {
+                            console.log('DISPATCHED: ', {
+                                type: actionP,
+                                domain: domainP,
+                                payload: payload
+                            })
+                        }
                     }
                 })
             }
