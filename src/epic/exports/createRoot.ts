@@ -19,7 +19,7 @@ export const createRoot = <D extends TDomainsBase>(arg: {
         reducer: reducer
     })
 
-    const {actions} = lib.createActions()
+    const {actions} = lib.createActions<D>()
  
     return {
        /**
@@ -46,7 +46,7 @@ export const createRoot = <D extends TDomainsBase>(arg: {
                  */
                 createHook() {
                     return {
-                        useActions: lib.createHook({ actions })
+                        useActions: lib.createHook<D>({ actions })
                     }
                 },
  
@@ -65,7 +65,7 @@ export const createRoot = <D extends TDomainsBase>(arg: {
        */
         createHook() {
             return {
-                useActions: lib.createHook({ actions })
+                useActions: lib.createHook<D>({ actions })
             }
         },
  
