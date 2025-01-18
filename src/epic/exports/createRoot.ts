@@ -53,7 +53,7 @@ export const createRoot = <D extends TDomainsBase>(arg: {
                  */
                 createProvider() {
                     return {
-                        Provider: {}
+                        Provider: lib.createProvider({ store })
                     }
                 }
             }
@@ -72,7 +72,7 @@ export const createRoot = <D extends TDomainsBase>(arg: {
        */
         createProvider() {
             return {
-                Provider: {}
+                Provider: lib.createProvider({ store })
             }
         }
     }
