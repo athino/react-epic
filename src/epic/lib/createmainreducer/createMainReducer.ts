@@ -7,7 +7,7 @@ export const createMainReducer = <D extends TDomainsBase>(arg: {
     const reducer = new Proxy(arg.domains, {
         get(domainsTarget, domainsP) {
             if (typeof domainsP !== 'string') return (s: any) => s
-            const reducer = domainsTarget[domainsP]
+            const reducer: any = domainsTarget[domainsP]
             return (state: any, action: any) => {
                 if (!reducer) return state
                 if (action.domain !== domainsP) return state

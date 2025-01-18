@@ -1,7 +1,7 @@
 import { createReducer } from './deltaState'
 import { TDeltaActions } from './deltaActions'
 
-export const deltaReducer = createReducer<TDeltaActions>({
+export const { reducer } = createReducer<TDeltaActions>({
 
     deltaActionWithPayload({state, payload}) {
         state.value = payload.value

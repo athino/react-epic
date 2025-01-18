@@ -1,7 +1,7 @@
 import { createReducer } from './echoState'
 import { TEchoActions } from './echoActions'
 
-export const echoReducer = createReducer<TEchoActions>({
+export const { reducer } = createReducer<TEchoActions>({
 
     echoActionWithPayload({state, payload}) {
         state.value = payload.value
@@ -11,8 +11,4 @@ export const echoReducer = createReducer<TEchoActions>({
 
     }
 
-})
-
-echoReducer({ value: '' }, {
-    type: 'echoActionWithoutPayload'
 })
