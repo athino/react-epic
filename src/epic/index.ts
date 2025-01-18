@@ -34,9 +34,11 @@ export const createState = <S extends StateBase>(state: S) => {
          }
 
          return (state: State, action: Action) => {
-            const newState = {...state}
-            reducer[action.type](createCtx(action, newState))
-            return newState
+            return handleReducer({
+               handler: reducer[action.type],
+               action: action,
+               state: state
+            })
          }
       }
    }
@@ -44,10 +46,27 @@ export const createState = <S extends StateBase>(state: S) => {
 
 type StateBase = Record<string, any>
 type ActionsBase = Record<string, {
-   payload: undefined | Record<string, any>
+   payload: Record<string, any>
 }>
 
-const createCtx = <T, P, S, A extends { type: T, payload?: P }>(action: A, state: S) => ({
-   state: state,
-   payload: action.payload
-})
+const handleReducer = <S, F extends Function, A extends object>(arg: {
+   handler: F
+   action: A
+   state: S
+}) => {
+   const state = {...arg.state}
+   if ('payload' in arg.action
+      && typeof arg.action.payload === 'object'
+      && !!Object.keys(arg.action.payload || {}).length) {
+      arg.handler({
+         state: state,
+         payload: arg.action.payload
+      })
+   } else {
+      arg.handler({
+         state: state
+      })
+   }
+
+   return state
+}
