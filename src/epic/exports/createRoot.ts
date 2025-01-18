@@ -19,7 +19,9 @@ export const createRoot = <D extends TDomainsBase>(arg: {
         reducer: reducer
     })
 
-    const {actions} = lib.createActions<D>()
+    const {actions} = lib.createActions<D>({ 
+        dispatch: store.dispatch
+    })
  
     return {
        /**

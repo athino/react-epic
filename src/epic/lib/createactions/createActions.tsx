@@ -1,7 +1,9 @@
 import { TActions } from "../../types/actionsType"
 import { TDomainsBase } from "../../types/domainsBaseType"
 
-export const createActions = <D extends TDomainsBase>() => {
+export const createActions = <D extends TDomainsBase>(arg: {
+    dispatch: Function
+}) => {
     const actions = {} as TActions<D>
 
     return {
@@ -10,10 +12,10 @@ export const createActions = <D extends TDomainsBase>() => {
                 return new Proxy(domainTarget, {
                     get(what, actionP) {
                         return (payload: any) => {
-                            console.log('DISPATCHED: ', {
+                            arg.dispatch({
                                 type: actionP,
                                 domain: domainP,
-                                payload: payload
+                                payload: payload  
                             })
                         }
                     }
