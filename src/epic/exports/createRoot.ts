@@ -5,7 +5,7 @@ import { TDomainsBase } from "../types/domainsBaseType"
  */
 export const createRoot = <D extends TDomainsBase>(arg: {
     domains: D
- }) => {
+}) => {
  
     return {
        /**
@@ -66,4 +66,3 @@ export const createRoot = <D extends TDomainsBase>(arg: {
     }
  
 }
- 
