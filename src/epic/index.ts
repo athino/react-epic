@@ -17,8 +17,7 @@ export type DefineState<State extends TStateBase> = State
 /**
  * Utility function to construct the inital state.
  */
-export const createState = <State extends TStateBase>(state: State) => {
-   const initialState = state
+export const createState = <State extends TStateBase>(initialState: State) => {
 
    return {
       /**
