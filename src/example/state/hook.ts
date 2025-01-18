@@ -1,3 +1,3 @@
 import { createHook } from './effects'
 
-export const useActions = createHook()
+export const { useActions } = createHook()

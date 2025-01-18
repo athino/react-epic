@@ -31,30 +31,38 @@ export const createRoot = <D extends TDomainsBase>(arg: {
                  * Utility to create a react hook for your app.
                  */
                 createHook() {
-                   return {}
+                    return {
+                        useActions: {}
+                    }
                 },
  
                 /**
                  * Utility to create a provider component for your app.
                  */
                 createProvider() {
-                   return {}
+                    return {
+                        Provider: {}
+                    }
                 }
           }
        },
        /**
        * Utility to create a react hook for your app.
        */
-       createHook() {
-          return {}
-       },
+        createHook() {
+            return {
+                useActions: {}
+            }
+        },
  
        /**
        * Utility to create a provider component for your app.
        */
-       createProvider() {
-          return {}
-       }
+        createProvider() {
+            return {
+                Provider: {}
+            }
+        }
     }
  
  }
