@@ -4,6 +4,8 @@ import { useActions } from "../state/hook"
 export const Component = () => {
     const {actions} = useActions()
 
+    actions.delta.deltaActionWithPayload({ value: '' })
+    actions.delta.deltaActionWithoutPayload()
 
     return (
         <div>

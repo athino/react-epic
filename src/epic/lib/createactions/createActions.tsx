@@ -12,6 +12,10 @@ export const createActions = <D extends TDomainsBase>(arg: {
     console.log(mfeaf)
 
     return {
-        actions: { foo: mfeaf }
+        actions: { } as {
+            [K in keyof D]: {
+                [P in Parameters<D[K]>[1] as P['type']]: P extends {payload: any} ? (payload: P['payload']) => void : () => void
+            }
+        }
     }
 }
