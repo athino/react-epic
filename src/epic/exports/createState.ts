@@ -4,7 +4,6 @@ import { TActions } from "../types/actionsType"
 import { TReducer } from "../types/reducerType"
 import { TStateBase } from "../types/stateBaseType"
 
-
 /**
  * Utility function to construct the inital state.
  */
