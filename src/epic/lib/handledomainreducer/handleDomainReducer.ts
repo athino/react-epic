@@ -14,6 +14,6 @@ export const handleDomainReducer = <S, F extends Function, A extends object>(arg
     } else {
         ctx = { state: state }
     }
-    arg.handler(ctx)
+    arg.handler?.(ctx)
     return state
 }

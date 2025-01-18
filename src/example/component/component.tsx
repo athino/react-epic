@@ -9,7 +9,6 @@ export const Component = () => {
             <input
                 type='text'
                 value={''}/>
-                {}
         </div>
     )
 }
