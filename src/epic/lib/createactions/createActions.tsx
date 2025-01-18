@@ -13,7 +13,7 @@ export const createActions = <D extends TDomainsBase>(arg: {
                     get(what, actionP) {
                         return (payload: any) => {
                             arg.dispatch({
-                                type: actionP,
+                                type: `${domainP as string}:${actionP as string}`,
                                 domain: domainP,
                                 payload: payload  
                             })
