@@ -8,14 +8,12 @@ export const Component = () => {
         actions.delta.deltaActionWithPayload({ value })
     }
 
-    console.log(data)
-
     return (
         <div>
             <input
                 type='text'
                 onChange={({target}) => onChange(target.value)}
-                value={''}/>
+                value={data.delta.value}/>
         </div>
     )
 }
