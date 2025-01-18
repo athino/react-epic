@@ -13,7 +13,7 @@ export const Component = () => {
             <input
                 type='text'
                 onChange={({target}) => onChange(target.value)}
-                value={'data.delta.value'}/>
+                value={data.value}/>
         </div>
     )
 }
