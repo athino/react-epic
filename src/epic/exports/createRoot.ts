@@ -14,6 +14,10 @@ export const createRoot = <D extends TDomainsBase>(arg: {
     const {reducer} = lib.createMainReducer({
         domains: arg.domains
     })
+
+    const {store} = lib.createStore({
+        reducer: reducer
+    })
  
     return {
        /**

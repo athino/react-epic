@@ -1,6 +1,6 @@
-import { state } from "../state/root";
+import { createEffect } from "../state/root";
 
-export const echoEffect = state.createEffect({
+export const echoEffect = createEffect({
     domainType: undefined,
     actionType: 'echoActionWithPayload',
     handler: async (arg) => {

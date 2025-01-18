@@ -1,6 +1,6 @@
-import { state } from "../state/root";
+import { createEffect } from "../state/root";
 
-export const deltaEffect = state.createEffect({
+export const deltaEffect = createEffect({
     domainType: 'delta',
     actionType: 'deltaActionWithPayload',
     handler: async (arg) => {
