@@ -4,6 +4,9 @@ import { TDomainsBase } from "../types/domainsBaseType"
  * Utility to create root.
  */
 export const createRoot = <D extends TDomainsBase>(arg: {
+    /** 
+     * Specify the reducer of each domain.
+     */
     domains: D
 }) => {
  
