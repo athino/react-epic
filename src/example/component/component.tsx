@@ -2,11 +2,13 @@ import React from "react"
 import { useActions } from "../state/hook"
 
 export const Component = () => {
-    const {actions} = useActions()
+    const {actions, data} = useActions((state: any) => state)
 
     const onChange = (value: string) => {
         actions.delta.deltaActionWithPayload({ value })
     }
+
+    console.log(data)
 
     return (
         <div>
