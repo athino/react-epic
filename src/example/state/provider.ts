@@ -1,3 +1,3 @@
-import { effects } from './effects'
+import { createProvider } from './effects'
 
-export const Provider = effects.createProvider()
+export const Provider = createProvider()

@@ -1,3 +1,3 @@
-import { effects } from './effects'
+import { createHook } from './effects'
 
-export const useActions = effects.createHook()
+export const useActions = createHook()
