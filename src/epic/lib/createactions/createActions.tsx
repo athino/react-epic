@@ -1,11 +1,7 @@
 import { TDomainsBase } from "../../types/domainsBaseType"
 
 export const createActions = <D extends TDomainsBase>() => {
-    const actions = {} as {
-        [K in keyof D]: {
-            [P in Parameters<D[K]>[1] as P['type']]: P extends {payload: any} ? (payload: P['payload']) => void : () => void
-        }
-    }
+    const actions = {} as TActions<D>
 
     return {
         actions: new Proxy(actions, {
@@ -23,5 +19,11 @@ export const createActions = <D extends TDomainsBase>() => {
                 })
             }
         })
+    }
+}
+
+type TActions<D extends TDomainsBase> = {
+    [K in keyof D]: {
+        [P in Parameters<D[K]>[1] as P['type']]: P extends {payload: any} ? (payload: P['payload']) => void : () => void
     }
 }

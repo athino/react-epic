@@ -1,6 +1,6 @@
 import { lib } from "../lib/lib"
 import { TActionsBase } from "../types/actionsBaseType"
-import { TActions } from "../types/actionsType"
+import { TReducerActions } from "../types/reducerActionsType"
 import { TReducer } from "../types/reducerType"
 import { TStateBase } from "../types/stateBaseType"
 
@@ -15,7 +15,7 @@ export const createState = <State extends TStateBase>(initialState: State) => {
         */
         createReducer: <Actions extends TActionsBase>(reducer: TReducer<Actions, State>) => {
             return {
-                reducer: (state: State = initialState, action: TActions<Actions>) => {
+                reducer: (state: State = initialState, action: TReducerActions<Actions>) => {
                     return lib.handleDomainReducer({
                         handler: reducer[action.type],
                         action: action,
