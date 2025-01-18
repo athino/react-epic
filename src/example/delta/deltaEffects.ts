@@ -1,4 +1,4 @@
-import { state } from "../state/state";
+import { state } from "../state/root";
 
 export const deltaEffect = state.createEffect({
     domainType: 'delta',
