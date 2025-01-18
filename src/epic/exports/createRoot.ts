@@ -1,3 +1,4 @@
+import { lib } from "../lib/lib"
 import { TDomainsBase } from "../types/domainsBaseType"
 
 /**
@@ -9,6 +10,10 @@ export const createRoot = <D extends TDomainsBase>(arg: {
      */
     domains: D
 }) => {
+
+    const {reducer} = lib.createMainReducer({
+        domains: arg.domains
+    })
  
     return {
        /**
