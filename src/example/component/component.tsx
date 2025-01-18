@@ -14,8 +14,6 @@ export const Component = () => {
                 type='text'
                 onChange={({target}) => onChange(target.value)}
                 value={data}/>
-
-            <pre>{JSON.stringify(data, null, 4)}</pre>
         </div>
     )
 }
