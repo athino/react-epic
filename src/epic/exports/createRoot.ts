@@ -1,4 +1,4 @@
-import { lib } from "../lib/lib"
+import { internal } from "../lib/lib"
 import { TDomainsBase } from "../types/domainsBaseType"
 import { TEffect } from "../types/effectType"
 
@@ -12,27 +12,14 @@ export const createRoot = <D extends TDomainsBase>(arg: {
     domains: D
 }) => {
 
-    const {effects} = lib.createEffects<D>()
-
-    const {reducer} = lib.createMainReducer({
-        domains: arg.domains
-    })
-
-    const {store} = lib.createStore({
-        reducer: reducer,
-        effects: effects
-    })
-
-    const {actions} = lib.createActions<D>({ 
-        dispatch: store.dispatch
-    })
+    const root = internal.createRoot<D>(arg.domains)
  
     return {
        /**
        * Utility to create effect that listens to actions.
        */
        createEffects() {
-            return lib.createDomainEffects<D>()
+            return root.createEffects()
        },
  
        /**
@@ -45,9 +32,7 @@ export const createRoot = <D extends TDomainsBase>(arg: {
             effects: TEffect<D, any, any>[]
         }) {
 
-            effects.addEffects({
-                effects: arg.effects
-            })
+            root.addEffects(arg)
  
             return {
  
@@ -55,14 +40,14 @@ export const createRoot = <D extends TDomainsBase>(arg: {
                  * Utility to create a react hook for your app.
                  */
                 createHook() {
-                    return lib.createHook<D>({ actions })
+                    return root.createHook()
                 },
  
                 /**
                  * Utility to create a provider component for your app.
                  */
                 createProvider() {
-                    return lib.createProvider({ store })
+                    return root.createProvider()
                 }
 
             }
