@@ -6,6 +6,6 @@ effects.addEffect({
     domainType: 'delta',
     actionType: 'deltaActionWithPayload',
     handler: async (ctx) => {
-        console.log('DELTA EFFECT CTX: ', ctx)
+        ctx.actions.delta.deltaActionWithoutPayload()
     }
 })

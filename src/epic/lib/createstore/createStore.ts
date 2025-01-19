@@ -9,7 +9,7 @@ export const createStore = (arg: {
         const result = next(action)
 
         arg.effects.handler({
-            state: store.getState(),
+            store,
             action: action
         })
         

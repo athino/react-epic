@@ -8,7 +8,7 @@ export const reducer = state.createReducer<TDeltaActions>({
     },
 
     deltaActionWithoutPayload({state}) {
-
+        console.log(1)
     }
 
 })
