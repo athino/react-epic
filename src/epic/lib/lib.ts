@@ -1,4 +1,5 @@
 import { createActions } from './createactions/createActions'
+import { createDomainEffects } from './createdomaineffects/createDomainEffects'
 import { createEffects } from './createeffects/createEffects'
 import { createHook } from './createhook/createHook'
 import { createMainReducer } from './createmainreducer/createMainReducer'
@@ -13,5 +14,6 @@ export const lib = {
     createProvider,
     createActions,
     createHook,
-    createEffects
+    createEffects,
+    createDomainEffects
 }
