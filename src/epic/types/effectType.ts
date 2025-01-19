@@ -1,12 +1,10 @@
 import { TActions } from "./actionsType";
-import { TActionTypeBase } from "./actionTypeBaseType";
 import { TDomainsBase } from "./domainsBaseType";
-import { TDomainTypeBase } from "./domainTypeBaseType";
 
 export type TEffect<
     D extends TDomainsBase,
-    TDomainType extends TDomainTypeBase<D>,
-    TActionType extends TActionTypeBase<D, TDomainType>
+    TDomainType extends keyof D,
+    TActionType extends any
 > = {
     /** domainType */
     domainType: TDomainType

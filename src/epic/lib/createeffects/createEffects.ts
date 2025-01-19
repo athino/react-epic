@@ -1,15 +1,14 @@
 import { TDomainsBase } from "../../types/domainsBaseType"
-import { TDomainTypeBase } from "../../types/domainTypeBaseType"
 import { TEffect } from "../../types/effectType"
 import { lib } from "../lib"
 
 export const createEffects = <D extends TDomainsBase>() => {
-    const store = { effects: [] as TEffect<D, TDomainTypeBase<D>, any>[] }
+    const store = { effects: [] as TEffect<D, any, any>[] }
 
     return {
         effects: {
             addEffects(arg: {
-                effects: TEffect<D, TDomainTypeBase<D>, any>[]
+                effects: TEffect<D, any, any>[]
             }) {
                 store.effects = arg.effects
             },
