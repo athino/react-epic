@@ -32,14 +32,14 @@ export const createRoot = <D extends TDomainsBase>(arg: {
        /**
        * Utility to create effect that listens to actions.
        */
-       createEffect<TDomainType extends TDomainTypeBase<D>>(effect: TEffect<D, TDomainType>) {       
-          return effect
+       createEffects<TDomainType extends TDomainTypeBase<D>>(effect: TEffect<D, TDomainType>) {       
+          return [effect]
        },
  
        /**
        * Utility to collect all effects defined by createEffect.
        */
-       createEffects(arg: {
+       createConsumer(arg: {
             /** 
              * Specify the effects that listen to actions.
              */
@@ -56,18 +56,14 @@ export const createRoot = <D extends TDomainsBase>(arg: {
                  * Utility to create a react hook for your app.
                  */
                 createHook() {
-                    return {
-                        useActions: lib.createHook<D>({ actions })
-                    }
+                    return lib.createHook<D>({ actions })
                 },
  
                 /**
                  * Utility to create a provider component for your app.
                  */
                 createProvider() {
-                    return {
-                        Provider: lib.createProvider({ store })
-                    }
+                    return lib.createProvider({ store })
                 }
 
             }

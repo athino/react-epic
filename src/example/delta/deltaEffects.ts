@@ -1,5 +1,5 @@
-import { createEffect } from "../state/root";
+import { root } from "../state/root";
 
-export const deltaEffect = createEffect({
+export const deltaEffects = root.createEffects({
     domainType: 'delta'
 })

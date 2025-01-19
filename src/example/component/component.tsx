@@ -1,5 +1,5 @@
 import React from "react"
-import { useActions } from "../state/hook"
+import { useActions } from "../state/consumer"
 
 export const Component = () => {
     const {actions, data} = useActions((state) => state.delta.value)

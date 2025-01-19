@@ -1,5 +1,5 @@
-import { createEffect } from "../state/root";
+import { root } from "../state/root";
 
-export const echoEffect = createEffect({
+export const echoEffects = root.createEffects({
     domainType: 'echo'
 })
