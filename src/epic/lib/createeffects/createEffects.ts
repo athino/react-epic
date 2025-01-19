@@ -1,9 +1,10 @@
+import { TDomainsBase } from "../../types/domainsBaseType"
+import { TDomainTypeBase } from "../../types/domainTypeBaseType"
+import { TEffect } from "../../types/effectType"
 
 
-export const createEffects = () => {
-    const store = {
-        effects: [] as any[]
-    }
+export const createEffects = <D extends TDomainsBase>() => {
+    const store = { effects: [] as TEffect<D, TDomainTypeBase<D>>[] }
 
     return {
         effects: {
@@ -16,8 +17,13 @@ export const createEffects = () => {
                 action: any
                 state: any
             }) {
-                console.log('EFFECT: ', arg)
-                console.log('EFFECTS: ', store.effects)
+                store.effects.forEach((effect) => {
+                    effect.handler({
+                        store: {},
+                        actions: {},
+                        action: {}
+                    })
+                })
 
             }
         }
