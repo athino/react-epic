@@ -11,12 +11,15 @@ export const createRoot = <D extends TDomainsBase>(arg: {
     domains: D
 }) => {
 
+    const {effects} = lib.createEffects()
+
     const {reducer} = lib.createMainReducer({
         domains: arg.domains
     })
 
     const {store} = lib.createStore({
-        reducer: reducer
+        reducer: reducer,
+        effects: effects
     })
 
     const {actions} = lib.createActions<D>({ 
@@ -34,14 +37,18 @@ export const createRoot = <D extends TDomainsBase>(arg: {
        /**
        * Utility to collect all effects defined by createEffect.
        */
-       createEffects(effects: {
+       createEffects(arg: {
             /** 
              * Specify the effects that listen to actions.
              */
             effects: any
         }) {
+
+            effects.addEffects({
+                effects: arg.effects
+            })
  
-          return {
+            return {
  
                 /**
                  * Utility to create a react hook for your app.
@@ -60,25 +67,11 @@ export const createRoot = <D extends TDomainsBase>(arg: {
                         Provider: lib.createProvider({ store })
                     }
                 }
+
             }
-       },
-       /**
-       * Utility to create a react hook for your app.
-       */
-        createHook() {
-            return {
-                useActions: lib.createHook<D>({ actions })
-            }
-        },
- 
-       /**
-       * Utility to create a provider component for your app.
-       */
-        createProvider() {
-            return {
-                Provider: lib.createProvider({ store })
-            }
-        }
+
+       }
+
     }
- 
+
 }
