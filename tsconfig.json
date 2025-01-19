@@ -1,14 +1,18 @@
 {
   "compilerOptions": {
-      "jsx": "react",
-      "esModuleInterop": true,
-      "outDir": "dist",
-      "declaration": true,
-      "target": "ESNext",
-      "module": "CommonJS",
-      "strict": true,
-      "noImplicitAny": true,
-      "noImplicitThis": true,
-      "noUncheckedIndexedAccess": true
-  }
+    "outDir": "dist",
+    "declaration": true,            // Generate .d.ts files
+    "rootDir": "src",               // Set the root directory
+    "module": "ESNext",              // Required for bundling (use "amd" or "system")
+    "target": "ES2024",                  // Target ES6 or newer
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",       // Resolve modules like Node.js
+    "jsx": "react-jsx",               // Enable JSX for React (use "react" for older setups)
+    "strict": true,                   // Enable strict type checking
+    "removeComments": false,           // Keep all comments, including JSDoc
+    "stripInternal": true,             // Remove @internal comments from declarations
+    "allowJs": true                    // Allow JavaScript files if needed
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
