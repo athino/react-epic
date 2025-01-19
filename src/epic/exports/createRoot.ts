@@ -43,7 +43,7 @@ export const createRoot = <D extends TDomainsBase>(arg: {
             /** 
              * Specify the effects that listen to actions.
              */
-            effects: TEffect<D, TDomainTypeBase<D>>[]
+            effects: TEffect<D, TDomainTypeBase<D>, any>[]
         }) {
 
             effects.addEffects({
