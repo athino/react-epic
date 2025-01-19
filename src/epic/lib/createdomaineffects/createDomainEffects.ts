@@ -7,12 +7,12 @@ export const createDomainEffects = <D extends TDomainsBase>() => {
         effects: [] as any[]
     }
     return {
-        /**g gre  */
+        /** Add effect */
         addEffect<TDomainType extends TDomainTypeBase<D>>(effect: TEffect<D, TDomainType>) {
             store.effects = [...store.effects, effect]
         },
 
-        /** efregr */
+        /** Get effects */
         getEffects() {
             return store.effects
         }
