@@ -14,14 +14,12 @@ export const createState = <State extends TStateBase>(initialState: State) => {
         * Utility function to construct the reducer for the state.
         */
         createReducer: <Actions extends TActionsBase>(reducer: TReducer<Actions, State>) => {
-            return {
-                reducer: (state: State = initialState, action: TReducerActions<Actions>) => {
-                    return lib.handleDomainReducer({
-                        handler: reducer[action.type],
-                        action: action,
-                        state: state
-                    })
-                }
+            return (state: State = initialState, action: TReducerActions<Actions>) => {
+                return lib.handleDomainReducer({
+                    handler: reducer[action.type],
+                    action: action,
+                    state: state
+                })
             }
        }
     }
