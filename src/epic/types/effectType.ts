@@ -1,21 +1,23 @@
 import { TActions } from "./actionsType";
 import { TDomainsBase } from "./domainsBaseType";
+import { TState } from "./stateType";
 
-export type TEffect<
-    D extends TDomainsBase,
-    TDomainType extends keyof D,
-    TActionType extends any
-> = {
-    /** domainType */
-    domainType: TDomainType
+export type TActionType<D extends TDomainsBase, A extends keyof D> = Parameters<D[A]>[1]['type']
 
-    /** actionType */
-    actionType: TActionType
-
-    /** handler */
+export type TEffect<D extends TDomainsBase, A extends keyof D, B extends TActionType<D, A>> = {
+    domain: A
+    action: B
     handler: (ctx: {
-        state: any
-        action: any
+        action: (Parameters<D[A]>[1] & { type: B }) extends { payload: any } ? {
+            domain: A
+            type: B
+            payload: (Parameters<D[A]>[1] & { type: B })['payload']
+        } : {
+            domain: A
+            type: B
+        }
+        state: TState<D>
         actions: TActions<D>
-    }) => Promise<void>
+        call<T extends (...args: any[]) => any>(func: T): ReturnType<T>
+    }) => void
 }

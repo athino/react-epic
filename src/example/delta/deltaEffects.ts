@@ -3,9 +3,16 @@ import { root } from "../state/root";
 export const effects = root.createEffects()
 
 effects.addEffect({
-    domainType: 'delta',
-    actionType: 'deltaActionWithPayload',
-    handler: async (ctx) => {
-        ctx.actions.delta.deltaActionWithoutPayload()
+    domain: 'echo',
+    action: 'echoActionWithPayload',
+    handler(ctx) {
+        ctx.action.type
+        ctx.action.domain
+        ctx.action.payload
+
+        console.log('CTX IN DELTA', ctx)
+
+        ctx.actions
+        const mok = ctx.call(() =>1)
     }
 })
