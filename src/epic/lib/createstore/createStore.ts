@@ -7,6 +7,7 @@ export const createStore = (arg: {
 
     const middleware: Middleware = (store) => (next) => (action) => {
         const result = next(action)
+
         arg.effects.handler({
             state: store.getState(),
             action: action
