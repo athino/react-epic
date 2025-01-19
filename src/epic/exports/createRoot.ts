@@ -13,7 +13,7 @@ export const createRoot = <D extends TDomainsBase>(arg: {
     domains: D
 }) => {
 
-    const {effects} = lib.createEffects()
+    const {effects} = lib.createEffects<D>()
 
     const {reducer} = lib.createMainReducer({
         domains: arg.domains
