@@ -1,7 +1,7 @@
-import { createReducer } from './echoState'
+import { state } from './echoState'
 import { TEchoActions } from './echoActions'
 
-export const reducer = createReducer<TEchoActions>({
+export const reducer = state.createReducer<TEchoActions>({
 
     echoActionWithPayload({state, payload}) {
         state.value = payload.value

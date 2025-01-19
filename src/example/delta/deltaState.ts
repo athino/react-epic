@@ -4,6 +4,6 @@ type TDeltaState = DefineState<{
     value: string
 }>
 
-export const { createReducer } = createState<TDeltaState>({
+export const state = createState<TDeltaState>({
     value: 'skriv her...'
 })

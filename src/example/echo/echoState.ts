@@ -4,6 +4,6 @@ type TEchoState = DefineState<{
     value: string
 }>
 
-export const { createReducer } = createState<TEchoState>({
+export const state = createState<TEchoState>({
     value: 'skriv her...'
 })
