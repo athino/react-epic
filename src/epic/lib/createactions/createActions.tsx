@@ -12,7 +12,7 @@ export const createActions = <D extends TDomainsBase>(arg: {
         },
         call(runner: Function) {
             if (cancelled) return
-            runner()
+            return runner()
         },
         actions: new Proxy({} as TActions<D>, {
             get(domainTarget, domainP) {
