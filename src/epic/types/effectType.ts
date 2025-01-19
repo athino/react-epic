@@ -4,12 +4,12 @@ import { TDomainsBase } from "./domainsBaseType";
 import { TDomainTypeBase } from "./domainTypeBaseType";
 
 export type TEffect<
-    TDomains extends TDomainsBase,
-    TDomainType extends TDomainTypeBase<TDomains>,
-    TActionType extends TActionTypeBase<TDomains, TDomainType>
+    D extends TDomainsBase,
+    TDomainType extends TDomainTypeBase<D>,
+    TActionType extends TActionTypeBase<D, TDomainType>
 > = {
     /** domainType */
-    domainType?: TDomainType
+    domainType: TDomainType
 
     /** actionType */
     actionType: TActionType
@@ -18,6 +18,6 @@ export type TEffect<
     handler: (ctx: {
         state: any
         action: any
-        actions: TActions<TDomains>
+        actions: TActions<D>
     }) => Promise<void>
 }
