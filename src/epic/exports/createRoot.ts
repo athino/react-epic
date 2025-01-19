@@ -32,8 +32,18 @@ export const createRoot = <D extends TDomainsBase>(arg: {
        /**
        * Utility to create effect that listens to actions.
        */
-       createEffects<TDomainType extends TDomainTypeBase<D>>(effect: TEffect<D, TDomainType>) {       
-          return [effect]
+       createEffects<TDomainType extends TDomainTypeBase<D>>() {
+            const store = {
+                effects: [] as any[]
+            }
+            return {
+                addEffect(effect: TEffect<D, TDomainType>) {
+                    store.effects = [...store.effects, effect]
+                },
+                getEffects() {
+                    return store.effects
+                }
+            }
        },
  
        /**

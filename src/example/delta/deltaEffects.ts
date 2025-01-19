@@ -1,5 +1,7 @@
 import { root } from "../state/root";
 
-export const deltaEffects = root.createEffects({
+export const effects = root.createEffects()
+
+effects.addEffect({
     domainType: 'delta'
 })

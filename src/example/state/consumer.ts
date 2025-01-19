@@ -1,11 +1,11 @@
 import { root } from './root'
-import { deltaEffects } from '../delta/deltaEffects'
-import { echoEffects } from '../echo/echoEffects'
+import { effects as deltaEffects } from '../delta/deltaEffects'
+import { effects as echoEffects } from '../echo/echoEffects'
 
 const consumer = root.createConsumer({
     effects: [
-        ...deltaEffects,
-        ...echoEffects
+        ...deltaEffects.getEffects(),
+        ...echoEffects.getEffects()
     ]
 })
 
