@@ -1,3 +1,4 @@
+import { TActions } from "./actionsType";
 import { TDomainsBase } from "./domainsBaseType";
 import { TDomainTypeBase } from "./domainTypeBaseType";
 
@@ -12,5 +13,9 @@ export type TEffect<
     actionType: string
 
     /** handler */
-    handler: (ctx: any) => Promise<void>
+    handler: (ctx: {
+        state: any
+        action: any
+        actions: TActions<TDomains>
+    }) => Promise<void>
 }

@@ -21,7 +21,7 @@ export const createEffects = <D extends TDomainsBase>() => {
                     const type = arg.action.type.slice(arg.action.domain.length + 1)
                     if (effect.actionType === type) {
                         if (effect.domainType === undefined || effect.domainType === arg.action.domain) {
-                            const {actions} = lib.createActions({
+                            const {actions} = lib.createActions<D>({
                                 dispatch: arg.store.dispatch
                             })
                             effect.handler({
