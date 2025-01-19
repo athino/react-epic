@@ -7,6 +7,7 @@ export type TActionType<D extends TDomainsBase, A extends keyof D> = Parameters<
 export type TEffect<D extends TDomainsBase, A extends keyof D, B extends TActionType<D, A>> = {
     domain: A
     action: B
+    type: 'takeEvery' | 'takeLatest' | 'takeLeading'
     handler: (ctx: {
         action: (Parameters<D[A]>[1] & { type: B }) extends { payload: any } ? {
             domain: A

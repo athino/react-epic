@@ -3,7 +3,11 @@ import { TEffect } from "../../types/effectType"
 import { lib } from "../lib"
 
 export const createEffects = <D extends TDomainsBase>() => {
-    const store = { effects: [] as TEffect<D, any, any>[] }
+    const store = {
+        effects: [] as any[],
+        cancellers: {} as any,
+        promises: {} as any
+    }
 
     return {
         effects: {
@@ -20,18 +24,57 @@ export const createEffects = <D extends TDomainsBase>() => {
                     const type = arg.action.type.slice(arg.action.domain.length + 1)
                     if (effect.action === type) {
                         if (effect.domain === arg.action.domain) {
-                            const {actions, cancel} = lib.createActions<D>({
+                            const {actions, cancel, call} = lib.createActions<D>({
                                 dispatch: arg.store.dispatch
                             })
-                            effect.handler({
-                                state: arg.store.getState(),
-                                actions: actions,
-                                action: {
-                                    ...arg.action,
-                                    type: arg.action.type.slice(arg.action.domain.length + 1)
-                                },
-                                call: (runner) => runner()
-                            })
+                            switch (effect.type) {
+                                case 'takeEvery': {
+                                    effect.handler({
+                                        state: arg.store.getState(),
+                                        actions: actions,
+                                        action: {
+                                            ...arg.action,
+                                            type: arg.action.type.slice(arg.action.domain.length + 1)
+                                        },
+                                        call: call
+                                    })
+
+                                    break
+                                }
+                                case 'takeLatest': {
+                                    store.cancellers[effect.id]?.()
+                                    store.cancellers[effect.id] = cancel
+                                    effect.handler({
+                                        state: arg.store.getState(),
+                                        actions: actions,
+                                        action: {
+                                            ...arg.action,
+                                            type: arg.action.type.slice(arg.action.domain.length + 1)
+                                        },
+                                        call: call
+                                    })
+
+                                    break
+                                }
+                                case 'takeLeading': {
+                                    if (!store.promises[effect.id]) {
+                                        store.promises[effect.id] = true
+                                        effect.handler({
+                                            state: arg.store.getState(),
+                                            actions: actions,
+                                            action: {
+                                                ...arg.action,
+                                                type: arg.action.type.slice(arg.action.domain.length + 1)
+                                            },
+                                            call: call
+                                        })
+                                        .then(() => store.promises[effect.id] = false)
+                                        .catch(() => store.promises[effect.id] = false)
+                                    }
+                                    
+                                    break
+                                }
+                            }     
                         }
                     }
                 })

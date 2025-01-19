@@ -5,6 +5,7 @@ export const effects = root.createEffects()
 effects.addEffect({
     domain: 'delta',
     action: 'deltaActionWithPayload',
+    type: 'takeEvery',
     handler(ctx) {
         console.log('ECHO EFFECT CTX: ', ctx)
 
