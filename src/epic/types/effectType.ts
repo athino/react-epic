@@ -9,7 +9,7 @@ export type TEffect<
     domainType?: TDomainType
 
     /** actionType */
-    actionType?: string
+    actionType: string
 
     /** handler */
     handler: (ctx: any) => Promise<void>
