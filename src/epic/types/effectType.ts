@@ -1,5 +1,17 @@
 
+import { TDomainsBase } from "./domainsBaseType";
+import { TDomainTypeBase } from "./domainTypeBaseType";
 
-export type TEffect = {
-    actionType: string
+export type TEffect<
+    TDomains extends TDomainsBase,
+    TDomainType extends TDomainTypeBase<TDomains>,
+> = {
+    /** domainType */
+    domainType?: TDomainType
+
+    /** actionType */
+    actionType?: string
+
+    /** handler */
+    handler?: (arg: any) => Promise<void>
 }

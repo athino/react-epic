@@ -1,6 +1,6 @@
 import { lib } from "../lib/lib"
 import { TDomainsBase } from "../types/domainsBaseType"
-import { TDomainTypeBase } from "../types/domainTypeBase"
+import { TDomainTypeBase } from "../types/domainTypeBaseType"
 import { TEffect } from "../types/effectType"
 
 /**
@@ -32,7 +32,7 @@ export const createRoot = <D extends TDomainsBase>(arg: {
        /**
        * Utility to create effect that listens to actions.
        */
-       createEffect<TDomainType extends TDomainTypeBase<D>>(effect: TEffect) {       
+       createEffect<TDomainType extends TDomainTypeBase<D>>(effect: TEffect<D, TDomainType>) {       
           return effect
        },
  
