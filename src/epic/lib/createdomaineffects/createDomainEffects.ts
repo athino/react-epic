@@ -7,7 +7,11 @@ export const createDomainEffects = <D extends TDomainsBase>() => {
     return {
         /** Add effect */
         addEffect<A extends keyof D, B extends TActionType<D, A>>(effect: TEffect<D, A, B>) {
-            store.effects = [...store.effects, effect]
+            store.effects = [...store.effects, {
+                ...effect,
+                // @ts-ignore
+                id: Symbol()
+            }]
         },
 
         /** Get effects */
