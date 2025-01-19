@@ -5,7 +5,7 @@ export const effects = root.createEffects()
 effects.addEffect({
     domain: 'delta',
     action: 'setSearchValue',
-    type: 'takeEvery',
+    type: 'takeLatest',
     async handler(ctx) {
         await sleep(2000)
 
