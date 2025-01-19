@@ -19,7 +19,7 @@ export const createEffects = <D extends TDomainsBase>() => {
                 store.effects.forEach((effect) => {
                     const type = arg.action.type.slice(arg.action.domain.length + 1)
                     if (effect.action === type) {
-                        if (effect.domain === undefined || effect.domain === arg.action.domain) {
+                        if (effect.domain === arg.action.domain) {
                             const {actions} = lib.createActions<D>({
                                 dispatch: arg.store.dispatch
                             })
