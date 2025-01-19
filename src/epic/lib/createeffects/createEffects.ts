@@ -12,7 +12,7 @@ export const createEffects = <D extends TDomainsBase>() => {
             }) {
                 store.effects = arg.effects
             },
-            handler(arg: {
+            async handler(arg: {
                 action: any
                 state: any
             }) {
