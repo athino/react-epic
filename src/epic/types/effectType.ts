@@ -1,4 +1,3 @@
-
 import { TDomainsBase } from "./domainsBaseType";
 import { TDomainTypeBase } from "./domainTypeBaseType";
 
@@ -13,5 +12,5 @@ export type TEffect<
     actionType?: string
 
     /** handler */
-    handler?: (arg: any) => Promise<void>
+    handler: (ctx: any) => Promise<void>
 }

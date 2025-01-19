@@ -3,5 +3,8 @@ import { root } from "../state/root";
 export const effects = root.createEffects()
 
 effects.addEffect({
-    domainType: 'echo'
+    domainType: 'echo',
+    handler: async (ctx) => {
+
+    }
 })
