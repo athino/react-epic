@@ -18,10 +18,16 @@ export const createEffects = <D extends TDomainsBase>() => {
                 state: any
             }) {
                 store.effects.forEach((effect) => {
+                    
+                    // create actions instance here...
+                    const actions = {}
                     effect.handler({
-                        store: {},
-                        actions: {},
-                        action: {}
+                        state: arg.state,
+                        actions: actions,
+                        action: {
+                            ...arg.action,
+                            type: arg.action.type.slice(arg.action.domain.length + 1)
+                        }
                     })
                 })
 
