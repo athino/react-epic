@@ -15,7 +15,7 @@ export const createStore = (arg: {
         
         return result
     };
-1
+
     const store = configureStore({
         reducer: arg.reducer,
         middleware: (getDefaultMiddleware) => {
