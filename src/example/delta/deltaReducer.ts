@@ -3,12 +3,8 @@ import { TDeltaActions } from './deltaActions'
 
 export const reducer = state.createReducer<TDeltaActions>({
 
-    deltaActionWithPayload({state, payload}) {
+    setSearchValue({state, payload}) {
         state.value = payload.value
-    },
-
-    deltaActionWithoutPayload({state}) {
-        console.log(1)
     }
-
+    
 })

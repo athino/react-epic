@@ -3,12 +3,8 @@ import { TEchoActions } from './echoActions'
 
 export const reducer = state.createReducer<TEchoActions>({
 
-    echoActionWithPayload({state, payload}) {
-        state.value = payload.value
+    setSearchResult({state, payload}) {
+        state.searchResult = payload.searchResult
     },
-
-    echoActionWithoutPayload({state}) {
-
-    }
 
 })

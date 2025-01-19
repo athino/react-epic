@@ -2,15 +2,9 @@ import { DefineActions } from "../../epic"
 
 export type TDeltaActions = DefineActions<{
 
-    deltaActionWithPayload: {
+    setSearchValue: {
         payload: {
             value: string
-        }
-    }
-
-    deltaActionWithoutPayload: {
-        payload: {
-            
         }
     }
     

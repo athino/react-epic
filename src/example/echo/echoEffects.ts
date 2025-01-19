@@ -4,11 +4,21 @@ export const effects = root.createEffects()
 
 effects.addEffect({
     domain: 'delta',
-    action: 'deltaActionWithPayload',
+    action: 'setSearchValue',
     type: 'takeEvery',
-    handler(ctx) {
-        console.log('ECHO EFFECT CTX: ', ctx)
+    async handler(ctx) {
+        await sleep(2000)
 
-        ctx.actions.echo.echoActionWithPayload({ value: '1' })
+        ctx.call(() => {
+            console.log('"Started" fetch...')
+        })
+
+        ctx.actions.echo.setSearchResult({
+            searchResult: ctx.state.echo.searchResult + 1
+        })
     }
 })
+
+const sleep = (ms: number): Promise<void> => {
+    return new Promise(resolve => setTimeout(resolve, ms))
+}

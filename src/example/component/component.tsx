@@ -2,18 +2,24 @@ import React from "react"
 import { useActions } from "../state/consumer"
 
 export const Component = () => {
-    const {actions, data} = useActions((state) => state.delta.value)
-
-    const onChange = (value: string) => {
-        actions.delta.deltaActionWithPayload({ value })
-    }
+    const {actions, data} = useActions((state) => ({
+        searchResult: state.echo.searchResult,
+        value: state.delta.value
+    }))
 
     return (
         <div>
             <input
                 type='text'
-                onChange={({target}) => onChange(target.value)}
-                value={data}/>
+                value={data.value}
+                onChange={({target}) => {
+                    actions.delta.setSearchValue({
+                        value: target.value
+                    })
+                }}/>
+            <div>
+                Search result: {data.searchResult}
+            </div>
         </div>
     )
 }
