@@ -7,15 +7,20 @@ effects.addEffect({
     action: 'setSearchValue',
     type: 'takeLatest',
     async handler(ctx) {
-        await sleep(2000)
+        if (ctx.action.payload.value !== '') {
+            ctx.actions.echo.setSearching({ searching: true })
+            await sleep(2000)
 
-        ctx.call(() => {
-            console.log('"Started" fetch...')
-        })
+            ctx.call(() => {
+                console.log('"Started" fetch...')
+            })
 
-        ctx.actions.echo.setSearchResult({
-            searchResult: ctx.state.echo.searchResult + 1
-        })
+            ctx.actions.echo.setSearchResult({
+                searchResult: ctx.state.echo.searchResult + 1
+            })
+        } else {
+            ctx.actions.echo.setSearching({ searching: false })
+        }
     }
 })
 

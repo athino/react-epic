@@ -8,4 +8,10 @@ export type TEchoActions = DefineActions<{
         }
     }
 
+    setSearching: {
+        payload: {
+            searching: boolean
+        }
+    }
+
 }>

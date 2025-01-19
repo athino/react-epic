@@ -2,9 +2,10 @@ import React from "react"
 import { useActions } from "../state/consumer"
 
 export const Component = () => {
-    const {actions, data} = useActions((state) => ({
-        searchResult: state.echo.searchResult,
-        value: state.delta.value
+    const {actions, data} = useActions(({echo, delta}) => ({
+        searchResult: echo.searchResult,
+        value: delta.value,
+        searching: echo.searching
     }))
 
     return (
@@ -18,7 +19,7 @@ export const Component = () => {
                     })
                 }}/>
             <div>
-                Search result: {data.searchResult}
+                Search result: {data.searching ? 'Searching...' : data.searchResult}
             </div>
         </div>
     )
