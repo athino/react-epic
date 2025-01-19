@@ -41,7 +41,7 @@ export const createRoot = <D extends TDomainsBase>(arg: {
             /** 
              * Specify the effects that listen to actions.
              */
-            effects: any
+            effects: any[]
         }) {
 
             effects.addEffects({
