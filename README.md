@@ -40,12 +40,12 @@ Next to your `userActions.ts` file, add `userState.ts`.
 ```tsx
 // @/user/userState.ts
 
-import { createState } from "@athino/react-epic";
+import { createState, DefineState } from "@athino/react-epic";
 
-type TUserState = {
+type TUserState = DefineState<{
   isLoading: boolean
   name?: string
-};
+}>;
 
 export const state = createState<TUserState>({
     isLoading: false,
@@ -143,41 +143,27 @@ export const Provider = consumer.createProvider();
 
 ```
 
-### 6. Implement the Provider in your main React component
+### 6. Implement the Provider and useActions hook in React
 
-Within your main `App.tsx` file, add the Provider.
+In the root of your project, create `app.tsx`, and import the Provider.
 
 ```tsx
-// App.tsx
+// @/app.tsx
 
-import React from 'react'
-import { Provider } from '@/common/state/consumer.ts'
+import React from 'react';
+import { Provider, useActions } from '@/common/state/consumer.ts';
 
 const App = () => {
 
     return (
         <Provider>
-            {/* your app here */}
+            <User/>
         </Provider>
     )
-}
-```
+};
 
-### 7. Implement the useActions hook
-
-Within your `User.tsx` file, add the the following hooks.
-
-```tsx
-// User.tsx
-
-import React from 'react'
-import { useActions, useSelector } from '../common/hooks.ts'
-
-export const User = () => {
-    const {actions} = useActions()
-
-    const name = useSelector((state) => state.user?.name)
-    const isLoading = useSelector((state) => state.user.isLoading)
+const User = () => {
+    const {actions, data} = useActions((state) => state.user)
 
     return (
         <div>
@@ -186,18 +172,18 @@ export const User = () => {
                 {isLoading ? 'Fetching user...' : 'Fetch user'}
             </button>
             <br/>
-            User name: {name || '-'}
+            User name: {data.name || '-'}
         </div>
     )
-}
+};
+
 ```
 
 ## API
 
-There are only two exports from `react-epic`.
-- Root
-- Actions
+There are four exports from `react-epic`.
 
-### Actions
-- excepts: `actionsInitializer` function.
-- returns: `actions` instance.
+- createRoot
+- createState
+- DefineActions
+- DefineState
