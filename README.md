@@ -1,42 +1,66 @@
 ## React Epic
-React Epic is a Redux-wrapper for React.
+React Epic is a state manager for React.
 - Has excellent typescript support.
 - Handles complex async logic.
 - Is domain driven.
-
 
 ## Usage
 
 ### 1. Setting up domain actions
 
-Within your app, for instance `/app/user`, add a file called `userActions.ts`.
+Within your app, for instance under `/app/user`, add a file called `userActions.ts`.
 
 ```tsx
 // userActions.ts
 
-import { Actions } from "@athino/react-epic";
+import { DefineActions } from "@athino/react-epic";
 
-export const { Reducer } = new Actions((defineAction) => ({
+export const { Reducer } = DefineActions<
 
-    fetchUser: defineAction<{
-        id: string
-    }>(),
+    fetchUser: {
+        payload: {
+            id: string
+        }
+    }
 
-    setUser: defineAction<{
-        name: string
-    }>()
+    setUser: {
+        payload: {
+            name: string
+        }
+    }
 
-}))
+>
 ```
 
-### 2. Setting up domain reducer
+### 2. Setting up the default user state
+
+Next to your `userActions.ts` file, add `userState.ts`.
+
+```tsx
+// userState.ts
+
+import { createState } from "@athino/react-epic"
+
+type TUserState = {
+  isLoading: boolean
+  name?: string
+}
+
+export const state = createState<TUserState>({
+    isLoading: true,
+    name: undefined
+})
+```
+
+
+### 2. Setting up the domain reducer
 
 Next to your `userActions.ts` file, add `userReducer.ts`.
 
 ```tsx
 // userReducer.ts
 
-import { Reducer } from "./userActions.ts"
+import { state } from "./userActions.ts"
 
 type UserState = {
   isLoading: boolean
