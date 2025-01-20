@@ -10,10 +10,10 @@ React Epic is a state manager for React.
 
 Within your app, for instance under `@/user/`, add a file called `userActions.ts`.
 
-```tsx
+```ts
 // @/user/userActions.ts
 
-import { DefineActions } from "@athino/react-epic";
+import { DefineActions } from '@athino/react-epic';
 
 export const TUserActions = DefineActions<{
 
@@ -37,10 +37,10 @@ export const TUserActions = DefineActions<{
 
 Next to your `userActions.ts` file, add `userState.ts`.
 
-```tsx
+```ts
 // @/user/userState.ts
 
-import { createState, DefineState } from "@athino/react-epic";
+import { createState, DefineState } from '@athino/react-epic';
 
 type TUserState = DefineState<{
   isLoading: boolean
@@ -59,7 +59,7 @@ export const state = createState<TUserState>({
 
 Next to your `userState.ts` file, add `userReducer.ts`.
 
-```tsx
+```ts
 // @/user/userReducer.ts
 
 import { state } from '@/user/userState.ts';
@@ -84,7 +84,7 @@ export const reducer = state.createReducer<TUserActions>({
 
 Outside your `user` directory, perhaps in `@/common/state/` folder, add a new file called `root.ts`.
 
-```tsx
+```ts
 // @/common/state/root.ts
 
 import { createRoot } from '@athino/react-epic';
@@ -102,7 +102,7 @@ export const root = createRoot({
 
 Next to `userReducer.ts`, `userActions.ts` and `userState.ts`, add a new file called `userEffects.ts`.
 
-```tsx
+```ts
 // @/user/userEffects.ts
 
 import { root } from '@/common/state/root.ts';
@@ -126,7 +126,7 @@ effects.add({
 
 Next to your `root.ts` file, add a new file called `consumer.ts`.
 
-```tsx
+```ts
 // @/common/state/consumer.ts
 
 import { root } from '@/common/state/root.ts';
