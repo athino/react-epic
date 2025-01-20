@@ -8,14 +8,14 @@ React Epic is a state manager for React.
 
 ### 1. Setting up domain actions
 
-Within your app, for instance under `/app/user`, add a file called `userActions.ts`.
+Within your app, for instance under `/app/user/`, add a file called `userActions.ts`.
 
 ```tsx
 // userActions.ts
 
 import { DefineActions } from "@athino/react-epic";
 
-export const { Reducer } = DefineActions<
+export const TUserActions = DefineActions<
 
     fetchUser: {
         payload: {
@@ -39,7 +39,7 @@ Next to your `userActions.ts` file, add `userState.ts`.
 ```tsx
 // userState.ts
 
-import { createState } from "@athino/react-epic"
+import { createState } from "@athino/react-epic";
 
 type TUserState = {
   isLoading: boolean
@@ -47,87 +47,68 @@ type TUserState = {
 }
 
 export const state = createState<TUserState>({
-    isLoading: true,
+    isLoading: false,
     name: undefined
 })
 ```
 
 
-### 2. Setting up the domain reducer
+### 3. Setting up the domain reducer
 
-Next to your `userActions.ts` file, add `userReducer.ts`.
+Next to your `userState.ts` file, add `userReducer.ts`.
 
 ```tsx
 // userReducer.ts
 
-import { state } from "./userActions.ts"
+import { state } from "./userState.ts"
 
-type UserState = {
-  isLoading: boolean
-  name?: string
-}
+export const reducer = state.createReducer({
 
-const initialState: UserState = {
-  isLoading: false,
-  name: undefined
-}
+    fetchUser({state, payload}) {
+        state.isLoading = true
+    },
 
-export const { reducer } = new Reducer<UserState>((state = initialState, action): UserState => {
-    switch (action.type) {
-        case 'fetchUser': {
-            return {
-                ...state,
-                isLoading: true
-            }
-        }
-        case 'setUser': {
-            return {
-                ...state,
-                isLoading: false,
-                name: action.payload.name
-            }
-        }
-        default: {
-            return {
-                ...state
-            }
-        }
+    setUser({state, payload}) {
+        state.isLoading = false
+        state.name = payload.name
     }
-})
 
+})
 ```
 
 ### 3. Connect the domain reducer to the Root class
 
-Outside your `user` directory, perhaps in a `common` folder, add a new file called `root.ts`.
+Outside your `user` directory, perhaps in `common/state/` folder, add a new file called `root.ts`.
 
 ```tsx
 // root.ts
 
-import { Root } from '@athino/react-epic'
-import { reducer as userReducer } from './user/userReducer.ts'
+import { createRoot } from '@athino/react-epic';
+import { reducer as userReducer } from './user/userReducer.ts';
 
-export const { Effects, Hooks } = new Root({
-    user: userReducer
+export const root = createRoot({
+    domains: {
+        user: userReducer
+    }
 })
 ```
 
 ### 4. Add effects to your actions
 
-Next to `userReducer.ts` and `userActions.ts`, add a new file called `userEffects.ts`.
+Next to `userReducer.ts`, `userActions.ts` and `userState.ts`, add a new file called `userEffects.ts`.
 
 ```tsx
 // userEffects.ts
 
-import { Effects } from '../common/root.ts'
+import { root } from '../common/root.ts'
 
-export const effects = new Effects({ domain: 'user' })
+export const effects = root.createEffects()
 
 effects.add({
     actionType: 'fetchUser',
     effectType: 'takeLatest',
-    handler: async ({action, actions}) => {
-        const res =  await fetch(`/my-api/get-user?id=${action.payload.id}`)
+    handler: async ({action, actions, call}) => {
+        const res =  await call(() => fetch(`/my-api/get-user?id=${action.payload.id}`))
         const json = await res.json()
 
         actions.user.setUser({ name: json.name })
@@ -135,43 +116,47 @@ effects.add({
 })
 ```
 
-### 5. Connect your effects to the Hooks class
+### 5. Crate the consumer and connect your effects
 
-Next to your `root.ts` file, add a new file called `hooks.ts`.
+Next to your `root.ts` file, add a new file called `consumer.ts`.
 
 ```tsx
-// hooks.ts
+// consumer.ts
 
-import { Hooks } from './root'
+import { root } from './root'
 import { effects as userEffects} from './user/userEffects.ts'
 
-export const { useSelector, useActions, useProvider } = new Hooks({
-    user: userEffects
+export const consumer = root.createConsumer({
+    effects: [
+        ...userEffects.getEffects()
+    ]
 })
+
+export const useActions = consumer.createHook()
+export const Provider = consumer.createProvider()
 ```
 
-### 6. Implement the useProvider hook in your main React component
+### 6. Implement the Provider in your main React component
 
-Within your main `App.tsx` file, add the p.
+Within your main `App.tsx` file, add the Provider.
 
 ```tsx
 // App.tsx
 
 import React from 'react'
-import { useProvider } from './common/hooks.ts'
-import { User } from '../User.tsx'
+import { Provider } from '@/common/state/consumer.ts'
 
 const App = () => {
-  const { Provider } = useProvider()
-  return (
-    <Provider>
-      <User/>
-    </Provider>
-  )
+
+    return (
+        <Provider>
+            {/* your app here */}
+        </Provider>
+    )
 }
 ```
 
-### 7. Implement the useSelector and useActions hooks
+### 7. Implement the useActions hook
 
 Within your `User.tsx` file, add the the following hooks.
 
