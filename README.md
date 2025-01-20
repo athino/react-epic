@@ -5,8 +5,7 @@ React Epic is a state manager for React.
 - Handles complex async logic.
 - Is domain driven.
 
-Link to this documentation:
-- https://athino.github.io/react-epic/
+Link to this documentation [here](https://athino.github.io/react-epic/).
 
 ## Usage
 
