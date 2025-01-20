@@ -15,7 +15,7 @@ Within your app, for instance under `/app/user/`, add a file called `userActions
 
 import { DefineActions } from "@athino/react-epic";
 
-export const TUserActions = DefineActions<
+export const TUserActions = DefineActions<{
 
     fetchUser: {
         payload: {
@@ -29,7 +29,7 @@ export const TUserActions = DefineActions<
         }
     }
 
->
+}>
 ```
 
 ### 2. Setting up the default user state
