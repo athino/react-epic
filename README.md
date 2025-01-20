@@ -29,7 +29,8 @@ export const TUserActions = DefineActions<{
         }
     }
 
-}>
+}>;
+
 ```
 
 ### 2. Setting up the default user state
@@ -37,19 +38,20 @@ export const TUserActions = DefineActions<{
 Next to your `userActions.ts` file, add `userState.ts`.
 
 ```tsx
-// userState.ts
+// @/user/userState.ts
 
 import { createState } from "@athino/react-epic";
 
 type TUserState = {
   isLoading: boolean
   name?: string
-}
+};
 
 export const state = createState<TUserState>({
     isLoading: false,
     name: undefined
-})
+});
+
 ```
 
 
@@ -58,9 +60,9 @@ export const state = createState<TUserState>({
 Next to your `userState.ts` file, add `userReducer.ts`.
 
 ```tsx
-// userReducer.ts
+// @/user/userReducer.ts
 
-import { state } from "./userState.ts"
+import { state } from '@/user/userState.ts';
 import { TUserActions } from '@/user/userActions.ts';
 
 export const reducer = state.createReducer<TUserActions>({
@@ -74,7 +76,8 @@ export const reducer = state.createReducer<TUserActions>({
         state.name = payload.name
     }
 
-})
+});
+
 ```
 
 ### 3. Connect the domain reducer to the Root class
@@ -91,7 +94,8 @@ export const root = createRoot({
     domains: {
         user: userReducer
     }
-})
+});
+
 ```
 
 ### 4. Add effects to your actions
@@ -101,7 +105,7 @@ Next to `userReducer.ts`, `userActions.ts` and `userState.ts`, add a new file ca
 ```tsx
 // @/user/userEffects.ts
 
-import { root } from '../common/root.ts'
+import { root } from '@/common/state/root.ts';
 
 export const effects = root.createEffects()
 
@@ -114,7 +118,8 @@ effects.add({
 
         actions.user.setUser({ name: json.name })
     }
-})
+});
+
 ```
 
 ### 5. Crate the consumer and connect your effects
@@ -124,17 +129,18 @@ Next to your `root.ts` file, add a new file called `consumer.ts`.
 ```tsx
 // @/common/state/consumer.ts
 
-import { root } from './root'
-import { effects as userEffects} from './user/userEffects.ts'
+import { root } from '@/common/state/root.ts';
+import { effects as userEffects } from '@/user/userEffects.ts';
 
 export const consumer = root.createConsumer({
     effects: [
         ...userEffects.getEffects()
     ]
-})
+});
 
-export const useActions = consumer.createHook()
-export const Provider = consumer.createProvider()
+export const useActions = consumer.createHook();
+export const Provider = consumer.createProvider();
+
 ```
 
 ### 6. Implement the Provider in your main React component
