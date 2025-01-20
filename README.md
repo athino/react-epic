@@ -61,8 +61,9 @@ Next to your `userState.ts` file, add `userReducer.ts`.
 // userReducer.ts
 
 import { state } from "./userState.ts"
+import { TUserActions } from '@/user/userActions.ts';
 
-export const reducer = state.createReducer({
+export const reducer = state.createReducer<TUserActions>({
 
     fetchUser({state, payload}) {
         state.isLoading = true
@@ -78,13 +79,13 @@ export const reducer = state.createReducer({
 
 ### 3. Connect the domain reducer to the Root class
 
-Outside your `user` directory, perhaps in `common/state/` folder, add a new file called `root.ts`.
+Outside your `user` directory, perhaps in `@/common/state/` folder, add a new file called `root.ts`.
 
 ```tsx
-// root.ts
+// @/common/state/root.ts
 
 import { createRoot } from '@athino/react-epic';
-import { reducer as userReducer } from './user/userReducer.ts';
+import { reducer as userReducer } from '@/user/userReducer.ts';
 
 export const root = createRoot({
     domains: {
@@ -98,7 +99,7 @@ export const root = createRoot({
 Next to `userReducer.ts`, `userActions.ts` and `userState.ts`, add a new file called `userEffects.ts`.
 
 ```tsx
-// userEffects.ts
+// @/user/userEffects.ts
 
 import { root } from '../common/root.ts'
 
@@ -121,7 +122,7 @@ effects.add({
 Next to your `root.ts` file, add a new file called `consumer.ts`.
 
 ```tsx
-// consumer.ts
+// @/common/state/consumer.ts
 
 import { root } from './root'
 import { effects as userEffects} from './user/userEffects.ts'
