@@ -1,8 +1,12 @@
+
 ## React Epic
 React Epic is a state manager for React.
 - Has excellent typescript support.
 - Handles complex async logic.
 - Is domain driven.
+
+Link to this documentation:
+- https://athino.github.io/react-epic/
 
 ## Usage
 
