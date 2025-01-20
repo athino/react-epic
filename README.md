@@ -126,7 +126,7 @@ effects.add({
 
 ```
 
-### 5. Crate the consumer and connect your effects
+### 5. Create the consumer and connect your effects
 
 Next to your `root.ts` file, add a new file called `consumer.ts`.
 
