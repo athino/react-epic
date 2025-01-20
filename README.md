@@ -8,10 +8,10 @@ React Epic is a state manager for React.
 
 ### 1. Setting up domain actions
 
-Within your app, for instance under `/app/user/`, add a file called `userActions.ts`.
+Within your app, for instance under `@/user/`, add a file called `userActions.ts`.
 
 ```tsx
-// userActions.ts
+// @/user/userActions.ts
 
 import { DefineActions } from "@athino/react-epic";
 
