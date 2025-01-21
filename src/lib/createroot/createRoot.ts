@@ -16,7 +16,6 @@ export const createRoot = <D extends TDomainsBase>(domains: D) => {
     })
 
     return {
-        createEffects: () => lib.createDomainEffects<D>(),
         addEffects: effects.addEffects,
         createHook: () => lib.createHook<D>({ actions }),
         createProvider: () => lib.createProvider({ store })

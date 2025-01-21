@@ -1,6 +1,6 @@
 import { internal } from "../lib/lib"
 import { TDomainsBase } from "../types/domainsBaseType"
-import { TEffect } from "../types/effectType"
+import { TActionType, TEffect } from "../types/effectType"
 
 /**
  * Utility to create root.
@@ -19,7 +19,23 @@ export const createRoot = <D extends TDomainsBase>(arg: {
        * Utility to create effect that listens to actions.
        */
        createEffects() {
-            return root.createEffects()
+            const store = { effects: [] as Array<{ id: symbol } & TEffect<D, any, any>> }
+
+            return {
+
+                /** Add effect */
+                addEffect<A extends keyof D, B extends TActionType<D, A>>(effect: TEffect<D, A, B>) {
+                    store.effects = [...store.effects, {
+                        ...effect,
+                        id: Symbol()
+                    }]
+                },
+        
+                /** Get effects */
+                getEffects() {
+                    return store.effects
+                }
+            }
        },
  
        /**
