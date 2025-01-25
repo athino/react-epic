@@ -1,16 +1,18 @@
 import React from "react";
-import { renderToStaticMarkup } from "react-dom/server";
-
-const Docs = () => {
-    return (
-        <div>
-        </div>
-    )
-}
-
+import { createHTML } from "../common/createHTML";
+import { Sidebar } from "./components/sidebar/sidebar";
+import { writeHTMLFiles } from "../common/writeHTMLFiles";
 
 export const docsBuildDocs = () => {
-    const html = renderToStaticMarkup(<Docs/>)
+    const html = createHTML({
+        title: '',
+        body: <Sidebar/>
+    })
 
-    console.log(html)
+    writeHTMLFiles({
+        files: [{
+            filename: 'index.html',
+            html
+        }]
+    })
 }
