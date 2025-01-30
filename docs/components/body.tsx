@@ -65,8 +65,10 @@ const Content = styled.div`
 const Logo = styled.div`
     display: flex;
     justify-content: center;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 24px;
     color: #f6f6f6;
     letter-spacing: 0.12em;
+    padding: 20px 0;
+    background: #20222a;
 `
