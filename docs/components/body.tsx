@@ -11,7 +11,9 @@ export const Body = () => {
     return (
         <Frame>
             <Sidebar>
-                REACTIONS
+                <Logo>
+                    REACTIONS
+                </Logo>
             </Sidebar>
             <Wrapper>
                 <Content>
@@ -58,4 +60,13 @@ const Content = styled.div`
     left: 20px;
     right: 20px;
     top: 20px;
+`
+
+const Logo = styled.div`
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 24px;
+    color: #f6f6f6;
+    letter-spacing: 0.12em;
 `
