@@ -10,7 +10,6 @@ export type TCodeProps = {
 export const Code = (props: TCodeProps) => {
     return (
         <div>
-            {props.path}
             <Frame dangerouslySetInnerHTML={{__html: props.html}}/>
         </div>
     )
@@ -22,8 +21,9 @@ const Frame = styled.div`
     margin: 0;
     background: #252830;
     color: white;
+    white-space: pre;
 
-    background: rgb(246, 246, 247);;
+    background: rgb(246, 246, 247);
     display: inline-block;
     padding: 20px;
     min-width: 300px;
@@ -32,7 +32,6 @@ const Frame = styled.div`
         font-family: "Roboto Mono", serif;
         font-size: 14px;
     }
-
     .hljs {
         &-keyword {
             color: rgb(215, 58, 73);;
@@ -42,6 +41,9 @@ const Frame = styled.div`
         }
         &-string {
             color: rgb(3, 47, 98);
+        }
+        &-comment {
+            color: rgb(106, 115, 125);
         }
     }
 `
