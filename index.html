@@ -22,7 +22,7 @@
     }
   </style>
   <style data-styled="" data-styled-version="6.1.14">
-    .cMfptl {
+    .gkEiIr {
       position: relative;
       overflow: hidden;
       min-height: 100%;
@@ -40,60 +40,55 @@
     }
 
     /*!sc*/
-    .cMfptl,
-    .cMfptl * {
+    .gkEiIr,
+    .gkEiIr * {
       font-family: "Roboto Mono", serif;
       font-size: 14px;
     }
 
     /*!sc*/
-    .cMfptl .hljs-keyword {
+    .gkEiIr .hljs-keyword {
       color: rgb(215, 58, 73);
     }
 
     /*!sc*/
-    .cMfptl .hljs-title {
+    .gkEiIr .hljs-title {
       color: rgb(36, 41, 46);
     }
 
     /*!sc*/
-    .cMfptl .hljs-title.function_ {
+    .gkEiIr .hljs-title.function_ {
       color: rgb(111, 66, 193);
     }
 
     /*!sc*/
-    .cMfptl .hljs-string {
+    .gkEiIr .hljs-string {
       color: rgb(3, 47, 98);
     }
 
     /*!sc*/
-    .cMfptl .hljs-comment {
+    .gkEiIr .hljs-comment {
       color: rgb(106, 115, 125);
     }
 
     /*!sc*/
-    .cMfptl .hljs-name {
+    .gkEiIr .hljs-name {
       color: rgb(227, 98, 9);
     }
 
     /*!sc*/
-    .cMfptl .hljs-attr {
+    .gkEiIr .hljs-attr {
       color: rgb(72, 78, 84);
     }
 
     /*!sc*/
-    .cMfptl .hljs-number {
-      color: rgb(0, 92, 197);
-    }
-
-    /*!sc*/
-    .cMfptl .hljs-property {
+    .gkEiIr .hljs-number {
       color: rgb(0, 92, 197);
     }
 
     /*!sc*/
     data-styled.g1[id="sc-KXCwU"] {
-      content: "cMfptl,"
+      content: "gkEiIr,"
     }
 
     /*!sc*/
@@ -179,6 +174,17 @@
     }
 
     /*!sc*/
+    .dGxerA {
+      font-size: 28px;
+      font-weight: 500;
+    }
+
+    /*!sc*/
+    data-styled.g7[id="sc-gTrWKq"] {
+      content: "dGxerA,"
+    }
+
+    /*!sc*/
   </style>
 </head>
 
@@ -188,7 +194,11 @@
   </div>
   <div class="sc-eaUbBy jhwxht">
     <div class="sc-dDvxFM ddwJXo">
-      <pre class="sc-KXCwU cMfptl"><span class="hljs-comment">// ./app.tsx</span>
+      <div class="sc-gTrWKq dGxerA">Usage</div>
+      <div>1. Setting up domain actions</div>
+      <div>Within your app, for instance under `@/user/`, add a file called
+        `userActions.ts`.</div>
+      <pre class="sc-KXCwU gkEiIr"><span class="hljs-comment">// ./app.tsx</span>
 
 <span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>;
 <span class="hljs-keyword">import</span> { <span class="hljs-title class_">Component</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./example/component/component&#x27;</span>;
@@ -203,7 +213,7 @@
     )
 }
 </pre>
-      <pre class="sc-KXCwU cMfptl"><span class="hljs-comment">// ./component/component.tsx</span>
+      <pre class="sc-KXCwU gkEiIr"><span class="hljs-comment">// ./component/component.tsx</span>
 
 <span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react&quot;</span>
 <span class="hljs-keyword">import</span> { useActions } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../state/consumer&quot;</span>
@@ -232,7 +242,7 @@
     )
 }
 </pre>
-      <pre class="sc-KXCwU cMfptl"><span class="hljs-comment">// ./delta/deltaActions.ts</span>
+      <pre class="sc-KXCwU gkEiIr"><span class="hljs-comment">// ./delta/deltaActions.ts</span>
 
 <span class="hljs-keyword">import</span> { <span class="hljs-title class_">DefineActions</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../../epic&quot;</span>
 
@@ -246,13 +256,13 @@
     
 }&gt;
 </pre>
-      <pre class="sc-KXCwU cMfptl"><span class="hljs-comment">// ./delta/deltaEffects.ts</span>
+      <pre class="sc-KXCwU gkEiIr"><span class="hljs-comment">// ./delta/deltaEffects.ts</span>
 
 <span class="hljs-keyword">import</span> { root } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../state/root&quot;</span>;
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> effects = root.<span class="hljs-title function_">createEffects</span>()
 </pre>
-      <pre class="sc-KXCwU cMfptl"><span class="hljs-comment">// ./delta/deltaReducer.ts</span>
+      <pre class="sc-KXCwU gkEiIr"><span class="hljs-comment">// ./delta/deltaReducer.ts</span>
 
 <span class="hljs-keyword">import</span> { state } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./deltaState&#x27;</span>
 <span class="hljs-keyword">import</span> { <span class="hljs-title class_">TDeltaActions</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./deltaActions&#x27;</span>
@@ -265,7 +275,7 @@
     
 })
 </pre>
-      <pre class="sc-KXCwU cMfptl"><span class="hljs-comment">// ./delta/deltaState.ts</span>
+      <pre class="sc-KXCwU gkEiIr"><span class="hljs-comment">// ./delta/deltaState.ts</span>
 
 <span class="hljs-keyword">import</span> { createState, <span class="hljs-title class_">DefineState</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../epic&#x27;</span>
 
@@ -277,7 +287,7 @@
     <span class="hljs-attr">value</span>: <span class="hljs-string">&#x27;skriv her...&#x27;</span>
 })
 </pre>
-      <pre class="sc-KXCwU cMfptl"><span class="hljs-comment">// ./echo/echoActions.ts</span>
+      <pre class="sc-KXCwU gkEiIr"><span class="hljs-comment">// ./echo/echoActions.ts</span>
 
 <span class="hljs-keyword">import</span> { <span class="hljs-title class_">DefineActions</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../../epic&quot;</span>
 
@@ -297,7 +307,7 @@
 
 }&gt;
 </pre>
-      <pre class="sc-KXCwU cMfptl"><span class="hljs-comment">// ./echo/echoEffects.ts</span>
+      <pre class="sc-KXCwU gkEiIr"><span class="hljs-comment">// ./echo/echoEffects.ts</span>
 
 <span class="hljs-keyword">import</span> { root } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../state/root&quot;</span>;
 
@@ -329,7 +339,7 @@ effects.<span class="hljs-title function_">addEffect</span>({
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> <span class="hljs-built_in">setTimeout</span>(resolve, ms))
 }
 </pre>
-      <pre class="sc-KXCwU cMfptl"><span class="hljs-comment">// ./echo/echoReducer.ts</span>
+      <pre class="sc-KXCwU gkEiIr"><span class="hljs-comment">// ./echo/echoReducer.ts</span>
 
 <span class="hljs-keyword">import</span> { state } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./echoState&#x27;</span>
 <span class="hljs-keyword">import</span> { <span class="hljs-title class_">TEchoActions</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./echoActions&#x27;</span>
@@ -347,7 +357,7 @@ effects.<span class="hljs-title function_">addEffect</span>({
 
 })
 </pre>
-      <pre class="sc-KXCwU cMfptl"><span class="hljs-comment">// ./echo/echoState.ts</span>
+      <pre class="sc-KXCwU gkEiIr"><span class="hljs-comment">// ./echo/echoState.ts</span>
 
 <span class="hljs-keyword">import</span> { createState, <span class="hljs-title class_">DefineState</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../epic&#x27;</span>
 
@@ -361,7 +371,7 @@ effects.<span class="hljs-title function_">addEffect</span>({
     <span class="hljs-attr">searching</span>: <span class="hljs-literal">false</span>
 })
 </pre>
-      <pre class="sc-KXCwU cMfptl"><span class="hljs-comment">// ./state/consumer.ts</span>
+      <pre class="sc-KXCwU gkEiIr"><span class="hljs-comment">// ./state/consumer.ts</span>
 
 <span class="hljs-keyword">import</span> { root } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./root&#x27;</span>
 <span class="hljs-keyword">import</span> { effects <span class="hljs-keyword">as</span> deltaEffects } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../delta/deltaEffects&#x27;</span>
@@ -377,7 +387,7 @@ effects.<span class="hljs-title function_">addEffect</span>({
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> useActions = consumer.<span class="hljs-title function_">createHook</span>()
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title class_">Provider</span> = consumer.<span class="hljs-title function_">createProvider</span>()
 </pre>
-      <pre class="sc-KXCwU cMfptl"><span class="hljs-comment">// ./state/root.ts</span>
+      <pre class="sc-KXCwU gkEiIr"><span class="hljs-comment">// ./state/root.ts</span>
 
 <span class="hljs-keyword">import</span> { createRoot } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../epic/index&#x27;</span>
 <span class="hljs-keyword">import</span> { reducer <span class="hljs-keyword">as</span> deltaReducer } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../delta/deltaReducer&#x27;</span>

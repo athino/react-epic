@@ -17,6 +17,9 @@ export const Body = (props: TBodyProps) => {
             </Sidebar>
             <Wrapper>
                 <Content>
+                    <Title>Usage</Title>
+                        <div>1. Setting up domain actions</div>
+                        <div>Within your app, for instance under `@/user/`, add a file called `userActions.ts`.</div>
                     {Object.entries(props.files).map(([path, html]) => (
                         <Code
                             key={path}
@@ -79,4 +82,9 @@ const Logo = styled.div`
     letter-spacing: 0.12em;
     padding: 20px 0;
     background: #20222a;
+`
+
+const Title = styled.div`
+    font-size: 28px;
+    font-weight: 500;
 `
