@@ -9,9 +9,9 @@ export type TCodeProps = {
 
 export const Code = (props: TCodeProps) => {
     return (
-        <div>
+        <pre>
             <Frame dangerouslySetInnerHTML={{__html: props.html}}/>
-        </div>
+        </pre>
     )
 }
 
@@ -21,14 +21,14 @@ const Frame = styled.div`
     margin: 0;
     background: #252830;
     color: white;
-    white-space: pre-line;
 
     background: rgb(246, 246, 247);
     display: inline-block;
     padding: 20px;
     min-width: 300px;
     border-radius: 8px;
-    * {
+    color: rgb(36, 41, 46);
+    &, * {
         font-family: "Roboto Mono", serif;
         font-size: 14px;
     }
@@ -38,12 +38,21 @@ const Frame = styled.div`
         }
         &-title {
             color: rgb(36, 41, 46);
+            &.function_, &.class_ {
+                color: rgb(111, 66, 193);
+            }
         }
         &-string {
             color: rgb(3, 47, 98);
         }
         &-comment {
             color: rgb(106, 115, 125);
+        }
+        &-name {
+            color: rgb(227, 98, 9);
+        }
+        &-attr {
+            color: rgb(72, 78, 84);
         }
     }
 `

@@ -22,49 +22,66 @@
     }
   </style>
   <style data-styled="" data-styled-version="6.1.14">
-    .blgTPI {
+    .iVfmmo {
       overflow: hidden;
       min-height: 100%;
       margin: 0;
       background: #252830;
       color: white;
-      white-space: pre-line;
       background: rgb(246, 246, 247);
       display: inline-block;
       padding: 20px;
       min-width: 300px;
       border-radius: 8px;
+      color: rgb(36, 41, 46);
     }
 
     /*!sc*/
-    .blgTPI * {
+    .iVfmmo,
+    .iVfmmo * {
       font-family: "Roboto Mono", serif;
       font-size: 14px;
     }
 
     /*!sc*/
-    .blgTPI .hljs-keyword {
+    .iVfmmo .hljs-keyword {
       color: rgb(215, 58, 73);
     }
 
     /*!sc*/
-    .blgTPI .hljs-title {
+    .iVfmmo .hljs-title {
       color: rgb(36, 41, 46);
     }
 
     /*!sc*/
-    .blgTPI .hljs-string {
+    .iVfmmo .hljs-title.function_,
+    .iVfmmo .hljs-title.class_ {
+      color: rgb(111, 66, 193);
+    }
+
+    /*!sc*/
+    .iVfmmo .hljs-string {
       color: rgb(3, 47, 98);
     }
 
     /*!sc*/
-    .blgTPI .hljs-comment {
+    .iVfmmo .hljs-comment {
       color: rgb(106, 115, 125);
     }
 
     /*!sc*/
+    .iVfmmo .hljs-name {
+      color: rgb(227, 98, 9);
+    }
+
+    /*!sc*/
+    .iVfmmo .hljs-attr {
+      color: rgb(72, 78, 84);
+    }
+
+    /*!sc*/
     data-styled.g1[id="sc-KXCwU"] {
-      content: "blgTPI,"
+      content: "iVfmmo,"
     }
 
     /*!sc*/
@@ -156,409 +173,208 @@
   </div>
   <div class="sc-eaUbBy jhwxht">
     <div class="sc-dDvxFM VhKcz">
-      <div>
-        <div class="sc-KXCwU blgTPI"><span class="hljs-comment">//
-            ./app.tsx</span>
+      <pre><div class="sc-KXCwU iVfmmo"><span class="hljs-comment">// ./app.tsx</span>
 
-          <span class="hljs-keyword">import</span> <span
-            class="hljs-title class_">React</span> <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&#x27;react&#x27;</span>;
-          <span class="hljs-keyword">import</span> { <span
-            class="hljs-title class_">Component</span> } <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&#x27;./example/component/component&#x27;</span>;
-          <span class="hljs-keyword">import</span> { <span
-            class="hljs-title class_">Provider</span> } <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&#x27;./example/state/consumer&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>;
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">Component</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./example/component/component&#x27;</span>;
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">Provider</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./example/state/consumer&#x27;</span>;
 
-          <span class="hljs-keyword">export</span> <span
-            class="hljs-keyword">const</span> <span
-            class="hljs-title function_">App</span> = (<span
-            class="hljs-params"></span>) =&gt; {
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">App</span> = (<span class="hljs-params"></span>) =&gt; {
 
-          <span class="hljs-keyword">return</span> (
-          <span class="language-xml"><span class="hljs-tag">&lt;<span
-                class="hljs-name">Provider</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span
-                class="hljs-name">Component</span>/&gt;</span>
-            <span class="hljs-tag">&lt;/<span
-                class="hljs-name">Provider</span>&gt;</span></span>
-          )
-          }
-        </div>
-      </div>
-      <div>
-        <div class="sc-KXCwU blgTPI"><span class="hljs-comment">//
-            ./component/component.tsx</span>
+    <span class="hljs-keyword">return</span> (
+        <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Provider</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Component</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span></span>
+    )
+}
+</div></pre>
+      <pre><div class="sc-KXCwU iVfmmo"><span class="hljs-comment">// ./component/component.tsx</span>
 
-          <span class="hljs-keyword">import</span> <span
-            class="hljs-title class_">React</span> <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&quot;react&quot;</span>
-          <span class="hljs-keyword">import</span> { useActions } <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&quot;../state/consumer&quot;</span>
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react&quot;</span>
+<span class="hljs-keyword">import</span> { useActions } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../state/consumer&quot;</span>
 
-          <span class="hljs-keyword">export</span> <span
-            class="hljs-keyword">const</span> <span
-            class="hljs-title function_">Component</span> = (<span
-            class="hljs-params"></span>) =&gt; {
-          <span class="hljs-keyword">const</span> {actions, data} = <span
-            class="hljs-title function_">useActions</span>(<span
-            class="hljs-function">(<span class="hljs-params">{echo,
-              delta}</span>) =&gt;</span> ({
-          <span class="hljs-attr">searchResult</span>: echo.<span
-            class="hljs-property">searchResult</span>,
-          <span class="hljs-attr">value</span>: delta.<span
-            class="hljs-property">value</span>,
-          <span class="hljs-attr">searching</span>: echo.<span
-            class="hljs-property">searching</span>
-          }))
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">Component</span> = (<span class="hljs-params"></span>) =&gt; {
+    <span class="hljs-keyword">const</span> {actions, data} = <span class="hljs-title function_">useActions</span>(<span class="hljs-function">(<span class="hljs-params">{echo, delta}</span>) =&gt;</span> ({
+        <span class="hljs-attr">searchResult</span>: echo.<span class="hljs-property">searchResult</span>,
+        <span class="hljs-attr">value</span>: delta.<span class="hljs-property">value</span>,
+        <span class="hljs-attr">searching</span>: echo.<span class="hljs-property">searching</span>
+    }))
 
-          <span class="hljs-keyword">return</span> (
-          <span class="language-xml"><span class="hljs-tag">&lt;<span
-                class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-keyword">return</span> (
+        <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">input</span>
-              <span class="hljs-attr">type</span>=<span
-                class="hljs-string">&#x27;text&#x27;</span>
-              <span class="hljs-attr">value</span>=<span
-                class="hljs-string">{data.value}</span>
-              <span class="hljs-attr">onChange</span>=<span
-                class="hljs-string">{({target})</span> =&gt;</span> {
-            actions.delta.setSearchValue({
-            value: target.value
+                <span class="hljs-attr">type</span>=<span class="hljs-string">&#x27;text&#x27;</span>
+                <span class="hljs-attr">value</span>=<span class="hljs-string">{data.value}</span>
+                <span class="hljs-attr">onChange</span>=<span class="hljs-string">{({target})</span> =&gt;</span> {
+                    actions.delta.setSearchValue({
+                        value: target.value
+                    })
+                }}/&gt;
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                Search result: {data.searching ? &#x27;Searching...&#x27; : data.searchResult}
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    )
+}
+</div></pre>
+      <pre><div class="sc-KXCwU iVfmmo"><span class="hljs-comment">// ./delta/deltaActions.ts</span>
+
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">DefineActions</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../../epic&quot;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">TDeltaActions</span> = <span class="hljs-title class_">DefineActions</span>&lt;{
+
+    <span class="hljs-attr">setSearchValue</span>: {
+        <span class="hljs-attr">payload</span>: {
+            <span class="hljs-attr">value</span>: <span class="hljs-built_in">string</span>
+        }
+    }
+    
+}&gt;
+</div></pre>
+      <pre><div class="sc-KXCwU iVfmmo"><span class="hljs-comment">// ./delta/deltaEffects.ts</span>
+
+<span class="hljs-keyword">import</span> { root } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../state/root&quot;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> effects = root.<span class="hljs-title function_">createEffects</span>()
+</div></pre>
+      <pre><div class="sc-KXCwU iVfmmo"><span class="hljs-comment">// ./delta/deltaReducer.ts</span>
+
+<span class="hljs-keyword">import</span> { state } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./deltaState&#x27;</span>
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">TDeltaActions</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./deltaActions&#x27;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> reducer = state.<span class="hljs-property">createReducer</span>&lt;<span class="hljs-title class_">TDeltaActions</span>&gt;({
+
+    <span class="hljs-title function_">setSearchValue</span>(<span class="hljs-params">{state, payload}</span>) {
+        state.<span class="hljs-property">value</span> = payload.<span class="hljs-property">value</span>
+    }
+    
+})
+</div></pre>
+      <pre><div class="sc-KXCwU iVfmmo"><span class="hljs-comment">// ./delta/deltaState.ts</span>
+
+<span class="hljs-keyword">import</span> { createState, <span class="hljs-title class_">DefineState</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../epic&#x27;</span>
+
+<span class="hljs-keyword">type</span> <span class="hljs-title class_">TDeltaState</span> = <span class="hljs-title class_">DefineState</span>&lt;{
+    <span class="hljs-attr">value</span>: <span class="hljs-built_in">string</span>
+}&gt;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> state = createState&lt;<span class="hljs-title class_">TDeltaState</span>&gt;({
+    <span class="hljs-attr">value</span>: <span class="hljs-string">&#x27;skriv her...&#x27;</span>
+})
+</div></pre>
+      <pre><div class="sc-KXCwU iVfmmo"><span class="hljs-comment">// ./echo/echoActions.ts</span>
+
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">DefineActions</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../../epic&quot;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">TEchoActions</span> = <span class="hljs-title class_">DefineActions</span>&lt;{
+
+    <span class="hljs-attr">setSearchResult</span>: {
+        <span class="hljs-attr">payload</span>: {
+            <span class="hljs-attr">searchResult</span>: <span class="hljs-built_in">number</span>
+        }
+    }
+
+    <span class="hljs-attr">setSearching</span>: {
+        <span class="hljs-attr">payload</span>: {
+            <span class="hljs-attr">searching</span>: <span class="hljs-built_in">boolean</span>
+        }
+    }
+
+}&gt;
+</div></pre>
+      <pre><div class="sc-KXCwU iVfmmo"><span class="hljs-comment">// ./echo/echoEffects.ts</span>
+
+<span class="hljs-keyword">import</span> { root } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../state/root&quot;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> effects = root.<span class="hljs-title function_">createEffects</span>()
+
+effects.<span class="hljs-title function_">addEffect</span>({
+    <span class="hljs-attr">domain</span>: <span class="hljs-string">&#x27;delta&#x27;</span>,
+    <span class="hljs-attr">action</span>: <span class="hljs-string">&#x27;setSearchValue&#x27;</span>,
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;takeLatest&#x27;</span>,
+    <span class="hljs-keyword">async</span> <span class="hljs-title function_">handler</span>(<span class="hljs-params">ctx</span>) {
+        <span class="hljs-keyword">if</span> (ctx.<span class="hljs-property">action</span>.<span class="hljs-property">payload</span>.<span class="hljs-property">value</span> !== <span class="hljs-string">&#x27;&#x27;</span>) {
+            ctx.<span class="hljs-property">actions</span>.<span class="hljs-property">echo</span>.<span class="hljs-title function_">setSearching</span>({ <span class="hljs-attr">searching</span>: <span class="hljs-literal">true</span> })
+            <span class="hljs-keyword">await</span> <span class="hljs-title function_">sleep</span>(<span class="hljs-number">2000</span>)
+
+            ctx.<span class="hljs-title function_">call</span>(<span class="hljs-function">() =&gt;</span> {
+                <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;&quot;Started&quot; fetch...&#x27;</span>)
             })
-            }}/&gt;
-            <span class="hljs-tag">&lt;<span
-                class="hljs-name">div</span>&gt;</span>
-            Search result: {data.searching ? &#x27;Searching...&#x27; :
-            data.searchResult}
-            <span class="hljs-tag">&lt;/<span
-                class="hljs-name">div</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span
-                class="hljs-name">div</span>&gt;</span></span>
-          )
-          }
-        </div>
-      </div>
-      <div>
-        <div class="sc-KXCwU blgTPI"><span class="hljs-comment">//
-            ./delta/deltaActions.ts</span>
 
-          <span class="hljs-keyword">import</span> { <span
-            class="hljs-title class_">DefineActions</span> } <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&quot;../../epic&quot;</span>
+            ctx.<span class="hljs-property">actions</span>.<span class="hljs-property">echo</span>.<span class="hljs-title function_">setSearchResult</span>({
+                <span class="hljs-attr">searchResult</span>: ctx.<span class="hljs-property">state</span>.<span class="hljs-property">echo</span>.<span class="hljs-property">searchResult</span> + <span class="hljs-number">1</span>
+            })
+        } <span class="hljs-keyword">else</span> {
+            ctx.<span class="hljs-property">actions</span>.<span class="hljs-property">echo</span>.<span class="hljs-title function_">setSearching</span>({ <span class="hljs-attr">searching</span>: <span class="hljs-literal">false</span> })
+        }
+    }
+})
 
-          <span class="hljs-keyword">export</span> <span
-            class="hljs-keyword">type</span> <span
-            class="hljs-title class_">TDeltaActions</span> = <span
-            class="hljs-title class_">DefineActions</span>&lt;{
+<span class="hljs-keyword">const</span> sleep = (<span class="hljs-attr">ms</span>: <span class="hljs-built_in">number</span>): <span class="hljs-title class_">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt; =&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> <span class="hljs-built_in">setTimeout</span>(resolve, ms))
+}
+</div></pre>
+      <pre><div class="sc-KXCwU iVfmmo"><span class="hljs-comment">// ./echo/echoReducer.ts</span>
 
-          <span class="hljs-attr">setSearchValue</span>: {
-          <span class="hljs-attr">payload</span>: {
-          <span class="hljs-attr">value</span>: <span
-            class="hljs-built_in">string</span>
-          }
-          }
+<span class="hljs-keyword">import</span> { state } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./echoState&#x27;</span>
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">TEchoActions</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./echoActions&#x27;</span>
 
-          }&gt;
-        </div>
-      </div>
-      <div>
-        <div class="sc-KXCwU blgTPI"><span class="hljs-comment">//
-            ./delta/deltaEffects.ts</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> reducer = state.<span class="hljs-property">createReducer</span>&lt;<span class="hljs-title class_">TEchoActions</span>&gt;({
 
-          <span class="hljs-keyword">import</span> { root } <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&quot;../state/root&quot;</span>;
+    <span class="hljs-title function_">setSearchResult</span>(<span class="hljs-params">{state, payload}</span>) {
+        state.<span class="hljs-property">searchResult</span> = payload.<span class="hljs-property">searchResult</span>
+        state.<span class="hljs-property">searching</span> = <span class="hljs-literal">false</span>
+    },
 
-          <span class="hljs-keyword">export</span> <span
-            class="hljs-keyword">const</span> effects = root.<span
-            class="hljs-title function_">createEffects</span>()
-        </div>
-      </div>
-      <div>
-        <div class="sc-KXCwU blgTPI"><span class="hljs-comment">//
-            ./delta/deltaReducer.ts</span>
+    <span class="hljs-title function_">setSearching</span>(<span class="hljs-params">{state, payload}</span>) {
+        state.<span class="hljs-property">searching</span> = payload.<span class="hljs-property">searching</span>
+    }
 
-          <span class="hljs-keyword">import</span> { state } <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&#x27;./deltaState&#x27;</span>
-          <span class="hljs-keyword">import</span> { <span
-            class="hljs-title class_">TDeltaActions</span> } <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&#x27;./deltaActions&#x27;</span>
+})
+</div></pre>
+      <pre><div class="sc-KXCwU iVfmmo"><span class="hljs-comment">// ./echo/echoState.ts</span>
 
-          <span class="hljs-keyword">export</span> <span
-            class="hljs-keyword">const</span> reducer = state.<span
-            class="hljs-property">createReducer</span>&lt;<span
-            class="hljs-title class_">TDeltaActions</span>&gt;({
+<span class="hljs-keyword">import</span> { createState, <span class="hljs-title class_">DefineState</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../epic&#x27;</span>
 
-          <span class="hljs-title function_">setSearchValue</span>(<span
-            class="hljs-params">{state, payload}</span>) {
-          state.<span class="hljs-property">value</span> = payload.<span
-            class="hljs-property">value</span>
-          }
+<span class="hljs-keyword">type</span> <span class="hljs-title class_">TEchoState</span> = <span class="hljs-title class_">DefineState</span>&lt;{
+    <span class="hljs-attr">searchResult</span>: <span class="hljs-built_in">number</span>,
+    <span class="hljs-attr">searching</span>: <span class="hljs-built_in">boolean</span>
+}&gt;
 
-          })
-        </div>
-      </div>
-      <div>
-        <div class="sc-KXCwU blgTPI"><span class="hljs-comment">//
-            ./delta/deltaState.ts</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> state = createState&lt;<span class="hljs-title class_">TEchoState</span>&gt;({
+    <span class="hljs-attr">searchResult</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">searching</span>: <span class="hljs-literal">false</span>
+})
+</div></pre>
+      <pre><div class="sc-KXCwU iVfmmo"><span class="hljs-comment">// ./state/consumer.ts</span>
 
-          <span class="hljs-keyword">import</span> { createState, <span
-            class="hljs-title class_">DefineState</span> } <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&#x27;../../epic&#x27;</span>
+<span class="hljs-keyword">import</span> { root } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./root&#x27;</span>
+<span class="hljs-keyword">import</span> { effects <span class="hljs-keyword">as</span> deltaEffects } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../delta/deltaEffects&#x27;</span>
+<span class="hljs-keyword">import</span> { effects <span class="hljs-keyword">as</span> echoEffects } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../echo/echoEffects&#x27;</span>
 
-          <span class="hljs-keyword">type</span> <span
-            class="hljs-title class_">TDeltaState</span> = <span
-            class="hljs-title class_">DefineState</span>&lt;{
-          <span class="hljs-attr">value</span>: <span
-            class="hljs-built_in">string</span>
-          }&gt;
+<span class="hljs-keyword">const</span> consumer = root.<span class="hljs-title function_">createConsumer</span>({
+    <span class="hljs-attr">effects</span>: [
+        ...deltaEffects.<span class="hljs-title function_">getEffects</span>(),
+        ...echoEffects.<span class="hljs-title function_">getEffects</span>()
+    ]
+})
 
-          <span class="hljs-keyword">export</span> <span
-            class="hljs-keyword">const</span> state = createState&lt;<span
-            class="hljs-title class_">TDeltaState</span>&gt;({
-          <span class="hljs-attr">value</span>: <span
-            class="hljs-string">&#x27;skriv her...&#x27;</span>
-          })
-        </div>
-      </div>
-      <div>
-        <div class="sc-KXCwU blgTPI"><span class="hljs-comment">//
-            ./echo/echoActions.ts</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> useActions = consumer.<span class="hljs-title function_">createHook</span>()
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title class_">Provider</span> = consumer.<span class="hljs-title function_">createProvider</span>()
+</div></pre>
+      <pre><div class="sc-KXCwU iVfmmo"><span class="hljs-comment">// ./state/root.ts</span>
 
-          <span class="hljs-keyword">import</span> { <span
-            class="hljs-title class_">DefineActions</span> } <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&quot;../../epic&quot;</span>
+<span class="hljs-keyword">import</span> { createRoot } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../epic/index&#x27;</span>
+<span class="hljs-keyword">import</span> { reducer <span class="hljs-keyword">as</span> deltaReducer } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../delta/deltaReducer&#x27;</span>
+<span class="hljs-keyword">import</span> { reducer <span class="hljs-keyword">as</span> echoReducer } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../echo/echoReducer&#x27;</span>
 
-          <span class="hljs-keyword">export</span> <span
-            class="hljs-keyword">type</span> <span
-            class="hljs-title class_">TEchoActions</span> = <span
-            class="hljs-title class_">DefineActions</span>&lt;{
-
-          <span class="hljs-attr">setSearchResult</span>: {
-          <span class="hljs-attr">payload</span>: {
-          <span class="hljs-attr">searchResult</span>: <span
-            class="hljs-built_in">number</span>
-          }
-          }
-
-          <span class="hljs-attr">setSearching</span>: {
-          <span class="hljs-attr">payload</span>: {
-          <span class="hljs-attr">searching</span>: <span
-            class="hljs-built_in">boolean</span>
-          }
-          }
-
-          }&gt;
-        </div>
-      </div>
-      <div>
-        <div class="sc-KXCwU blgTPI"><span class="hljs-comment">//
-            ./echo/echoEffects.ts</span>
-
-          <span class="hljs-keyword">import</span> { root } <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&quot;../state/root&quot;</span>;
-
-          <span class="hljs-keyword">export</span> <span
-            class="hljs-keyword">const</span> effects = root.<span
-            class="hljs-title function_">createEffects</span>()
-
-          effects.<span class="hljs-title function_">addEffect</span>({
-          <span class="hljs-attr">domain</span>: <span
-            class="hljs-string">&#x27;delta&#x27;</span>,
-          <span class="hljs-attr">action</span>: <span
-            class="hljs-string">&#x27;setSearchValue&#x27;</span>,
-          <span class="hljs-attr">type</span>: <span
-            class="hljs-string">&#x27;takeLatest&#x27;</span>,
-          <span class="hljs-keyword">async</span> <span
-            class="hljs-title function_">handler</span>(<span
-            class="hljs-params">ctx</span>) {
-          <span class="hljs-keyword">if</span> (ctx.<span
-            class="hljs-property">action</span>.<span
-            class="hljs-property">payload</span>.<span
-            class="hljs-property">value</span> !== <span
-            class="hljs-string">&#x27;&#x27;</span>) {
-          ctx.<span class="hljs-property">actions</span>.<span
-            class="hljs-property">echo</span>.<span
-            class="hljs-title function_">setSearching</span>({ <span
-            class="hljs-attr">searching</span>: <span
-            class="hljs-literal">true</span> })
-          <span class="hljs-keyword">await</span> <span
-            class="hljs-title function_">sleep</span>(<span
-            class="hljs-number">2000</span>)
-
-          ctx.<span class="hljs-title function_">call</span>(<span
-            class="hljs-function">() =&gt;</span> {
-          <span class="hljs-variable language_">console</span>.<span
-            class="hljs-title function_">log</span>(<span
-            class="hljs-string">&#x27;&quot;Started&quot; fetch...&#x27;</span>)
-          })
-
-          ctx.<span class="hljs-property">actions</span>.<span
-            class="hljs-property">echo</span>.<span
-            class="hljs-title function_">setSearchResult</span>({
-          <span class="hljs-attr">searchResult</span>: ctx.<span
-            class="hljs-property">state</span>.<span
-            class="hljs-property">echo</span>.<span
-            class="hljs-property">searchResult</span> + <span
-            class="hljs-number">1</span>
-          })
-          } <span class="hljs-keyword">else</span> {
-          ctx.<span class="hljs-property">actions</span>.<span
-            class="hljs-property">echo</span>.<span
-            class="hljs-title function_">setSearching</span>({ <span
-            class="hljs-attr">searching</span>: <span
-            class="hljs-literal">false</span> })
-          }
-          }
-          })
-
-          <span class="hljs-keyword">const</span> sleep = (<span
-            class="hljs-attr">ms</span>: <span
-            class="hljs-built_in">number</span>): <span
-            class="hljs-title class_">Promise</span>&lt;<span
-            class="hljs-built_in">void</span>&gt; =&gt; {
-          <span class="hljs-keyword">return</span> <span
-            class="hljs-keyword">new</span> <span
-            class="hljs-title class_">Promise</span>(<span
-            class="hljs-function"><span class="hljs-params">resolve</span>
-            =&gt;</span> <span class="hljs-built_in">setTimeout</span>(resolve,
-          ms))
-          }
-        </div>
-      </div>
-      <div>
-        <div class="sc-KXCwU blgTPI"><span class="hljs-comment">//
-            ./echo/echoReducer.ts</span>
-
-          <span class="hljs-keyword">import</span> { state } <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&#x27;./echoState&#x27;</span>
-          <span class="hljs-keyword">import</span> { <span
-            class="hljs-title class_">TEchoActions</span> } <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&#x27;./echoActions&#x27;</span>
-
-          <span class="hljs-keyword">export</span> <span
-            class="hljs-keyword">const</span> reducer = state.<span
-            class="hljs-property">createReducer</span>&lt;<span
-            class="hljs-title class_">TEchoActions</span>&gt;({
-
-          <span class="hljs-title function_">setSearchResult</span>(<span
-            class="hljs-params">{state, payload}</span>) {
-          state.<span class="hljs-property">searchResult</span> = payload.<span
-            class="hljs-property">searchResult</span>
-          state.<span class="hljs-property">searching</span> = <span
-            class="hljs-literal">false</span>
-          },
-
-          <span class="hljs-title function_">setSearching</span>(<span
-            class="hljs-params">{state, payload}</span>) {
-          state.<span class="hljs-property">searching</span> = payload.<span
-            class="hljs-property">searching</span>
-          }
-
-          })
-        </div>
-      </div>
-      <div>
-        <div class="sc-KXCwU blgTPI"><span class="hljs-comment">//
-            ./echo/echoState.ts</span>
-
-          <span class="hljs-keyword">import</span> { createState, <span
-            class="hljs-title class_">DefineState</span> } <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&#x27;../../epic&#x27;</span>
-
-          <span class="hljs-keyword">type</span> <span
-            class="hljs-title class_">TEchoState</span> = <span
-            class="hljs-title class_">DefineState</span>&lt;{
-          <span class="hljs-attr">searchResult</span>: <span
-            class="hljs-built_in">number</span>,
-          <span class="hljs-attr">searching</span>: <span
-            class="hljs-built_in">boolean</span>
-          }&gt;
-
-          <span class="hljs-keyword">export</span> <span
-            class="hljs-keyword">const</span> state = createState&lt;<span
-            class="hljs-title class_">TEchoState</span>&gt;({
-          <span class="hljs-attr">searchResult</span>: <span
-            class="hljs-number">0</span>,
-          <span class="hljs-attr">searching</span>: <span
-            class="hljs-literal">false</span>
-          })
-        </div>
-      </div>
-      <div>
-        <div class="sc-KXCwU blgTPI"><span class="hljs-comment">//
-            ./state/consumer.ts</span>
-
-          <span class="hljs-keyword">import</span> { root } <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&#x27;./root&#x27;</span>
-          <span class="hljs-keyword">import</span> { effects <span
-            class="hljs-keyword">as</span> deltaEffects } <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&#x27;../delta/deltaEffects&#x27;</span>
-          <span class="hljs-keyword">import</span> { effects <span
-            class="hljs-keyword">as</span> echoEffects } <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&#x27;../echo/echoEffects&#x27;</span>
-
-          <span class="hljs-keyword">const</span> consumer = root.<span
-            class="hljs-title function_">createConsumer</span>({
-          <span class="hljs-attr">effects</span>: [
-          ...deltaEffects.<span
-            class="hljs-title function_">getEffects</span>(),
-          ...echoEffects.<span class="hljs-title function_">getEffects</span>()
-          ]
-          })
-
-          <span class="hljs-keyword">export</span> <span
-            class="hljs-keyword">const</span> useActions = consumer.<span
-            class="hljs-title function_">createHook</span>()
-          <span class="hljs-keyword">export</span> <span
-            class="hljs-keyword">const</span> <span
-            class="hljs-title class_">Provider</span> = consumer.<span
-            class="hljs-title function_">createProvider</span>()
-        </div>
-      </div>
-      <div>
-        <div class="sc-KXCwU blgTPI"><span class="hljs-comment">//
-            ./state/root.ts</span>
-
-          <span class="hljs-keyword">import</span> { createRoot } <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&#x27;../../epic/index&#x27;</span>
-          <span class="hljs-keyword">import</span> { reducer <span
-            class="hljs-keyword">as</span> deltaReducer } <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&#x27;../delta/deltaReducer&#x27;</span>
-          <span class="hljs-keyword">import</span> { reducer <span
-            class="hljs-keyword">as</span> echoReducer } <span
-            class="hljs-keyword">from</span> <span
-            class="hljs-string">&#x27;../echo/echoReducer&#x27;</span>
-
-          <span class="hljs-keyword">export</span> <span
-            class="hljs-keyword">const</span> root = <span
-            class="hljs-title function_">createRoot</span>({
-          <span class="hljs-attr">domains</span>: {
-          <span class="hljs-attr">delta</span>: deltaReducer,
-          <span class="hljs-attr">echo</span>: echoReducer
-          }
-          })
-        </div>
-      </div>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> root = <span class="hljs-title function_">createRoot</span>({
+    <span class="hljs-attr">domains</span>: {
+        <span class="hljs-attr">delta</span>: deltaReducer,
+        <span class="hljs-attr">echo</span>: echoReducer
+    }
+})
+</div></pre>
     </div>
   </div>
 </body>
