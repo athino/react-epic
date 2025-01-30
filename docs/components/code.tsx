@@ -9,18 +9,19 @@ export type TCodeProps = {
 
 export const Code = (props: TCodeProps) => {
     return (
-        <pre>
-            <Frame dangerouslySetInnerHTML={{__html: props.html}}/>
-        </pre>
+        <Frame dangerouslySetInnerHTML={{__html: props.html}}/>
     )
 }
 
-const Frame = styled.div`
+const Frame = styled.pre`
+    position: relative;
     overflow: hidden;
     min-height: 100%;
+    width: 100%;
     margin: 0;
     background: #252830;
     color: white;
+    box-sizing: border-box;
 
     background: rgb(246, 246, 247);
     display: inline-block;

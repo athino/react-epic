@@ -65,6 +65,9 @@ const Content = styled.div`
     left: 20px;
     right: 20px;
     top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 `
 
 const Logo = styled.div`
