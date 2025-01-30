@@ -55,5 +55,8 @@ const Frame = styled.pre`
         &-attr {
             color: rgb(72, 78, 84);
         }
+        &-number {
+            color: rgb(0, 92, 197);
+        }
     }
 `
