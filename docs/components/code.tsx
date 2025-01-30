@@ -21,7 +21,7 @@ const Frame = styled.div`
     margin: 0;
     background: #252830;
     color: white;
-    white-space: pre;
+    white-space: pre-line;
 
     background: rgb(246, 246, 247);
     display: inline-block;

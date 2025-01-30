@@ -18,9 +18,9 @@ export const readExample = (): Record<string, string> => {
             } else {
                 const file = fs.readFileSync(fullPath, 'utf8');
 
-                const relativeToCWDPath = `.${path.sep}${path.relative(dirPath, fullPath)}`;
+                const relativeToCWDPath = `// .${path.sep}${path.relative(dirPath, fullPath)}`;
 
-                const fileWithComment = `// ${relativeToCWDPath}\n\n${file}`
+                const fileWithComment = `${relativeToCWDPath}\n\n${file}`
 
                 const {value} = hljs.highlight(fileWithComment, {
                     language: 'typescript'
