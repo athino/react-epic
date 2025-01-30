@@ -38,7 +38,7 @@ const Frame = styled.div`
         }
         &-title {
             color: rgb(36, 41, 46);
-            &.function_, &.class_ {
+            &.function_ {
                 color: rgb(111, 66, 193);
             }
         }
