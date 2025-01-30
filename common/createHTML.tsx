@@ -5,7 +5,8 @@ import { renderToString } from "react-dom/server"
 import { html as beautifyHtml } from 'js-beautify'
 
 const style = `
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rozha+One&family=Sofia+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
   margin: 0;
 }

@@ -1,0 +1,48 @@
+import React from "react"
+import styled from "styled-components"
+import hljs from 'highlight.js';
+
+export type TCodeProps = {
+
+}
+
+export const Code = () => {
+
+    const {value} = hljs.highlight('import React from "react"', {
+        language: 'typescript'
+    })
+
+    return (
+        <Frame dangerouslySetInnerHTML={{__html: value}}/>
+    )
+}
+
+const Frame = styled.div`
+    overflow: hidden;
+    min-height: 100%;
+    margin: 0;
+    background: #252830;
+    color: white;
+
+    background: rgb(246, 246, 247);;
+    display: inline-block;
+    padding: 20px;
+    min-width: 300px;
+    border-radius: 8px;
+    * {
+        font-family: "Roboto Mono", serif;
+        font-size: 14px;
+    }
+
+    .hljs {
+        &-keyword {
+            color: rgb(215, 58, 73);;
+        }
+        &-title {
+            color: rgb(36, 41, 46);
+        }
+        &-string {
+            color: rgb(3, 47, 98);
+        }
+    }
+`

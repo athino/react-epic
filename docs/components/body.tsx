@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { Code } from "./code"
 
 export type TBodyProps = {
 
@@ -13,7 +14,9 @@ export const Body = () => {
                 REACTIONS
             </Sidebar>
             <Wrapper>
-
+                <Content>
+                    <Code/>
+                </Content>
             </Wrapper>
         </Frame>
     )
@@ -48,4 +51,11 @@ const Sidebar = styled.div`
     overflow-y: auto;
     background: #252830;
     color: white;
+`
+
+const Content = styled.div`
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 20px;
 `
