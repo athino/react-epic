@@ -19,7 +19,6 @@ const Frame = styled.pre`
     min-height: 100%;
     width: 100%;
     margin: 0;
-    background: #252830;
     color: white;
     box-sizing: border-box;
 

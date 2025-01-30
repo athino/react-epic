@@ -16,6 +16,9 @@ export const Body = (props: TBodyProps) => {
                 </Logo>
             </Sidebar>
             <Wrapper>
+                <Header>
+
+                </Header>
                 <Content>
                     <Title>Usage</Title>
                         <Desc>1. Setting up domain actions</Desc>
@@ -75,13 +78,20 @@ const Content = styled.div`
 
 const Logo = styled.div`
     display: flex;
+    align-items: center;
     justify-content: center;
     font-weight: 800;
     font-size: 24px;
     color: #f6f6f6;
     letter-spacing: 0.12em;
-    padding: 20px 0;
+    height: 70px;
     background: #20222a;
+`
+
+const Header = styled.div`
+    display: flex;
+    height: 70px;
+    background: rgb(246, 246, 247);
 `
 
 const Title = styled.div`
