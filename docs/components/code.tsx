@@ -3,17 +3,16 @@ import styled from "styled-components"
 import hljs from 'highlight.js';
 
 export type TCodeProps = {
-
+    path: string
+    html: string
 }
 
-export const Code = () => {
-
-    const {value} = hljs.highlight('import React from "react"', {
-        language: 'typescript'
-    })
-
+export const Code = (props: TCodeProps) => {
     return (
-        <Frame dangerouslySetInnerHTML={{__html: value}}/>
+        <div>
+            {props.path}
+            <Frame dangerouslySetInnerHTML={{__html: props.html}}/>
+        </div>
     )
 }
 

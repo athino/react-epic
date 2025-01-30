@@ -3,10 +3,10 @@ import styled from "styled-components"
 import { Code } from "./code"
 
 export type TBodyProps = {
-
+    files: Record<string, string>
 }
 
-export const Body = () => {
+export const Body = (props: TBodyProps) => {
 
     return (
         <Frame>
@@ -17,7 +17,12 @@ export const Body = () => {
             </Sidebar>
             <Wrapper>
                 <Content>
-                    <Code/>
+                    {Object.entries(props.files).map(([path, html]) => (
+                        <Code
+                            key={path}
+                            path={path}
+                            html={html}/>
+                    ))}
                 </Content>
             </Wrapper>
         </Frame>
