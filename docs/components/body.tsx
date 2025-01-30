@@ -28,7 +28,7 @@ const Frame = styled.body`
     overflow: hidden;
     min-height: 100%;
     margin: 0;
-    background: #252830;
+    background: #181b20;
     color: white;
 `
 
@@ -40,7 +40,7 @@ const Wrapper = styled.div`
     overscroll-behavior: contain;
     overflow-y: auto;
     background: white;
-    color: #252830;
+    color: #181b20;
 `
 
 const Sidebar = styled.div`
