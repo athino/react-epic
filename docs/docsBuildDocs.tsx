@@ -4,9 +4,11 @@ import { writeHTMLFiles } from "../common/writeHTMLFiles";
 import { Body } from "./components/body";
 import { readExample } from "../common/readExample";
 
-const files = readExample()
+export const docsBuildDocs = async () => {
+    const files = await readExample()
 
-export const docsBuildDocs = () => {
+    console.log(files)
+
     const html = createHTML({
         title: '',
         body: <Body files={files}/>

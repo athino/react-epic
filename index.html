@@ -22,7 +22,7 @@
     }
   </style>
   <style data-styled="" data-styled-version="6.1.14">
-    .hqOjur {
+    .gDHuba {
       position: relative;
       overflow: hidden;
       min-height: 100%;
@@ -35,59 +35,18 @@
       padding: 20px;
       min-width: 300px;
       border-radius: 8px;
-      color: rgb(36, 41, 46);
     }
 
     /*!sc*/
-    .hqOjur,
-    .hqOjur * {
+    .gDHuba,
+    .gDHuba * {
       font-family: "Roboto Mono", serif;
       font-size: 14px;
     }
 
     /*!sc*/
-    .hqOjur .hljs-keyword {
-      color: rgb(215, 58, 73);
-    }
-
-    /*!sc*/
-    .hqOjur .hljs-title {
-      color: rgb(36, 41, 46);
-    }
-
-    /*!sc*/
-    .hqOjur .hljs-title.function_ {
-      color: rgb(111, 66, 193);
-    }
-
-    /*!sc*/
-    .hqOjur .hljs-string {
-      color: rgb(3, 47, 98);
-    }
-
-    /*!sc*/
-    .hqOjur .hljs-comment {
-      color: rgb(106, 115, 125);
-    }
-
-    /*!sc*/
-    .hqOjur .hljs-name {
-      color: rgb(227, 98, 9);
-    }
-
-    /*!sc*/
-    .hqOjur .hljs-attr {
-      color: rgb(72, 78, 84);
-    }
-
-    /*!sc*/
-    .hqOjur .hljs-number {
-      color: rgb(0, 92, 197);
-    }
-
-    /*!sc*/
     data-styled.g1[id="sc-KXCwU"] {
-      content: "hqOjur,"
+      content: "gDHuba,"
     }
 
     /*!sc*/
@@ -222,208 +181,220 @@
       <div class="sc-hWWBcw bTIIDm">1. Setting up domain actions</div>
       <div class="sc-hWWBcw bTIIDm">Within your app, for instance under
         `@/user/`, add a file called `userActions.ts`.</div>
-      <pre class="sc-KXCwU hqOjur"><span class="hljs-comment">// ./app.tsx</span>
-
-<span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>;
-<span class="hljs-keyword">import</span> { <span class="hljs-title class_">Component</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./example/component/component&#x27;</span>;
-<span class="hljs-keyword">import</span> { <span class="hljs-title class_">Provider</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./example/state/consumer&#x27;</span>;
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">App</span> = (<span class="hljs-params"></span>) =&gt; {
-
-    <span class="hljs-keyword">return</span> (
-        <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Provider</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">Component</span>/&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span></span>
-    )
-}
-</pre>
-      <pre class="sc-KXCwU hqOjur"><span class="hljs-comment">// ./component/component.tsx</span>
-
-<span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react&quot;</span>
-<span class="hljs-keyword">import</span> { useActions } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../state/consumer&quot;</span>
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">Component</span> = (<span class="hljs-params"></span>) =&gt; {
-    <span class="hljs-keyword">const</span> {actions, data} = <span class="hljs-title function_">useActions</span>(<span class="hljs-function">(<span class="hljs-params">{echo, delta}</span>) =&gt;</span> ({
-        <span class="hljs-attr">searchResult</span>: echo.<span class="hljs-property">searchResult</span>,
-        <span class="hljs-attr">value</span>: delta.<span class="hljs-property">value</span>,
-        <span class="hljs-attr">searching</span>: echo.<span class="hljs-property">searching</span>
-    }))
-
-    <span class="hljs-keyword">return</span> (
-        <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">input</span>
-                <span class="hljs-attr">type</span>=<span class="hljs-string">&#x27;text&#x27;</span>
-                <span class="hljs-attr">value</span>=<span class="hljs-string">{data.value}</span>
-                <span class="hljs-attr">onChange</span>=<span class="hljs-string">{({target})</span> =&gt;</span> {
-                    actions.delta.setSearchValue({
-                        value: target.value
-                    })
-                }}/&gt;
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-                Search result: {data.searching ? &#x27;Searching...&#x27; : data.searchResult}
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
-    )
-}
-</pre>
-      <pre class="sc-KXCwU hqOjur"><span class="hljs-comment">// ./delta/deltaActions.ts</span>
-
-<span class="hljs-keyword">import</span> { <span class="hljs-title class_">DefineActions</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../../epic&quot;</span>
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">TDeltaActions</span> = <span class="hljs-title class_">DefineActions</span>&lt;{
-
-    <span class="hljs-attr">setSearchValue</span>: {
-        <span class="hljs-attr">payload</span>: {
-            <span class="hljs-attr">value</span>: <span class="hljs-built_in">string</span>
-        }
-    }
-    
-}&gt;
-</pre>
-      <pre class="sc-KXCwU hqOjur"><span class="hljs-comment">// ./delta/deltaEffects.ts</span>
-
-<span class="hljs-keyword">import</span> { root } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../state/root&quot;</span>;
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> effects = root.<span class="hljs-title function_">createEffects</span>()
-</pre>
-      <pre class="sc-KXCwU hqOjur"><span class="hljs-comment">// ./delta/deltaReducer.ts</span>
-
-<span class="hljs-keyword">import</span> { state } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./deltaState&#x27;</span>
-<span class="hljs-keyword">import</span> { <span class="hljs-title class_">TDeltaActions</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./deltaActions&#x27;</span>
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> reducer = state.<span class="hljs-property">createReducer</span>&lt;<span class="hljs-title class_">TDeltaActions</span>&gt;({
-
-    <span class="hljs-title function_">setSearchValue</span>(<span class="hljs-params">{state, payload}</span>) {
-        state.<span class="hljs-property">value</span> = payload.<span class="hljs-property">value</span>
-    }
-    
-})
-</pre>
-      <pre class="sc-KXCwU hqOjur"><span class="hljs-comment">// ./delta/deltaState.ts</span>
-
-<span class="hljs-keyword">import</span> { createState, <span class="hljs-title class_">DefineState</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../epic&#x27;</span>
-
-<span class="hljs-keyword">type</span> <span class="hljs-title class_">TDeltaState</span> = <span class="hljs-title class_">DefineState</span>&lt;{
-    <span class="hljs-attr">value</span>: <span class="hljs-built_in">string</span>
-}&gt;
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> state = createState&lt;<span class="hljs-title class_">TDeltaState</span>&gt;({
-    <span class="hljs-attr">value</span>: <span class="hljs-string">&#x27;skriv her...&#x27;</span>
-})
-</pre>
-      <pre class="sc-KXCwU hqOjur"><span class="hljs-comment">// ./echo/echoActions.ts</span>
-
-<span class="hljs-keyword">import</span> { <span class="hljs-title class_">DefineActions</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../../epic&quot;</span>
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">TEchoActions</span> = <span class="hljs-title class_">DefineActions</span>&lt;{
-
-    <span class="hljs-attr">setSearchResult</span>: {
-        <span class="hljs-attr">payload</span>: {
-            <span class="hljs-attr">searchResult</span>: <span class="hljs-built_in">number</span>
-        }
-    }
-
-    <span class="hljs-attr">setSearching</span>: {
-        <span class="hljs-attr">payload</span>: {
-            <span class="hljs-attr">searching</span>: <span class="hljs-built_in">boolean</span>
-        }
-    }
-
-}&gt;
-</pre>
-      <pre class="sc-KXCwU hqOjur"><span class="hljs-comment">// ./echo/echoEffects.ts</span>
-
-<span class="hljs-keyword">import</span> { root } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../state/root&quot;</span>;
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> effects = root.<span class="hljs-title function_">createEffects</span>()
-
-effects.<span class="hljs-title function_">addEffect</span>({
-    <span class="hljs-attr">domain</span>: <span class="hljs-string">&#x27;delta&#x27;</span>,
-    <span class="hljs-attr">action</span>: <span class="hljs-string">&#x27;setSearchValue&#x27;</span>,
-    <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;takeLatest&#x27;</span>,
-    <span class="hljs-keyword">async</span> <span class="hljs-title function_">handler</span>(<span class="hljs-params">ctx</span>) {
-        <span class="hljs-keyword">if</span> (ctx.<span class="hljs-property">action</span>.<span class="hljs-property">payload</span>.<span class="hljs-property">value</span> !== <span class="hljs-string">&#x27;&#x27;</span>) {
-            ctx.<span class="hljs-property">actions</span>.<span class="hljs-property">echo</span>.<span class="hljs-title function_">setSearching</span>({ <span class="hljs-attr">searching</span>: <span class="hljs-literal">true</span> })
-            <span class="hljs-keyword">await</span> <span class="hljs-title function_">sleep</span>(<span class="hljs-number">2000</span>)
-
-            ctx.<span class="hljs-title function_">call</span>(<span class="hljs-function">() =&gt;</span> {
-                <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;&quot;Started&quot; fetch...&#x27;</span>)
-            })
-
-            ctx.<span class="hljs-property">actions</span>.<span class="hljs-property">echo</span>.<span class="hljs-title function_">setSearchResult</span>({
-                <span class="hljs-attr">searchResult</span>: ctx.<span class="hljs-property">state</span>.<span class="hljs-property">echo</span>.<span class="hljs-property">searchResult</span> + <span class="hljs-number">1</span>
-            })
-        } <span class="hljs-keyword">else</span> {
-            ctx.<span class="hljs-property">actions</span>.<span class="hljs-property">echo</span>.<span class="hljs-title function_">setSearching</span>({ <span class="hljs-attr">searching</span>: <span class="hljs-literal">false</span> })
-        }
-    }
-})
-
-<span class="hljs-keyword">const</span> sleep = (<span class="hljs-attr">ms</span>: <span class="hljs-built_in">number</span>): <span class="hljs-title class_">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt; =&gt; {
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> <span class="hljs-built_in">setTimeout</span>(resolve, ms))
-}
-</pre>
-      <pre class="sc-KXCwU hqOjur"><span class="hljs-comment">// ./echo/echoReducer.ts</span>
-
-<span class="hljs-keyword">import</span> { state } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./echoState&#x27;</span>
-<span class="hljs-keyword">import</span> { <span class="hljs-title class_">TEchoActions</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./echoActions&#x27;</span>
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> reducer = state.<span class="hljs-property">createReducer</span>&lt;<span class="hljs-title class_">TEchoActions</span>&gt;({
-
-    <span class="hljs-title function_">setSearchResult</span>(<span class="hljs-params">{state, payload}</span>) {
-        state.<span class="hljs-property">searchResult</span> = payload.<span class="hljs-property">searchResult</span>
-        state.<span class="hljs-property">searching</span> = <span class="hljs-literal">false</span>
-    },
-
-    <span class="hljs-title function_">setSearching</span>(<span class="hljs-params">{state, payload}</span>) {
-        state.<span class="hljs-property">searching</span> = payload.<span class="hljs-property">searching</span>
-    }
-
-})
-</pre>
-      <pre class="sc-KXCwU hqOjur"><span class="hljs-comment">// ./echo/echoState.ts</span>
-
-<span class="hljs-keyword">import</span> { createState, <span class="hljs-title class_">DefineState</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../epic&#x27;</span>
-
-<span class="hljs-keyword">type</span> <span class="hljs-title class_">TEchoState</span> = <span class="hljs-title class_">DefineState</span>&lt;{
-    <span class="hljs-attr">searchResult</span>: <span class="hljs-built_in">number</span>,
-    <span class="hljs-attr">searching</span>: <span class="hljs-built_in">boolean</span>
-}&gt;
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> state = createState&lt;<span class="hljs-title class_">TEchoState</span>&gt;({
-    <span class="hljs-attr">searchResult</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-attr">searching</span>: <span class="hljs-literal">false</span>
-})
-</pre>
-      <pre class="sc-KXCwU hqOjur"><span class="hljs-comment">// ./state/consumer.ts</span>
-
-<span class="hljs-keyword">import</span> { root } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./root&#x27;</span>
-<span class="hljs-keyword">import</span> { effects <span class="hljs-keyword">as</span> deltaEffects } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../delta/deltaEffects&#x27;</span>
-<span class="hljs-keyword">import</span> { effects <span class="hljs-keyword">as</span> echoEffects } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../echo/echoEffects&#x27;</span>
-
-<span class="hljs-keyword">const</span> consumer = root.<span class="hljs-title function_">createConsumer</span>({
-    <span class="hljs-attr">effects</span>: [
-        ...deltaEffects.<span class="hljs-title function_">getEffects</span>(),
-        ...echoEffects.<span class="hljs-title function_">getEffects</span>()
-    ]
-})
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> useActions = consumer.<span class="hljs-title function_">createHook</span>()
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title class_">Provider</span> = consumer.<span class="hljs-title function_">createProvider</span>()
-</pre>
-      <pre class="sc-KXCwU hqOjur"><span class="hljs-comment">// ./state/root.ts</span>
-
-<span class="hljs-keyword">import</span> { createRoot } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../epic/index&#x27;</span>
-<span class="hljs-keyword">import</span> { reducer <span class="hljs-keyword">as</span> deltaReducer } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../delta/deltaReducer&#x27;</span>
-<span class="hljs-keyword">import</span> { reducer <span class="hljs-keyword">as</span> echoReducer } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../echo/echoReducer&#x27;</span>
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> root = <span class="hljs-title function_">createRoot</span>({
-    <span class="hljs-attr">domains</span>: {
-        <span class="hljs-attr">delta</span>: deltaReducer,
-        <span class="hljs-attr">echo</span>: echoReducer
-    }
-})
-</pre>
+      <pre class="sc-KXCwU gDHuba"><pre class="shiki one-dark-pro" style="background-color:#282c34;color:#abb2bf" tabindex="0"><code><span class="line"><span style="color:#7F848E;font-style:italic">// ./app.tsx</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#E06C75"> React</span><span style="color:#C678DD"> from</span><span style="color:#98C379"> 'react'</span><span style="color:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#ABB2BF"> { </span><span style="color:#E06C75">Component</span><span style="color:#ABB2BF"> } </span><span style="color:#C678DD">from</span><span style="color:#98C379"> './example/component/component'</span><span style="color:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#ABB2BF"> { </span><span style="color:#E06C75">Provider</span><span style="color:#ABB2BF"> } </span><span style="color:#C678DD">from</span><span style="color:#98C379"> './example/state/consumer'</span><span style="color:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">export</span><span style="color:#C678DD"> const</span><span style="color:#61AFEF"> App</span><span style="color:#56B6C2"> =</span><span style="color:#ABB2BF"> () </span><span style="color:#C678DD">=></span><span style="color:#ABB2BF"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">    return</span><span style="color:#ABB2BF"> (</span></span>
+<span class="line"><span style="color:#ABB2BF">        &#x3C;</span><span style="color:#E5C07B">Provider</span><span style="color:#ABB2BF">></span></span>
+<span class="line"><span style="color:#ABB2BF">            &#x3C;</span><span style="color:#E5C07B">Component</span><span style="color:#ABB2BF">/></span></span>
+<span class="line"><span style="color:#ABB2BF">        &#x3C;/</span><span style="color:#E5C07B">Provider</span><span style="color:#ABB2BF">></span></span>
+<span class="line"><span style="color:#ABB2BF">    )</span></span>
+<span class="line"><span style="color:#ABB2BF">}</span></span>
+<span class="line"></span></code></pre>
+      </pre>
+      <pre class="sc-KXCwU gDHuba"><pre class="shiki one-dark-pro" style="background-color:#282c34;color:#abb2bf" tabindex="0"><code><span class="line"><span style="color:#7F848E;font-style:italic">// ./echo/echoState.ts</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#ABB2BF"> { </span><span style="color:#E06C75">createState</span><span style="color:#ABB2BF">, </span><span style="color:#E06C75">DefineState</span><span style="color:#ABB2BF"> } </span><span style="color:#C678DD">from</span><span style="color:#98C379"> '../../epic'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">type</span><span style="color:#E5C07B"> TEchoState</span><span style="color:#56B6C2"> =</span><span style="color:#E5C07B"> DefineState</span><span style="color:#ABB2BF">&#x3C;{</span></span>
+<span class="line"><span style="color:#E06C75">    searchResult</span><span style="color:#ABB2BF">: </span><span style="color:#E5C07B">number</span><span style="color:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E06C75">    searching</span><span style="color:#ABB2BF">: </span><span style="color:#E5C07B">boolean</span></span>
+<span class="line"><span style="color:#ABB2BF">}></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">export</span><span style="color:#C678DD"> const</span><span style="color:#E5C07B"> state</span><span style="color:#56B6C2"> =</span><span style="color:#61AFEF"> createState</span><span style="color:#ABB2BF">&#x3C;</span><span style="color:#E5C07B">TEchoState</span><span style="color:#ABB2BF">>({</span></span>
+<span class="line"><span style="color:#E06C75">    searchResult</span><span style="color:#ABB2BF">: </span><span style="color:#D19A66">0</span><span style="color:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E06C75">    searching</span><span style="color:#ABB2BF">: </span><span style="color:#D19A66">false</span></span>
+<span class="line"><span style="color:#ABB2BF">})</span></span>
+<span class="line"></span></code></pre>
+      </pre>
+      <pre class="sc-KXCwU gDHuba"><pre class="shiki one-dark-pro" style="background-color:#282c34;color:#abb2bf" tabindex="0"><code><span class="line"><span style="color:#7F848E;font-style:italic">// ./state/consumer.ts</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#ABB2BF"> { </span><span style="color:#E06C75">root</span><span style="color:#ABB2BF"> } </span><span style="color:#C678DD">from</span><span style="color:#98C379"> './root'</span></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#ABB2BF"> { </span><span style="color:#E06C75">effects</span><span style="color:#C678DD"> as</span><span style="color:#E06C75"> deltaEffects</span><span style="color:#ABB2BF"> } </span><span style="color:#C678DD">from</span><span style="color:#98C379"> '../delta/deltaEffects'</span></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#ABB2BF"> { </span><span style="color:#E06C75">effects</span><span style="color:#C678DD"> as</span><span style="color:#E06C75"> echoEffects</span><span style="color:#ABB2BF"> } </span><span style="color:#C678DD">from</span><span style="color:#98C379"> '../echo/echoEffects'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">const</span><span style="color:#E5C07B"> consumer</span><span style="color:#56B6C2"> =</span><span style="color:#E5C07B"> root</span><span style="color:#ABB2BF">.</span><span style="color:#61AFEF">createConsumer</span><span style="color:#ABB2BF">({</span></span>
+<span class="line"><span style="color:#E06C75">    effects</span><span style="color:#ABB2BF">: [</span></span>
+<span class="line"><span style="color:#ABB2BF">        ...</span><span style="color:#E5C07B">deltaEffects</span><span style="color:#ABB2BF">.</span><span style="color:#61AFEF">getEffects</span><span style="color:#ABB2BF">(),</span></span>
+<span class="line"><span style="color:#ABB2BF">        ...</span><span style="color:#E5C07B">echoEffects</span><span style="color:#ABB2BF">.</span><span style="color:#61AFEF">getEffects</span><span style="color:#ABB2BF">()</span></span>
+<span class="line"><span style="color:#ABB2BF">    ]</span></span>
+<span class="line"><span style="color:#ABB2BF">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">export</span><span style="color:#C678DD"> const</span><span style="color:#E5C07B"> useActions</span><span style="color:#56B6C2"> =</span><span style="color:#E5C07B"> consumer</span><span style="color:#ABB2BF">.</span><span style="color:#61AFEF">createHook</span><span style="color:#ABB2BF">()</span></span>
+<span class="line"><span style="color:#C678DD">export</span><span style="color:#C678DD"> const</span><span style="color:#E5C07B"> Provider</span><span style="color:#56B6C2"> =</span><span style="color:#E5C07B"> consumer</span><span style="color:#ABB2BF">.</span><span style="color:#61AFEF">createProvider</span><span style="color:#ABB2BF">()</span></span>
+<span class="line"></span></code></pre>
+      </pre>
+      <pre class="sc-KXCwU gDHuba"><pre class="shiki one-dark-pro" style="background-color:#282c34;color:#abb2bf" tabindex="0"><code><span class="line"><span style="color:#7F848E;font-style:italic">// ./state/root.ts</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#ABB2BF"> { </span><span style="color:#E06C75">createRoot</span><span style="color:#ABB2BF"> } </span><span style="color:#C678DD">from</span><span style="color:#98C379"> '../../epic/index'</span></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#ABB2BF"> { </span><span style="color:#E06C75">reducer</span><span style="color:#C678DD"> as</span><span style="color:#E06C75"> deltaReducer</span><span style="color:#ABB2BF"> } </span><span style="color:#C678DD">from</span><span style="color:#98C379"> '../delta/deltaReducer'</span></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#ABB2BF"> { </span><span style="color:#E06C75">reducer</span><span style="color:#C678DD"> as</span><span style="color:#E06C75"> echoReducer</span><span style="color:#ABB2BF"> } </span><span style="color:#C678DD">from</span><span style="color:#98C379"> '../echo/echoReducer'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">export</span><span style="color:#C678DD"> const</span><span style="color:#E5C07B"> root</span><span style="color:#56B6C2"> =</span><span style="color:#61AFEF"> createRoot</span><span style="color:#ABB2BF">({</span></span>
+<span class="line"><span style="color:#E06C75">    domains</span><span style="color:#ABB2BF">: {</span></span>
+<span class="line"><span style="color:#E06C75">        delta</span><span style="color:#ABB2BF">: </span><span style="color:#E06C75">deltaReducer</span><span style="color:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E06C75">        echo</span><span style="color:#ABB2BF">: </span><span style="color:#E06C75">echoReducer</span></span>
+<span class="line"><span style="color:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#ABB2BF">})</span></span>
+<span class="line"></span></code></pre>
+      </pre>
+      <pre class="sc-KXCwU gDHuba"><pre class="shiki one-dark-pro" style="background-color:#282c34;color:#abb2bf" tabindex="0"><code><span class="line"><span style="color:#7F848E;font-style:italic">// ./component/component.tsx</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#E06C75"> React</span><span style="color:#C678DD"> from</span><span style="color:#98C379"> "react"</span></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#ABB2BF"> { </span><span style="color:#E06C75">useActions</span><span style="color:#ABB2BF"> } </span><span style="color:#C678DD">from</span><span style="color:#98C379"> "../state/consumer"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">export</span><span style="color:#C678DD"> const</span><span style="color:#61AFEF"> Component</span><span style="color:#56B6C2"> =</span><span style="color:#ABB2BF"> () </span><span style="color:#C678DD">=></span><span style="color:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#C678DD">    const</span><span style="color:#ABB2BF"> {</span><span style="color:#E5C07B">actions</span><span style="color:#ABB2BF">, </span><span style="color:#E5C07B">data</span><span style="color:#ABB2BF">} </span><span style="color:#56B6C2">=</span><span style="color:#61AFEF"> useActions</span><span style="color:#ABB2BF">(({</span><span style="color:#E06C75;font-style:italic">echo</span><span style="color:#ABB2BF">, </span><span style="color:#E06C75;font-style:italic">delta</span><span style="color:#ABB2BF">}) </span><span style="color:#C678DD">=></span><span style="color:#ABB2BF"> ({</span></span>
+<span class="line"><span style="color:#E06C75">        searchResult</span><span style="color:#ABB2BF">: </span><span style="color:#E5C07B">echo</span><span style="color:#ABB2BF">.</span><span style="color:#E06C75">searchResult</span><span style="color:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E06C75">        value</span><span style="color:#ABB2BF">: </span><span style="color:#E5C07B">delta</span><span style="color:#ABB2BF">.</span><span style="color:#E06C75">value</span><span style="color:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E06C75">        searching</span><span style="color:#ABB2BF">: </span><span style="color:#E5C07B">echo</span><span style="color:#ABB2BF">.</span><span style="color:#E06C75">searching</span></span>
+<span class="line"><span style="color:#ABB2BF">    }))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">    return</span><span style="color:#ABB2BF"> (</span></span>
+<span class="line"><span style="color:#ABB2BF">        &#x3C;</span><span style="color:#E06C75">div</span><span style="color:#ABB2BF">></span></span>
+<span class="line"><span style="color:#ABB2BF">            &#x3C;</span><span style="color:#E06C75">input</span></span>
+<span class="line"><span style="color:#D19A66;font-style:italic">                type</span><span style="color:#56B6C2">=</span><span style="color:#98C379">'text'</span></span>
+<span class="line"><span style="color:#D19A66;font-style:italic">                value</span><span style="color:#56B6C2">=</span><span style="color:#C678DD">{</span><span style="color:#E5C07B">data</span><span style="color:#ABB2BF">.</span><span style="color:#E06C75">value</span><span style="color:#C678DD">}</span></span>
+<span class="line"><span style="color:#D19A66;font-style:italic">                onChange</span><span style="color:#56B6C2">=</span><span style="color:#C678DD">{</span><span style="color:#ABB2BF">({</span><span style="color:#E06C75;font-style:italic">target</span><span style="color:#ABB2BF">}) </span><span style="color:#C678DD">=></span><span style="color:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E5C07B">                    actions</span><span style="color:#ABB2BF">.</span><span style="color:#E5C07B">delta</span><span style="color:#ABB2BF">.</span><span style="color:#61AFEF">setSearchValue</span><span style="color:#ABB2BF">({</span></span>
+<span class="line"><span style="color:#E06C75">                        value</span><span style="color:#ABB2BF">: </span><span style="color:#E5C07B">target</span><span style="color:#ABB2BF">.</span><span style="color:#E06C75">value</span></span>
+<span class="line"><span style="color:#ABB2BF">                    })</span></span>
+<span class="line"><span style="color:#ABB2BF">                }</span><span style="color:#C678DD">}</span><span style="color:#ABB2BF">/></span></span>
+<span class="line"><span style="color:#ABB2BF">            &#x3C;</span><span style="color:#E06C75">div</span><span style="color:#ABB2BF">></span></span>
+<span class="line"><span style="color:#ABB2BF">                Search result: </span><span style="color:#C678DD">{</span><span style="color:#E5C07B">data</span><span style="color:#ABB2BF">.</span><span style="color:#E06C75">searching</span><span style="color:#C678DD"> ?</span><span style="color:#98C379"> 'Searching...'</span><span style="color:#C678DD"> :</span><span style="color:#E5C07B"> data</span><span style="color:#ABB2BF">.</span><span style="color:#E06C75">searchResult</span><span style="color:#C678DD">}</span></span>
+<span class="line"><span style="color:#ABB2BF">            &#x3C;/</span><span style="color:#E06C75">div</span><span style="color:#ABB2BF">></span></span>
+<span class="line"><span style="color:#ABB2BF">        &#x3C;/</span><span style="color:#E06C75">div</span><span style="color:#ABB2BF">></span></span>
+<span class="line"><span style="color:#ABB2BF">    )</span></span>
+<span class="line"><span style="color:#ABB2BF">}</span></span>
+<span class="line"></span></code></pre>
+      </pre>
+      <pre class="sc-KXCwU gDHuba"><pre class="shiki one-dark-pro" style="background-color:#282c34;color:#abb2bf" tabindex="0"><code><span class="line"><span style="color:#7F848E;font-style:italic">// ./delta/deltaActions.ts</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#ABB2BF"> { </span><span style="color:#E06C75">DefineActions</span><span style="color:#ABB2BF"> } </span><span style="color:#C678DD">from</span><span style="color:#98C379"> "../../epic"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">export</span><span style="color:#C678DD"> type</span><span style="color:#E5C07B"> TDeltaActions</span><span style="color:#56B6C2"> =</span><span style="color:#E5C07B"> DefineActions</span><span style="color:#ABB2BF">&#x3C;{</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E06C75">    setSearchValue</span><span style="color:#ABB2BF">: {</span></span>
+<span class="line"><span style="color:#E06C75">        payload</span><span style="color:#ABB2BF">: {</span></span>
+<span class="line"><span style="color:#E06C75">            value</span><span style="color:#ABB2BF">: </span><span style="color:#E5C07B">string</span></span>
+<span class="line"><span style="color:#ABB2BF">        }</span></span>
+<span class="line"><span style="color:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#ABB2BF">    </span></span>
+<span class="line"><span style="color:#ABB2BF">}></span></span>
+<span class="line"></span></code></pre>
+      </pre>
+      <pre class="sc-KXCwU gDHuba"><pre class="shiki one-dark-pro" style="background-color:#282c34;color:#abb2bf" tabindex="0"><code><span class="line"><span style="color:#7F848E;font-style:italic">// ./delta/deltaEffects.ts</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#ABB2BF"> { </span><span style="color:#E06C75">root</span><span style="color:#ABB2BF"> } </span><span style="color:#C678DD">from</span><span style="color:#98C379"> "../state/root"</span><span style="color:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">export</span><span style="color:#C678DD"> const</span><span style="color:#E5C07B"> effects</span><span style="color:#56B6C2"> =</span><span style="color:#E5C07B"> root</span><span style="color:#ABB2BF">.</span><span style="color:#61AFEF">createEffects</span><span style="color:#ABB2BF">()</span></span>
+<span class="line"></span></code></pre>
+      </pre>
+      <pre class="sc-KXCwU gDHuba"><pre class="shiki one-dark-pro" style="background-color:#282c34;color:#abb2bf" tabindex="0"><code><span class="line"><span style="color:#7F848E;font-style:italic">// ./delta/deltaReducer.ts</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#ABB2BF"> { </span><span style="color:#E06C75">state</span><span style="color:#ABB2BF"> } </span><span style="color:#C678DD">from</span><span style="color:#98C379"> './deltaState'</span></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#ABB2BF"> { </span><span style="color:#E06C75">TDeltaActions</span><span style="color:#ABB2BF"> } </span><span style="color:#C678DD">from</span><span style="color:#98C379"> './deltaActions'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">export</span><span style="color:#C678DD"> const</span><span style="color:#E5C07B"> reducer</span><span style="color:#56B6C2"> =</span><span style="color:#E5C07B"> state</span><span style="color:#ABB2BF">.</span><span style="color:#61AFEF">createReducer</span><span style="color:#ABB2BF">&#x3C;</span><span style="color:#E5C07B">TDeltaActions</span><span style="color:#ABB2BF">>({</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#61AFEF">    setSearchValue</span><span style="color:#ABB2BF">({</span><span style="color:#E06C75;font-style:italic">state</span><span style="color:#ABB2BF">, </span><span style="color:#E06C75;font-style:italic">payload</span><span style="color:#ABB2BF">}) {</span></span>
+<span class="line"><span style="color:#E5C07B">        state</span><span style="color:#ABB2BF">.</span><span style="color:#E06C75">value</span><span style="color:#56B6C2"> =</span><span style="color:#E5C07B"> payload</span><span style="color:#ABB2BF">.</span><span style="color:#E06C75">value</span></span>
+<span class="line"><span style="color:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#ABB2BF">    </span></span>
+<span class="line"><span style="color:#ABB2BF">})</span></span>
+<span class="line"></span></code></pre>
+      </pre>
+      <pre class="sc-KXCwU gDHuba"><pre class="shiki one-dark-pro" style="background-color:#282c34;color:#abb2bf" tabindex="0"><code><span class="line"><span style="color:#7F848E;font-style:italic">// ./delta/deltaState.ts</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#ABB2BF"> { </span><span style="color:#E06C75">createState</span><span style="color:#ABB2BF">, </span><span style="color:#E06C75">DefineState</span><span style="color:#ABB2BF"> } </span><span style="color:#C678DD">from</span><span style="color:#98C379"> '../../epic'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">type</span><span style="color:#E5C07B"> TDeltaState</span><span style="color:#56B6C2"> =</span><span style="color:#E5C07B"> DefineState</span><span style="color:#ABB2BF">&#x3C;{</span></span>
+<span class="line"><span style="color:#E06C75">    value</span><span style="color:#ABB2BF">: </span><span style="color:#E5C07B">string</span></span>
+<span class="line"><span style="color:#ABB2BF">}></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">export</span><span style="color:#C678DD"> const</span><span style="color:#E5C07B"> state</span><span style="color:#56B6C2"> =</span><span style="color:#61AFEF"> createState</span><span style="color:#ABB2BF">&#x3C;</span><span style="color:#E5C07B">TDeltaState</span><span style="color:#ABB2BF">>({</span></span>
+<span class="line"><span style="color:#E06C75">    value</span><span style="color:#ABB2BF">: </span><span style="color:#98C379">'skriv her...'</span></span>
+<span class="line"><span style="color:#ABB2BF">})</span></span>
+<span class="line"></span></code></pre>
+      </pre>
+      <pre class="sc-KXCwU gDHuba"><pre class="shiki one-dark-pro" style="background-color:#282c34;color:#abb2bf" tabindex="0"><code><span class="line"><span style="color:#7F848E;font-style:italic">// ./echo/echoActions.ts</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#ABB2BF"> { </span><span style="color:#E06C75">DefineActions</span><span style="color:#ABB2BF"> } </span><span style="color:#C678DD">from</span><span style="color:#98C379"> "../../epic"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">export</span><span style="color:#C678DD"> type</span><span style="color:#E5C07B"> TEchoActions</span><span style="color:#56B6C2"> =</span><span style="color:#E5C07B"> DefineActions</span><span style="color:#ABB2BF">&#x3C;{</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E06C75">    setSearchResult</span><span style="color:#ABB2BF">: {</span></span>
+<span class="line"><span style="color:#E06C75">        payload</span><span style="color:#ABB2BF">: {</span></span>
+<span class="line"><span style="color:#E06C75">            searchResult</span><span style="color:#ABB2BF">: </span><span style="color:#E5C07B">number</span></span>
+<span class="line"><span style="color:#ABB2BF">        }</span></span>
+<span class="line"><span style="color:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E06C75">    setSearching</span><span style="color:#ABB2BF">: {</span></span>
+<span class="line"><span style="color:#E06C75">        payload</span><span style="color:#ABB2BF">: {</span></span>
+<span class="line"><span style="color:#E06C75">            searching</span><span style="color:#ABB2BF">: </span><span style="color:#E5C07B">boolean</span></span>
+<span class="line"><span style="color:#ABB2BF">        }</span></span>
+<span class="line"><span style="color:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#ABB2BF">}></span></span>
+<span class="line"></span></code></pre>
+      </pre>
+      <pre class="sc-KXCwU gDHuba"><pre class="shiki one-dark-pro" style="background-color:#282c34;color:#abb2bf" tabindex="0"><code><span class="line"><span style="color:#7F848E;font-style:italic">// ./echo/echoEffects.ts</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#ABB2BF"> { </span><span style="color:#E06C75">root</span><span style="color:#ABB2BF"> } </span><span style="color:#C678DD">from</span><span style="color:#98C379"> "../state/root"</span><span style="color:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">export</span><span style="color:#C678DD"> const</span><span style="color:#E5C07B"> effects</span><span style="color:#56B6C2"> =</span><span style="color:#E5C07B"> root</span><span style="color:#ABB2BF">.</span><span style="color:#61AFEF">createEffects</span><span style="color:#ABB2BF">()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E5C07B">effects</span><span style="color:#ABB2BF">.</span><span style="color:#61AFEF">addEffect</span><span style="color:#ABB2BF">({</span></span>
+<span class="line"><span style="color:#E06C75">    domain</span><span style="color:#ABB2BF">: </span><span style="color:#98C379">'delta'</span><span style="color:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E06C75">    action</span><span style="color:#ABB2BF">: </span><span style="color:#98C379">'setSearchValue'</span><span style="color:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E06C75">    type</span><span style="color:#ABB2BF">: </span><span style="color:#98C379">'takeLatest'</span><span style="color:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#C678DD">    async</span><span style="color:#61AFEF"> handler</span><span style="color:#ABB2BF">(</span><span style="color:#E06C75;font-style:italic">ctx</span><span style="color:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#C678DD">        if</span><span style="color:#ABB2BF"> (</span><span style="color:#E5C07B">ctx</span><span style="color:#ABB2BF">.</span><span style="color:#E5C07B">action</span><span style="color:#ABB2BF">.</span><span style="color:#E5C07B">payload</span><span style="color:#ABB2BF">.</span><span style="color:#E06C75">value</span><span style="color:#56B6C2"> !==</span><span style="color:#98C379"> ''</span><span style="color:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#E5C07B">            ctx</span><span style="color:#ABB2BF">.</span><span style="color:#E5C07B">actions</span><span style="color:#ABB2BF">.</span><span style="color:#E5C07B">echo</span><span style="color:#ABB2BF">.</span><span style="color:#61AFEF">setSearching</span><span style="color:#ABB2BF">({ </span><span style="color:#E06C75">searching</span><span style="color:#ABB2BF">: </span><span style="color:#D19A66">true</span><span style="color:#ABB2BF"> })</span></span>
+<span class="line"><span style="color:#C678DD">            await</span><span style="color:#61AFEF"> sleep</span><span style="color:#ABB2BF">(</span><span style="color:#D19A66">2000</span><span style="color:#ABB2BF">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E5C07B">            ctx</span><span style="color:#ABB2BF">.</span><span style="color:#61AFEF">call</span><span style="color:#ABB2BF">(() </span><span style="color:#C678DD">=></span><span style="color:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E5C07B">                console</span><span style="color:#ABB2BF">.</span><span style="color:#61AFEF">log</span><span style="color:#ABB2BF">(</span><span style="color:#98C379">'"Started" fetch...'</span><span style="color:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#ABB2BF">            })</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E5C07B">            ctx</span><span style="color:#ABB2BF">.</span><span style="color:#E5C07B">actions</span><span style="color:#ABB2BF">.</span><span style="color:#E5C07B">echo</span><span style="color:#ABB2BF">.</span><span style="color:#61AFEF">setSearchResult</span><span style="color:#ABB2BF">({</span></span>
+<span class="line"><span style="color:#E06C75">                searchResult</span><span style="color:#ABB2BF">: </span><span style="color:#E5C07B">ctx</span><span style="color:#ABB2BF">.</span><span style="color:#E5C07B">state</span><span style="color:#ABB2BF">.</span><span style="color:#E5C07B">echo</span><span style="color:#ABB2BF">.</span><span style="color:#E06C75">searchResult</span><span style="color:#56B6C2"> +</span><span style="color:#D19A66"> 1</span></span>
+<span class="line"><span style="color:#ABB2BF">            })</span></span>
+<span class="line"><span style="color:#ABB2BF">        } </span><span style="color:#C678DD">else</span><span style="color:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E5C07B">            ctx</span><span style="color:#ABB2BF">.</span><span style="color:#E5C07B">actions</span><span style="color:#ABB2BF">.</span><span style="color:#E5C07B">echo</span><span style="color:#ABB2BF">.</span><span style="color:#61AFEF">setSearching</span><span style="color:#ABB2BF">({ </span><span style="color:#E06C75">searching</span><span style="color:#ABB2BF">: </span><span style="color:#D19A66">false</span><span style="color:#ABB2BF"> })</span></span>
+<span class="line"><span style="color:#ABB2BF">        }</span></span>
+<span class="line"><span style="color:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#ABB2BF">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">const</span><span style="color:#61AFEF"> sleep</span><span style="color:#56B6C2"> =</span><span style="color:#ABB2BF"> (</span><span style="color:#E06C75;font-style:italic">ms</span><span style="color:#ABB2BF">: </span><span style="color:#E5C07B">number</span><span style="color:#ABB2BF">): </span><span style="color:#E5C07B">Promise</span><span style="color:#ABB2BF">&#x3C;</span><span style="color:#E5C07B">void</span><span style="color:#ABB2BF">> </span><span style="color:#C678DD">=></span><span style="color:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#C678DD">    return</span><span style="color:#C678DD"> new</span><span style="color:#E5C07B"> Promise</span><span style="color:#ABB2BF">(</span><span style="color:#E06C75;font-style:italic">resolve</span><span style="color:#C678DD"> =></span><span style="color:#61AFEF"> setTimeout</span><span style="color:#ABB2BF">(</span><span style="color:#E06C75">resolve</span><span style="color:#ABB2BF">, </span><span style="color:#E06C75">ms</span><span style="color:#ABB2BF">))</span></span>
+<span class="line"><span style="color:#ABB2BF">}</span></span>
+<span class="line"></span></code></pre>
+      </pre>
+      <pre class="sc-KXCwU gDHuba"><pre class="shiki one-dark-pro" style="background-color:#282c34;color:#abb2bf" tabindex="0"><code><span class="line"><span style="color:#7F848E;font-style:italic">// ./echo/echoReducer.ts</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#ABB2BF"> { </span><span style="color:#E06C75">state</span><span style="color:#ABB2BF"> } </span><span style="color:#C678DD">from</span><span style="color:#98C379"> './echoState'</span></span>
+<span class="line"><span style="color:#C678DD">import</span><span style="color:#ABB2BF"> { </span><span style="color:#E06C75">TEchoActions</span><span style="color:#ABB2BF"> } </span><span style="color:#C678DD">from</span><span style="color:#98C379"> './echoActions'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD">export</span><span style="color:#C678DD"> const</span><span style="color:#E5C07B"> reducer</span><span style="color:#56B6C2"> =</span><span style="color:#E5C07B"> state</span><span style="color:#ABB2BF">.</span><span style="color:#61AFEF">createReducer</span><span style="color:#ABB2BF">&#x3C;</span><span style="color:#E5C07B">TEchoActions</span><span style="color:#ABB2BF">>({</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#61AFEF">    setSearchResult</span><span style="color:#ABB2BF">({</span><span style="color:#E06C75;font-style:italic">state</span><span style="color:#ABB2BF">, </span><span style="color:#E06C75;font-style:italic">payload</span><span style="color:#ABB2BF">}) {</span></span>
+<span class="line"><span style="color:#E5C07B">        state</span><span style="color:#ABB2BF">.</span><span style="color:#E06C75">searchResult</span><span style="color:#56B6C2"> =</span><span style="color:#E5C07B"> payload</span><span style="color:#ABB2BF">.</span><span style="color:#E06C75">searchResult</span></span>
+<span class="line"><span style="color:#E5C07B">        state</span><span style="color:#ABB2BF">.</span><span style="color:#E06C75">searching</span><span style="color:#56B6C2"> =</span><span style="color:#D19A66"> false</span></span>
+<span class="line"><span style="color:#ABB2BF">    },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#61AFEF">    setSearching</span><span style="color:#ABB2BF">({</span><span style="color:#E06C75;font-style:italic">state</span><span style="color:#ABB2BF">, </span><span style="color:#E06C75;font-style:italic">payload</span><span style="color:#ABB2BF">}) {</span></span>
+<span class="line"><span style="color:#E5C07B">        state</span><span style="color:#ABB2BF">.</span><span style="color:#E06C75">searching</span><span style="color:#56B6C2"> =</span><span style="color:#E5C07B"> payload</span><span style="color:#ABB2BF">.</span><span style="color:#E06C75">searching</span></span>
+<span class="line"><span style="color:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#ABB2BF">})</span></span>
+<span class="line"></span></code></pre>
+      </pre>
     </div>
   </div>
 </body>
