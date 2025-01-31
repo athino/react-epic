@@ -17,7 +17,7 @@ export type TEffect<D extends TDomainsBase, A extends keyof D, B extends TAction
             domain: A
             type: B
         }
-        state: TState<D>
+        getState(): TState<D>
         actions: TActions<D>
         call<T extends (...args: any[]) => any>(func: T): ReturnType<T>
     }) => void

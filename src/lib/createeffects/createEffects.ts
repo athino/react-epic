@@ -30,7 +30,7 @@ export const createEffects = <D extends TDomainsBase>() => {
                             switch (effect.type) {
                                 case 'takeEvery': {
                                     effect.handler({
-                                        state: arg.store.getState(),
+                                        getState: arg.store.getState,
                                         actions: actions,
                                         action: {
                                             ...arg.action,
@@ -45,7 +45,7 @@ export const createEffects = <D extends TDomainsBase>() => {
                                     store.cancellers[effect.id]?.()
                                     store.cancellers[effect.id] = cancel
                                     effect.handler({
-                                        state: arg.store.getState(),
+                                        getState: arg.store.getState,
                                         actions: actions,
                                         action: {
                                             ...arg.action,
@@ -60,7 +60,7 @@ export const createEffects = <D extends TDomainsBase>() => {
                                     if (!store.promises[effect.id]) {
                                         store.promises[effect.id] = true
                                         effect.handler({
-                                            state: arg.store.getState(),
+                                            getState: arg.store.getState,
                                             actions: actions,
                                             action: {
                                                 ...arg.action,
