@@ -23,7 +23,7 @@ export const readExample = async (): Promise<Record<string, string>> => {
 
                     const html = await codeToHtml(fileWithComment, {
                         lang: 'tsx',
-                        theme: 'one-dark-pro',
+                        theme: 'one-light',
                     });
 
                     result[relativePath] = html;
@@ -32,9 +32,7 @@ export const readExample = async (): Promise<Record<string, string>> => {
         );
     };
 
-    await readDirRecursive(dirPath); // <-- Ensure we await this
+    await readDirRecursive(dirPath)
 
-    console.log('result: ', result); // Should now contain the expected output
-
-    return result;
+    return result
 };

@@ -7,8 +7,6 @@ import { readExample } from "../common/readExample";
 export const docsBuildDocs = async () => {
     const files = await readExample()
 
-    console.log(files)
-
     const html = createHTML({
         title: '',
         body: <Body files={files}/>
