@@ -12,7 +12,7 @@ export const Code = (props: TCodeProps) => {
     )
 }
 
-const Frame = styled.pre`
+const Frame = styled.div`
     position: relative;
     overflow: hidden;
     min-height: 100%;
@@ -20,14 +20,16 @@ const Frame = styled.pre`
     margin: 0;
     color: white;
     box-sizing: border-box;
-
-    background: rgb(246, 246, 247);
     display: inline-block;
-    padding: 20px;
     min-width: 300px;
-    border-radius: 8px;
-    &, * {
-        font-family: "Roboto Mono", serif;
-        font-size: 14px;
+    pre {
+        margin: 0;
+        padding: 20px;
+        border-radius: 8px;
+        &, * {
+            font-family: "Roboto Mono", serif;
+            font-size: 14px;
+        }
     }
+
 `
