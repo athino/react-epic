@@ -22,9 +22,6 @@ export const readExample = async (): Promise<Record<string, string>> => {
                     const fileWithComment = `${relativeToCWDPath}\n\n${file}`;
 
                     const mok = tokenize(fileWithComment).map(({text, kind}) => {
-                        if (kind === 'NewLineTrivia') {
-                            return '<br/>'
-                        }
                         return `<span class="${kind}">${text}</span>`
                     }).join('')
 

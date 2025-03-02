@@ -12,18 +12,19 @@ export const Code = (props: TCodeProps) => {
     )
 }
 
-const Frame = styled.div`
+const Frame = styled.pre`
     position: relative;
     overflow: hidden;
-    background-color: #282C34;
     min-height: 100%;
     padding: 20px;
     width: 100%;
     margin: 0;
-    color: white;
     box-sizing: border-box;
     display: inline-block;
     min-width: 300px;
+    
+    color: white;
+    background-color: #282C34;
     .Identifier {
         color: #E5C07B;
     }
@@ -58,14 +59,4 @@ const Frame = styled.div`
     .FirstTriviaToken {
         color: #5B626F;
     }
-    pre {
-        margin: 0;
-        padding: 20px;
-        border-radius: 8px;
-        &, * {
-            font-family: "Roboto Mono", serif;
-            font-size: 14px;
-        }
-    }
-
 `
