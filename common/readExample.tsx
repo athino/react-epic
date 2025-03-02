@@ -10,7 +10,7 @@ export const readExample = async (): Promise<Record<string, string>> => {
         const entries = await fs.readdir(dir, { withFileTypes: true });
 
         await Promise.all(
-            entries.filter((entry) => entry.name.includes('app.tsx')).map(async (entry) => {
+            entries.map(async (entry) => {
                 const fullPath = path.join(dir, entry.name);
                 const relativePath = `.${path.sep}${path.relative(process.cwd(), fullPath)}`;
 

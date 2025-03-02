@@ -22,7 +22,7 @@
     }
   </style>
   <style data-styled="" data-styled-version="6.1.14">
-    .IuxND {
+    .gUROMJ {
       position: relative;
       overflow: hidden;
       min-height: 100%;
@@ -37,51 +37,57 @@
     }
 
     /*!sc*/
-    .IuxND .Identifier {
+    .gUROMJ,
+    .gUROMJ * {
+      font-family: monospace;
+    }
+
+    /*!sc*/
+    .gUROMJ .Identifier {
       color: #E5C07B;
     }
 
     /*!sc*/
-    .IuxND .FirstAssignment {
+    .gUROMJ .FirstAssignment {
       color: #56B6C2;
     }
 
     /*!sc*/
-    .IuxND .SlashToken,
-    .IuxND .OpenParenToken,
-    .IuxND .CloseParenToken,
-    .IuxND .GreaterThanToken,
-    .IuxND .LessThanSlashToken,
-    .IuxND .FirstPunctuation,
-    .IuxND .CloseBraceToken,
-    .IuxND .FirstBinaryOperator,
-    .IuxND .SemicolonToken {
+    .gUROMJ .SlashToken,
+    .gUROMJ .OpenParenToken,
+    .gUROMJ .CloseParenToken,
+    .gUROMJ .GreaterThanToken,
+    .gUROMJ .LessThanSlashToken,
+    .gUROMJ .FirstPunctuation,
+    .gUROMJ .CloseBraceToken,
+    .gUROMJ .FirstBinaryOperator,
+    .gUROMJ .SemicolonToken {
       color: #ABB2BF;
     }
 
     /*!sc*/
-    .IuxND .EqualsGreaterThanToken,
-    .IuxND .FromKeyword,
-    .IuxND .ReturnKeyword,
-    .IuxND .ImportKeyword,
-    .IuxND .ExportKeyword,
-    .IuxND .ConstKeyword {
+    .gUROMJ .EqualsGreaterThanToken,
+    .gUROMJ .FromKeyword,
+    .gUROMJ .ReturnKeyword,
+    .gUROMJ .ImportKeyword,
+    .gUROMJ .ExportKeyword,
+    .gUROMJ .ConstKeyword {
       color: #C678DD;
     }
 
     /*!sc*/
-    .IuxND .StringLiteral {
+    .gUROMJ .StringLiteral {
       color: #98C379;
     }
 
     /*!sc*/
-    .IuxND .FirstTriviaToken {
+    .gUROMJ .FirstTriviaToken {
       color: #5B626F;
     }
 
     /*!sc*/
     data-styled.g1[id="sc-KXCwU"] {
-      content: "IuxND,"
+      content: "gUROMJ,"
     }
 
     /*!sc*/
@@ -216,7 +222,36 @@
       <div class="sc-hWWBcw bTIIDm">1. Setting up domain actions</div>
       <div class="sc-hWWBcw bTIIDm">Within your app, for instance under
         `@/user/`, add a file called `userActions.ts`.</div>
-      <pre class="sc-KXCwU IuxND"><span class="FirstTriviaToken">// ./app.tsx</span><span class="NewLineTrivia">
+      <pre class="sc-KXCwU gUROMJ"><span class="FirstTriviaToken">// ./component/component.tsx</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="Identifier">React</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&quot;react&quot;</span><span class="NewLineTrivia">
+</span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">useActions</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&quot;../state/consumer&quot;</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ExportKeyword">export</span><span class="WhitespaceTrivia"> </span><span class="ConstKeyword">const</span><span class="WhitespaceTrivia"> </span><span class="Identifier">Component</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="OpenParenToken">(</span><span class="CloseParenToken">)</span><span class="WhitespaceTrivia"> </span><span class="EqualsGreaterThanToken">=&gt;</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="ConstKeyword">const</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="Identifier">actions</span><span class="CommaToken">,</span><span class="WhitespaceTrivia"> </span><span class="Identifier">data</span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="Identifier">useActions</span><span class="OpenParenToken">(</span><span class="OpenParenToken">(</span><span class="FirstPunctuation">{</span><span class="Identifier">echo</span><span class="CommaToken">,</span><span class="WhitespaceTrivia"> </span><span class="Identifier">delta</span><span class="CloseBraceToken">}</span><span class="CloseParenToken">)</span><span class="WhitespaceTrivia"> </span><span class="EqualsGreaterThanToken">=&gt;</span><span class="WhitespaceTrivia"> </span><span class="OpenParenToken">(</span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="Identifier">searchResult</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="Identifier">echo</span><span class="DotToken">.</span><span class="Identifier">searchResult</span><span class="CommaToken">,</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="Identifier">value</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="Identifier">delta</span><span class="DotToken">.</span><span class="Identifier">value</span><span class="CommaToken">,</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="Identifier">searching</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="Identifier">echo</span><span class="DotToken">.</span><span class="Identifier">searching</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="CloseBraceToken">}</span><span class="CloseParenToken">)</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="ReturnKeyword">return</span><span class="WhitespaceTrivia"> </span><span class="OpenParenToken">(</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="FirstBinaryOperator">&lt;</span><span class="Identifier">div</span><span class="GreaterThanToken">&gt;</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">            </span><span class="FirstBinaryOperator">&lt;</span><span class="Identifier">input</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">                </span><span class="TypeKeyword">type</span><span class="FirstAssignment">=</span><span class="StringLiteral">&#39;text&#39;</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">                </span><span class="Identifier">value</span><span class="FirstAssignment">=</span><span class="FirstPunctuation">{</span><span class="Identifier">data</span><span class="DotToken">.</span><span class="Identifier">value</span><span class="CloseBraceToken">}</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">                </span><span class="Identifier">onChange</span><span class="FirstAssignment">=</span><span class="FirstPunctuation">{</span><span class="OpenParenToken">(</span><span class="FirstPunctuation">{</span><span class="Identifier">target</span><span class="CloseBraceToken">}</span><span class="CloseParenToken">)</span><span class="WhitespaceTrivia"> </span><span class="EqualsGreaterThanToken">=&gt;</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">                    </span><span class="Identifier">actions</span><span class="DotToken">.</span><span class="Identifier">delta</span><span class="DotToken">.</span><span class="Identifier">setSearchValue</span><span class="OpenParenToken">(</span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">                        </span><span class="Identifier">value</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="Identifier">target</span><span class="DotToken">.</span><span class="Identifier">value</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">                    </span><span class="CloseBraceToken">}</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">                </span><span class="CloseBraceToken">}</span><span class="CloseBraceToken">}</span><span class="SlashToken">/</span><span class="GreaterThanToken">&gt;</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">            </span><span class="FirstBinaryOperator">&lt;</span><span class="Identifier">div</span><span class="GreaterThanToken">&gt;</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">                </span><span class="Identifier">Search</span><span class="WhitespaceTrivia"> </span><span class="Identifier">result</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="Identifier">data</span><span class="DotToken">.</span><span class="Identifier">searching</span><span class="WhitespaceTrivia"> </span><span class="QuestionToken">?</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;Searching...&#39;</span><span class="WhitespaceTrivia"> </span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="Identifier">data</span><span class="DotToken">.</span><span class="Identifier">searchResult</span><span class="CloseBraceToken">}</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">            </span><span class="FirstBinaryOperator">&lt;</span><span class="SlashToken">/</span><span class="Identifier">div</span><span class="GreaterThanToken">&gt;</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="FirstBinaryOperator">&lt;</span><span class="SlashToken">/</span><span class="Identifier">div</span><span class="GreaterThanToken">&gt;</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span><span class="CloseBraceToken">}</span><span class="NewLineTrivia">
+</span></pre>
+      <pre class="sc-KXCwU gUROMJ"><span class="FirstTriviaToken">// ./app.tsx</span><span class="NewLineTrivia">
 </span><span class="NewLineTrivia">
 </span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="Identifier">React</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;react&#39;</span><span class="SemicolonToken">;</span><span class="NewLineTrivia">
 </span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">Component</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;./example/component/component&#39;</span><span class="SemicolonToken">;</span><span class="NewLineTrivia">
@@ -229,6 +264,164 @@
 </span><span class="WhitespaceTrivia">            </span><span class="FirstBinaryOperator">&lt;</span><span class="Identifier">Component</span><span class="SlashToken">/</span><span class="GreaterThanToken">&gt;</span><span class="NewLineTrivia">
 </span><span class="WhitespaceTrivia">        </span><span class="FirstBinaryOperator">&lt;</span><span class="SlashToken">/</span><span class="Identifier">Provider</span><span class="GreaterThanToken">&gt;</span><span class="NewLineTrivia">
 </span><span class="WhitespaceTrivia">    </span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span><span class="CloseBraceToken">}</span><span class="NewLineTrivia">
+</span></pre>
+      <pre class="sc-KXCwU gUROMJ"><span class="FirstTriviaToken">// ./delta/deltaEffects.ts</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">root</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&quot;../state/root&quot;</span><span class="SemicolonToken">;</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ExportKeyword">export</span><span class="WhitespaceTrivia"> </span><span class="ConstKeyword">const</span><span class="WhitespaceTrivia"> </span><span class="Identifier">effects</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="Identifier">root</span><span class="DotToken">.</span><span class="Identifier">createEffects</span><span class="OpenParenToken">(</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span></pre>
+      <pre class="sc-KXCwU gUROMJ"><span class="FirstTriviaToken">// ./delta/deltaActions.ts</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">DefineActions</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&quot;../../epic&quot;</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ExportKeyword">export</span><span class="WhitespaceTrivia"> </span><span class="TypeKeyword">type</span><span class="WhitespaceTrivia"> </span><span class="Identifier">TDeltaActions</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="Identifier">DefineActions</span><span class="FirstBinaryOperator">&lt;</span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="Identifier">setSearchValue</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="Identifier">payload</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">            </span><span class="Identifier">value</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="StringKeyword">string</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="CloseBraceToken">}</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="CloseBraceToken">}</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="NewLineTrivia">
+</span><span class="CloseBraceToken">}</span><span class="GreaterThanToken">&gt;</span><span class="NewLineTrivia">
+</span></pre>
+      <pre class="sc-KXCwU gUROMJ"><span class="FirstTriviaToken">// ./state/consumer.ts</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">root</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;./root&#39;</span><span class="NewLineTrivia">
+</span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">effects</span><span class="WhitespaceTrivia"> </span><span class="AsKeyword">as</span><span class="WhitespaceTrivia"> </span><span class="Identifier">deltaEffects</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;../delta/deltaEffects&#39;</span><span class="NewLineTrivia">
+</span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">effects</span><span class="WhitespaceTrivia"> </span><span class="AsKeyword">as</span><span class="WhitespaceTrivia"> </span><span class="Identifier">echoEffects</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;../echo/echoEffects&#39;</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ConstKeyword">const</span><span class="WhitespaceTrivia"> </span><span class="Identifier">consumer</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="Identifier">root</span><span class="DotToken">.</span><span class="Identifier">createConsumer</span><span class="OpenParenToken">(</span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="Identifier">effects</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="OpenBracketToken">[</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="DotDotDotToken">...</span><span class="Identifier">deltaEffects</span><span class="DotToken">.</span><span class="Identifier">getEffects</span><span class="OpenParenToken">(</span><span class="CloseParenToken">)</span><span class="CommaToken">,</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="DotDotDotToken">...</span><span class="Identifier">echoEffects</span><span class="DotToken">.</span><span class="Identifier">getEffects</span><span class="OpenParenToken">(</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="CloseBracketToken">]</span><span class="NewLineTrivia">
+</span><span class="CloseBraceToken">}</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ExportKeyword">export</span><span class="WhitespaceTrivia"> </span><span class="ConstKeyword">const</span><span class="WhitespaceTrivia"> </span><span class="Identifier">useActions</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="Identifier">consumer</span><span class="DotToken">.</span><span class="Identifier">createHook</span><span class="OpenParenToken">(</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span><span class="ExportKeyword">export</span><span class="WhitespaceTrivia"> </span><span class="ConstKeyword">const</span><span class="WhitespaceTrivia"> </span><span class="Identifier">Provider</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="Identifier">consumer</span><span class="DotToken">.</span><span class="Identifier">createProvider</span><span class="OpenParenToken">(</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span></pre>
+      <pre class="sc-KXCwU gUROMJ"><span class="FirstTriviaToken">// ./delta/deltaReducer.ts</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">state</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;./deltaState&#39;</span><span class="NewLineTrivia">
+</span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">TDeltaActions</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;./deltaActions&#39;</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ExportKeyword">export</span><span class="WhitespaceTrivia"> </span><span class="ConstKeyword">const</span><span class="WhitespaceTrivia"> </span><span class="Identifier">reducer</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="Identifier">state</span><span class="DotToken">.</span><span class="Identifier">createReducer</span><span class="FirstBinaryOperator">&lt;</span><span class="Identifier">TDeltaActions</span><span class="GreaterThanToken">&gt;</span><span class="OpenParenToken">(</span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="Identifier">setSearchValue</span><span class="OpenParenToken">(</span><span class="FirstPunctuation">{</span><span class="Identifier">state</span><span class="CommaToken">,</span><span class="WhitespaceTrivia"> </span><span class="Identifier">payload</span><span class="CloseBraceToken">}</span><span class="CloseParenToken">)</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="Identifier">state</span><span class="DotToken">.</span><span class="Identifier">value</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="Identifier">payload</span><span class="DotToken">.</span><span class="Identifier">value</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="CloseBraceToken">}</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="NewLineTrivia">
+</span><span class="CloseBraceToken">}</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span></pre>
+      <pre class="sc-KXCwU gUROMJ"><span class="FirstTriviaToken">// ./state/root.ts</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">createRoot</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;../../epic/index&#39;</span><span class="NewLineTrivia">
+</span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">reducer</span><span class="WhitespaceTrivia"> </span><span class="AsKeyword">as</span><span class="WhitespaceTrivia"> </span><span class="Identifier">deltaReducer</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;../delta/deltaReducer&#39;</span><span class="NewLineTrivia">
+</span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">reducer</span><span class="WhitespaceTrivia"> </span><span class="AsKeyword">as</span><span class="WhitespaceTrivia"> </span><span class="Identifier">echoReducer</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;../echo/echoReducer&#39;</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ExportKeyword">export</span><span class="WhitespaceTrivia"> </span><span class="ConstKeyword">const</span><span class="WhitespaceTrivia"> </span><span class="Identifier">root</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="Identifier">createRoot</span><span class="OpenParenToken">(</span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="Identifier">domains</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="Identifier">delta</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="Identifier">deltaReducer</span><span class="CommaToken">,</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="Identifier">echo</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="Identifier">echoReducer</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="CloseBraceToken">}</span><span class="NewLineTrivia">
+</span><span class="CloseBraceToken">}</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span></pre>
+      <pre class="sc-KXCwU gUROMJ"><span class="FirstTriviaToken">// ./echo/echoActions.ts</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">DefineActions</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&quot;../../epic&quot;</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ExportKeyword">export</span><span class="WhitespaceTrivia"> </span><span class="TypeKeyword">type</span><span class="WhitespaceTrivia"> </span><span class="Identifier">TEchoActions</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="Identifier">DefineActions</span><span class="FirstBinaryOperator">&lt;</span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="Identifier">setSearchResult</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="Identifier">payload</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">            </span><span class="Identifier">searchResult</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="NumberKeyword">number</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="CloseBraceToken">}</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="CloseBraceToken">}</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="Identifier">setSearching</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="Identifier">payload</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">            </span><span class="Identifier">searching</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="BooleanKeyword">boolean</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="CloseBraceToken">}</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="CloseBraceToken">}</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="CloseBraceToken">}</span><span class="GreaterThanToken">&gt;</span><span class="NewLineTrivia">
+</span></pre>
+      <pre class="sc-KXCwU gUROMJ"><span class="FirstTriviaToken">// ./delta/deltaState.ts</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">createState</span><span class="CommaToken">,</span><span class="WhitespaceTrivia"> </span><span class="Identifier">DefineState</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;../../epic&#39;</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="TypeKeyword">type</span><span class="WhitespaceTrivia"> </span><span class="Identifier">TDeltaState</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="Identifier">DefineState</span><span class="FirstBinaryOperator">&lt;</span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="Identifier">value</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="StringKeyword">string</span><span class="NewLineTrivia">
+</span><span class="CloseBraceToken">}</span><span class="GreaterThanToken">&gt;</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ExportKeyword">export</span><span class="WhitespaceTrivia"> </span><span class="ConstKeyword">const</span><span class="WhitespaceTrivia"> </span><span class="Identifier">state</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="Identifier">createState</span><span class="FirstBinaryOperator">&lt;</span><span class="Identifier">TDeltaState</span><span class="GreaterThanToken">&gt;</span><span class="OpenParenToken">(</span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="Identifier">value</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;skriv her...&#39;</span><span class="NewLineTrivia">
+</span><span class="CloseBraceToken">}</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span></pre>
+      <pre class="sc-KXCwU gUROMJ"><span class="FirstTriviaToken">// ./echo/echoState.ts</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">createState</span><span class="CommaToken">,</span><span class="WhitespaceTrivia"> </span><span class="Identifier">DefineState</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;../../epic&#39;</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="TypeKeyword">type</span><span class="WhitespaceTrivia"> </span><span class="Identifier">TEchoState</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="Identifier">DefineState</span><span class="FirstBinaryOperator">&lt;</span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="Identifier">searchResult</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="NumberKeyword">number</span><span class="CommaToken">,</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="Identifier">searching</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="BooleanKeyword">boolean</span><span class="NewLineTrivia">
+</span><span class="CloseBraceToken">}</span><span class="GreaterThanToken">&gt;</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ExportKeyword">export</span><span class="WhitespaceTrivia"> </span><span class="ConstKeyword">const</span><span class="WhitespaceTrivia"> </span><span class="Identifier">state</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="Identifier">createState</span><span class="FirstBinaryOperator">&lt;</span><span class="Identifier">TEchoState</span><span class="GreaterThanToken">&gt;</span><span class="OpenParenToken">(</span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="Identifier">searchResult</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="FirstLiteralToken">0</span><span class="CommaToken">,</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="Identifier">searching</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="FalseKeyword">false</span><span class="NewLineTrivia">
+</span><span class="CloseBraceToken">}</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span></pre>
+      <pre class="sc-KXCwU gUROMJ"><span class="FirstTriviaToken">// ./echo/echoReducer.ts</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">state</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;./echoState&#39;</span><span class="NewLineTrivia">
+</span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">TEchoActions</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;./echoActions&#39;</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ExportKeyword">export</span><span class="WhitespaceTrivia"> </span><span class="ConstKeyword">const</span><span class="WhitespaceTrivia"> </span><span class="Identifier">reducer</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="Identifier">state</span><span class="DotToken">.</span><span class="Identifier">createReducer</span><span class="FirstBinaryOperator">&lt;</span><span class="Identifier">TEchoActions</span><span class="GreaterThanToken">&gt;</span><span class="OpenParenToken">(</span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="Identifier">setSearchResult</span><span class="OpenParenToken">(</span><span class="FirstPunctuation">{</span><span class="Identifier">state</span><span class="CommaToken">,</span><span class="WhitespaceTrivia"> </span><span class="Identifier">payload</span><span class="CloseBraceToken">}</span><span class="CloseParenToken">)</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="Identifier">state</span><span class="DotToken">.</span><span class="Identifier">searchResult</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="Identifier">payload</span><span class="DotToken">.</span><span class="Identifier">searchResult</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="Identifier">state</span><span class="DotToken">.</span><span class="Identifier">searching</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="FalseKeyword">false</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="CloseBraceToken">}</span><span class="CommaToken">,</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="Identifier">setSearching</span><span class="OpenParenToken">(</span><span class="FirstPunctuation">{</span><span class="Identifier">state</span><span class="CommaToken">,</span><span class="WhitespaceTrivia"> </span><span class="Identifier">payload</span><span class="CloseBraceToken">}</span><span class="CloseParenToken">)</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="Identifier">state</span><span class="DotToken">.</span><span class="Identifier">searching</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="Identifier">payload</span><span class="DotToken">.</span><span class="Identifier">searching</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="CloseBraceToken">}</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="CloseBraceToken">}</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span></pre>
+      <pre class="sc-KXCwU gUROMJ"><span class="FirstTriviaToken">// ./echo/echoEffects.ts</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ImportKeyword">import</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">root</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="FromKeyword">from</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&quot;../state/root&quot;</span><span class="SemicolonToken">;</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ExportKeyword">export</span><span class="WhitespaceTrivia"> </span><span class="ConstKeyword">const</span><span class="WhitespaceTrivia"> </span><span class="Identifier">effects</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="Identifier">root</span><span class="DotToken">.</span><span class="Identifier">createEffects</span><span class="OpenParenToken">(</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="Identifier">effects</span><span class="DotToken">.</span><span class="Identifier">addEffect</span><span class="OpenParenToken">(</span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="Identifier">domain</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;delta&#39;</span><span class="CommaToken">,</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="Identifier">action</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;setSearchValue&#39;</span><span class="CommaToken">,</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="TypeKeyword">type</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;takeLatest&#39;</span><span class="CommaToken">,</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="AsyncKeyword">async</span><span class="WhitespaceTrivia"> </span><span class="Identifier">handler</span><span class="OpenParenToken">(</span><span class="Identifier">ctx</span><span class="CloseParenToken">)</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="IfKeyword">if</span><span class="WhitespaceTrivia"> </span><span class="OpenParenToken">(</span><span class="Identifier">ctx</span><span class="DotToken">.</span><span class="Identifier">action</span><span class="DotToken">.</span><span class="Identifier">payload</span><span class="DotToken">.</span><span class="Identifier">value</span><span class="WhitespaceTrivia"> </span><span class="ExclamationEqualsEqualsToken">!==</span><span class="WhitespaceTrivia"> </span><span class="StringLiteral">&#39;&#39;</span><span class="CloseParenToken">)</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">            </span><span class="Identifier">ctx</span><span class="DotToken">.</span><span class="Identifier">actions</span><span class="DotToken">.</span><span class="Identifier">echo</span><span class="DotToken">.</span><span class="Identifier">setSearching</span><span class="OpenParenToken">(</span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">searching</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="TrueKeyword">true</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">            </span><span class="AwaitKeyword">await</span><span class="WhitespaceTrivia"> </span><span class="Identifier">sleep</span><span class="OpenParenToken">(</span><span class="FirstLiteralToken">2000</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">            </span><span class="Identifier">ctx</span><span class="DotToken">.</span><span class="Identifier">call</span><span class="OpenParenToken">(</span><span class="OpenParenToken">(</span><span class="CloseParenToken">)</span><span class="WhitespaceTrivia"> </span><span class="EqualsGreaterThanToken">=&gt;</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">                </span><span class="Identifier">console</span><span class="DotToken">.</span><span class="Identifier">log</span><span class="OpenParenToken">(</span><span class="StringLiteral">&#39;&quot;Started&quot; fetch...&#39;</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">            </span><span class="CloseBraceToken">}</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">            </span><span class="Identifier">ctx</span><span class="DotToken">.</span><span class="Identifier">actions</span><span class="DotToken">.</span><span class="Identifier">echo</span><span class="DotToken">.</span><span class="Identifier">setSearchResult</span><span class="OpenParenToken">(</span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">                </span><span class="Identifier">searchResult</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="Identifier">ctx</span><span class="DotToken">.</span><span class="Identifier">state</span><span class="DotToken">.</span><span class="Identifier">echo</span><span class="DotToken">.</span><span class="Identifier">searchResult</span><span class="WhitespaceTrivia"> </span><span class="PlusToken">+</span><span class="WhitespaceTrivia"> </span><span class="FirstLiteralToken">1</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">            </span><span class="CloseBraceToken">}</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="CloseBraceToken">}</span><span class="WhitespaceTrivia"> </span><span class="ElseKeyword">else</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">            </span><span class="Identifier">ctx</span><span class="DotToken">.</span><span class="Identifier">actions</span><span class="DotToken">.</span><span class="Identifier">echo</span><span class="DotToken">.</span><span class="Identifier">setSearching</span><span class="OpenParenToken">(</span><span class="FirstPunctuation">{</span><span class="WhitespaceTrivia"> </span><span class="Identifier">searching</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="FalseKeyword">false</span><span class="WhitespaceTrivia"> </span><span class="CloseBraceToken">}</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">        </span><span class="CloseBraceToken">}</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="CloseBraceToken">}</span><span class="NewLineTrivia">
+</span><span class="CloseBraceToken">}</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
+</span><span class="NewLineTrivia">
+</span><span class="ConstKeyword">const</span><span class="WhitespaceTrivia"> </span><span class="Identifier">sleep</span><span class="WhitespaceTrivia"> </span><span class="FirstAssignment">=</span><span class="WhitespaceTrivia"> </span><span class="OpenParenToken">(</span><span class="Identifier">ms</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="NumberKeyword">number</span><span class="CloseParenToken">)</span><span class="ColonToken">:</span><span class="WhitespaceTrivia"> </span><span class="Identifier">Promise</span><span class="FirstBinaryOperator">&lt;</span><span class="VoidKeyword">void</span><span class="GreaterThanToken">&gt;</span><span class="WhitespaceTrivia"> </span><span class="EqualsGreaterThanToken">=&gt;</span><span class="WhitespaceTrivia"> </span><span class="FirstPunctuation">{</span><span class="NewLineTrivia">
+</span><span class="WhitespaceTrivia">    </span><span class="ReturnKeyword">return</span><span class="WhitespaceTrivia"> </span><span class="NewKeyword">new</span><span class="WhitespaceTrivia"> </span><span class="Identifier">Promise</span><span class="OpenParenToken">(</span><span class="Identifier">resolve</span><span class="WhitespaceTrivia"> </span><span class="EqualsGreaterThanToken">=&gt;</span><span class="WhitespaceTrivia"> </span><span class="Identifier">setTimeout</span><span class="OpenParenToken">(</span><span class="Identifier">resolve</span><span class="CommaToken">,</span><span class="WhitespaceTrivia"> </span><span class="Identifier">ms</span><span class="CloseParenToken">)</span><span class="CloseParenToken">)</span><span class="NewLineTrivia">
 </span><span class="CloseBraceToken">}</span><span class="NewLineTrivia">
 </span></pre>
     </div>
