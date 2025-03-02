@@ -15,13 +15,49 @@ export const Code = (props: TCodeProps) => {
 const Frame = styled.div`
     position: relative;
     overflow: hidden;
+    background-color: #282C34;
     min-height: 100%;
+    padding: 20px;
     width: 100%;
     margin: 0;
     color: white;
     box-sizing: border-box;
     display: inline-block;
     min-width: 300px;
+    .Identifier {
+        color: #E5C07B;
+    }
+
+    .FirstAssignment {
+        color: #56B6C2;
+    }
+
+    .SlashToken,
+    .OpenParenToken,
+    .CloseParenToken,
+    .GreaterThanToken,
+    .LessThanSlashToken,
+    .FirstPunctuation,
+    .CloseBraceToken,
+    .FirstBinaryOperator,
+    .SemicolonToken {
+        color: #ABB2BF;
+    }
+
+    .EqualsGreaterThanToken,
+    .FromKeyword,
+    .ReturnKeyword,
+    .ImportKeyword,
+    .ExportKeyword,
+    .ConstKeyword {
+        color: #C678DD;
+    }
+    .StringLiteral {
+        color: #98C379;
+    }
+    .FirstTriviaToken {
+        color: #5B626F;
+    }
     pre {
         margin: 0;
         padding: 20px;

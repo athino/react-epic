@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { codeToHtml } from 'shiki';
+import {tokenize} from './tokenize/tokenize';
 
 export const readExample = async (): Promise<Record<string, string>> => {
     const dirPath = path.join(process.cwd(), 'example');
@@ -10,7 +10,7 @@ export const readExample = async (): Promise<Record<string, string>> => {
         const entries = await fs.readdir(dir, { withFileTypes: true });
 
         await Promise.all(
-            entries.map(async (entry) => {
+            entries.filter((entry) => entry.name.includes('app.tsx')).map(async (entry) => {
                 const fullPath = path.join(dir, entry.name);
                 const relativePath = `.${path.sep}${path.relative(process.cwd(), fullPath)}`;
 
@@ -21,12 +21,11 @@ export const readExample = async (): Promise<Record<string, string>> => {
                     const relativeToCWDPath = `// .${path.sep}${path.relative(dirPath, fullPath)}`;
                     const fileWithComment = `${relativeToCWDPath}\n\n${file}`;
 
-                    const html = await codeToHtml(fileWithComment, {
-                        lang: 'tsx',
-                        theme: 'one-light',
-                    });
+                    const mok = tokenize(fileWithComment).map(({text, kind}) => {
+                        return `<span class="${kind}">${text}</span>`
+                    }).join('')
 
-                    result[relativePath] = html;
+                    result[relativePath] = mok;
                 }
             })
         );
