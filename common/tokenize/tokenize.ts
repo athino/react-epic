@@ -4,7 +4,7 @@ export const tokenize = (code: string) => {
     ts.LanguageVariant.JSX
     /// const scanner = ts.createScanner(ts.ScriptTarget.Latest, false, ts.LanguageVariant.Standard, code)
 
-    const scanner = ts.createScanner(ts.ScriptTarget.Latest, false, ts.LanguageVariant.Standard, code)
+    const scanner = ts.createScanner(ts.ScriptTarget.Latest, false, ts.LanguageVariant.JSX, code)
     let tokens: { text: string, kind: string }[] = []
 
     let token = scanner.scan()
